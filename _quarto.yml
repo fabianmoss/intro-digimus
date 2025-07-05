@@ -6,10 +6,10 @@ book:
   author: "Fabian C. Moss"
   date: "7/5/2025"
   chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+  - index.qmd
+  - intro.qmd
+  - summary.qmd
+  - references.qmd
 
 bibliography: references.bib
 
