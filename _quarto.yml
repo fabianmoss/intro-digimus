@@ -3,7 +3,7 @@ project:
 
 book:
   title: "book"
-  author: "Norah Jones"
+  author: "Fabian C. Moss"
   date: "7/5/2025"
   chapters:
     - index.qmd
