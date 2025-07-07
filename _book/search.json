@@ -1,0 +1,187 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "INTRODUCTION TO DIGITAL MUSICOLOGY",
+    "section": "",
+    "text": "Preface\nThis page contains material for the course Introduction to Digital Musicology, held at Julius-Maximilians-Universität, Würzburg (Germany) in Fall 2025.\n\n\n\n\n\n\nWarning\n\n\n\nThis is work in progress.\n\n\nTest citation Knuth (1984).\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "01_what_is_dm.html",
+    "href": "01_what_is_dm.html",
+    "title": "1  What is Digital Musicology?",
+    "section": "",
+    "text": "Introduction and terminology\n\n\n\n\n\n\nGoal\n\n\n\nUnderstanding what “digital musicology” means.\n\n\n\nIntroduction\nOverview of the field\nTerminology\n\ne.g. digital vs computational; the latter in 2nd semester\ndigital vs empirical vs quantiative\nhow does DM relate to “traditional” subdivisions of musicology?\n\n\n\n\n\n\n\n\nExercise\n\n\n\nRead.",
+    "crumbs": [
+      "INTRODUCTION",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is Digital Musicology?</span>"
+    ]
+  },
+  {
+    "objectID": "02_dm_today.html",
+    "href": "02_dm_today.html",
+    "title": "2  Digital Musicology today",
+    "section": "",
+    "text": "Goal\n\n\n\nAcquiring and overview of current activities in Digital Musicology.\n\n\n\nCurrent research topics\nImportant institutions and people (also, e.g. NFDI4Culture)\nCentral journals and conferences",
+    "crumbs": [
+      "INTRODUCTION",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Digital Musicology today</span>"
+    ]
+  },
+  {
+    "objectID": "03_history_of_dm.html",
+    "href": "03_history_of_dm.html",
+    "title": "3  The history of Digital Musicology",
+    "section": "",
+    "text": "Goal\n\n\n\nKnowing the beginnings and the major stages of DM.",
+    "crumbs": [
+      "INTRODUCTION",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The history of Digital Musicology</span>"
+    ]
+  },
+  {
+    "objectID": "04_RISM.html",
+    "href": "04_RISM.html",
+    "title": "4  RISM metadata",
+    "section": "",
+    "text": "Goal\n\n\n\nLearn what metadata are and how to search for music sources on RISM Online.\n\n\n\nWhat is RISM?\nWhat is RISM Online?\n\n\n\n\n\n\n\nExercise\n\n\n\nUnderstand basic SPARQL and design queries via prompting.",
+    "crumbs": [
+      "DATA ABOUT MUSIC",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RISM metadata</span>"
+    ]
+  },
+  {
+    "objectID": "05_spotify_musicbrainz.html",
+    "href": "05_spotify_musicbrainz.html",
+    "title": "5  Spotify and MusicBrainz metadata",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand the kind of metadata provided by Spotify vs MusicBrainz.",
+    "crumbs": [
+      "DATA ABOUT MUSIC",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Spotify and MusicBrainz metadata</span>"
+    ]
+  },
+  {
+    "objectID": "06_streaming_industry.html",
+    "href": "06_streaming_industry.html",
+    "title": "6  Music and the streaming industry",
+    "section": "",
+    "text": "Goal\n\n\n\nGain first insights into the music market and its workings.\n\n\n\n\n\n\n\n\nExercise\n\n\n\nWork with sales data.",
+    "crumbs": [
+      "DATA ABOUT MUSIC",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Music and the streaming industry</span>"
+    ]
+  },
+  {
+    "objectID": "07_audio.html",
+    "href": "07_audio.html",
+    "title": "7  Audio",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand what an audio signal is and how it is represented digitally .\n\n\n\nWaveform to spectrogram\nHarmonics\nTimbre\nAudible range and volume\nreading melodies from a spectrogram\ndigital audio: sampling",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Audio</span>"
+    ]
+  },
+  {
+    "objectID": "08_MIDI.html",
+    "href": "08_MIDI.html",
+    "title": "8  MIDI",
+    "section": "",
+    "text": "Goal\n\n\n\nBe able to name use cases for MIDI. Translate MIDI numbers to pitches.",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>MIDI</span>"
+    ]
+  },
+  {
+    "objectID": "09_MEI_header.html",
+    "href": "09_MEI_header.html",
+    "title": "9  MEI - header",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand basic XML encoding and the skeleton structure of MEI.\n\n\n\nmei friend",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>MEI - header</span>"
+    ]
+  },
+  {
+    "objectID": "10_MEI_body.html",
+    "href": "10_MEI_body.html",
+    "title": "10  MEI - the body",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand the relation between CWMN and the MEI music element.\n\n\n\nMuseScore export\nmei friend",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>MEI - the body</span>"
+    ]
+  },
+  {
+    "objectID": "11_dma_harmony.html",
+    "href": "11_dma_harmony.html",
+    "title": "11  Digital music analysis: harmony",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand what labeling is and why labels can be useful.\n\n\n\nfurther MuseScore practice\nsegmentation and labeling\nCounting chords, finding cadences",
+    "crumbs": [
+      "WORKING WITH MUSIC DATA",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Digital music analysis: harmony</span>"
+    ]
+  },
+  {
+    "objectID": "12_dma_melody.html",
+    "href": "12_dma_melody.html",
+    "title": "12  Digital music analysis: melody",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand how melodic pattern matching works in principle.\n\n\n\nPattern finding in melodies (Non-Western)",
+    "crumbs": [
+      "WORKING WITH MUSIC DATA",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Digital music analysis: melody</span>"
+    ]
+  },
+  {
+    "objectID": "13_dma_copyright.html",
+    "href": "13_dma_copyright.html",
+    "title": "13  Digital music analysis: copyright",
+    "section": "",
+    "text": "Goal\n\n\n\nKnow a few famous copyright infringement cases and why data analysis is important here.\n\n\n\nPlagiarism cases and copyright",
+    "crumbs": [
+      "WORKING WITH MUSIC DATA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Digital music analysis: copyright</span>"
+    ]
+  },
+  {
+    "objectID": "14_ethics.html",
+    "href": "14_ethics.html",
+    "title": "14  Ethical issues",
+    "section": "",
+    "text": "Goal\n\n\n\nUnderstand the difference between representativeness and representation. Obtain a critical understanding of biases relevant for data selection.\n\n\n\nRepresentation and the canon\nRepresenting means modeling means abstraction (what is “music” in “music encoding”?)\nbiases: how to recognize them, how to deal with them, and when biases are a good thing.\nFAIR and CARE",
+    "crumbs": [
+      "CRITICAL DIGITAL MUSICOLOGY",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ethical issues</span>"
+    ]
+  },
+  {
+    "objectID": "15_discussion.html",
+    "href": "15_discussion.html",
+    "title": "15  Discussion",
+    "section": "",
+    "text": "Goal",
+    "crumbs": [
+      "CRITICAL DIGITAL MUSICOLOGY",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Discussion</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
