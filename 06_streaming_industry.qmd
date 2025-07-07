@@ -1,0 +1,12 @@
+# Music and the streaming industry
+
+::: {.callout-note}
+# Goal
+Gain first insights into the music market and its workings.
+:::
+
+::: {.callout-tip}
+# Exercise
+Work with sales data. 
+:::
+

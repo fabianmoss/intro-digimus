@@ -1,0 +1,9 @@
+# Digital music analysis: melody
+
+::: {.callout-note}
+# Goal
+Understand how melodic pattern matching works in principle.
+:::
+
+- Pattern finding in melodies (Non-Western)
+

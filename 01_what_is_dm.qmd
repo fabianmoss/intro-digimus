@@ -1,0 +1,23 @@
+<!-- #  What is Digital Musicology? -->
+
+# What is Digital Musicology? 
+
+Introduction and terminology
+
+::: {.callout-note}
+# Goal
+Understanding what "digital musicology" means.
+:::
+
+- Introduction 
+- Overview of the field 
+- Terminology 
+  - e.g. digital vs computational; the latter in 2nd semester
+  - digital vs empirical vs quantiative
+  - how does DM relate to "traditional" subdivisions of musicology?
+
+::: {.callout-tip}
+# Exercise
+Read.
+:::
+

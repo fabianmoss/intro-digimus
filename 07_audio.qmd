@@ -1,0 +1,14 @@
+### Audio 
+
+::: {.callout-note}
+# Goal
+Understand what an audio signal is and how it is represented digitally .
+:::
+
+- Waveform to spectrogram 
+- Harmonics 
+- Timbre 
+- Audible range and volume
+- reading melodies from a spectrogram
+- digital audio: sampling 
+

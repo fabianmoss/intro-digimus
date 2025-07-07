@@ -1,0 +1,7 @@
+# Spotify and MusicBrainz metadata
+
+::: {.callout-note}
+# Goal
+Understand the kind of metadata provided by Spotify vs MusicBrainz.
+:::
+

@@ -1,0 +1,11 @@
+# Digital music analysis: harmony
+
+::: {.callout-note}
+# Goal
+Understand what labeling is and why labels can be useful.
+:::
+
+- further MuseScore practice
+- segmentation and labeling
+- Counting chords, finding cadences
+

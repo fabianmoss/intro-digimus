@@ -1,0 +1,9 @@
+# MEI - header
+
+::: {.callout-note}
+# Goal
+Understand basic XML encoding and the skeleton structure of MEI.
+:::
+
+- mei friend
+

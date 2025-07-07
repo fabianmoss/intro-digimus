@@ -1,0 +1,10 @@
+# MEI - the body
+
+::: {.callout-note}
+# Goal
+Understand the relation between CWMN and the MEI music element.
+:::
+
+- MuseScore export
+- mei friend
+

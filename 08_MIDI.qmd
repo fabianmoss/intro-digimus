@@ -1,0 +1,7 @@
+# MIDI
+
+::: {.callout-note}
+# Goal
+Be able to name use cases for MIDI. Translate MIDI numbers to pitches.
+:::
+

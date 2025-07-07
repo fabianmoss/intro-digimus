@@ -1,0 +1,15 @@
+# RISM metadata 
+
+::: {.callout-note}
+# Goal
+Learn what metadata are and how to search for music sources on RISM Online.
+:::
+
+- What is RISM?
+- What is RISM Online?
+
+::: {.callout-tip}
+# Exercise
+Understand basic SPARQL and design queries via prompting.
+:::
+

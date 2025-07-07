@@ -1,0 +1,9 @@
+# Digital music analysis: copyright
+
+::: {.callout-note}
+# Goal
+Know a few famous copyright infringement cases and why data analysis is important here.
+:::
+
+- Plagiarism cases and copyright
+

@@ -1,5 +1,12 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This page contains material for the course 
+**Introduction to Digital Musicology**, held 
+at Julius-Maximilians-Universität, Würzburg (Germany)
+in Fall 2025. 
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+::: {.callout-warning}
+This is work in progress.
+:::
+
+Test citation @knuth84.

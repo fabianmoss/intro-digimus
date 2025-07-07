@@ -2,22 +2,48 @@ project:
   type: book
 
 book:
-  title: "book"
+  title: "INTRODUCTION TO DIGITAL MUSICOLOGY"
   author: "Fabian C. Moss"
   date: "7/5/2025"
   chapters:
   - index.qmd
-  - intro.qmd
-  - summary.qmd
+  - part: INTRODUCTION
+    chapters:
+    - 01_what_is_dm.qmd
+    - 02_dm_today.qmd
+    - 03_history_of_dm.qmd
+  - part: DATA ABOUT MUSIC
+    chapters:
+    - 04_RISM.qmd
+    - 05_spotify_musicbrainz.qmd
+    - 06_streaming_industry.qmd
+  - part: MUSIC AS DATA
+    chapters:
+    - 07_audio.qmd
+    - 08_MIDI.qmd
+    - 09_MEI_header.qmd
+    - 10_MEI_body.qmd
+  - part: WORKING WITH MUSIC DATA
+    chapters:
+    - 11_dma_harmony.qmd
+    - 12_dma_melody.qmd
+    - 13_dma_copyright.qmd
+  - part: CRITICAL DIGITAL MUSICOLOGY
+    chapters:
+    - 14_ethics.qmd
+    - 15_discussion.qmd
+  # - intro.qmd
+  # - summary.qmd
   - references.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: darkly
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook
+    papersize: a4
 
 
 

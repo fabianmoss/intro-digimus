@@ -1,0 +1,11 @@
+# Digital Musicology today
+
+::: {.callout-note}
+# Goal
+Acquiring and overview of current activities in Digital Musicology.
+:::
+
+- Current research topics
+- Important institutions and people (also, e.g. NFDI4Culture)
+- Central journals and conferences
+
