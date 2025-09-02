@@ -1,14 +1,41 @@
-### Audio 
+# Audio 
 
 ::: {.callout-note}
 # Goal
 Understand what an audio signal is and how it is represented digitally .
 :::
 
-- Waveform to spectrogram 
-- Harmonics 
-- Timbre 
-- Audible range and volume
-- reading melodies from a spectrogram
-- digital audio: sampling 
+Clearly, music is related to sound, and artistic commentaries such as 
+John Cage's _4'33_ are exceptions that confirm the rule. 
+Thus, in order to understand music and how to encode it, 
+we need a basic understanding of how sound works. 
 
+## pure tones 
+
+- amplidute $A$
+- frequency $f$ 
+- limits of hearing,  Audible range and volume
+- intervals: octave and fifth 
+- phase $\phi$
+
+$$x(t) = A \sin(2\pi ft + phi)$$
+
+## Harmonics 
+
+Adding pure tones and decomposition via Fourier (link to 3b1b)
+
+- Timbre 
+- Waveform to spectrogram 
+- reading melodies from a spectrogram
+
+## Digital audio
+
+- Sampling 
+
+
+
+::: {.callout-note}
+# Further reading
+
+Excellent introductions can be found in @Sethares2005, @Mueller2015, and @Eerola2025.
+:::

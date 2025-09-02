@@ -344,7 +344,7 @@
     "href": "07_audio.html",
     "title": "8  Audio",
     "section": "",
-    "text": "Goal\n\n\n\nUnderstand what an audio signal is and how it is represented digitally .\n\n\n\nWaveform to spectrogram\nHarmonics\nTimbre\nAudible range and volume\nreading melodies from a spectrogram\ndigital audio: sampling",
+    "text": "8.1 pure tones\n\\[x(t) = A \\sin(2\\pi ft + phi)\\]",
     "crumbs": [
       "MUSIC AS DATA",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Audio</span>"
@@ -454,9 +454,42 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nSchaffer, Kris. 2016. “What Is Computational Musicology?”\nhttps://medium.com/@krisshaffer/what-is-computational-musicology-f25ee0a65102.\n\n\nWing, Jeannette M. 2006. “Computational Thinking.”\nCommun. ACM 49 (3): 33–35. https://doi.org/10.1145/1118178.1118215.",
+    "text": "Budge, Helen. 1943. “A Study of Chord\nFrequencies Based on Music of Representative\nComposers of the Eighteenth and\nNineteenth Centuries.” PhD thesis, Columbia\nUniversity.\n\n\nEerola, T. 2025. Music and Science: A Guide to Empirical Music\nResearch. SEMPRE Studies in the Psychology of Music.\nLondon, UK: Routledge.\n\n\nJeppesen, Knud. 1927. The Style of\nPalestrina and the Dissonance. 1st ed.\nNew York: Oxford University Press.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nMüller, Meinard. 2015. Fundamentals of Music\nProcessing: Audio, Analysis,\nAlgorithms, Applications. Springer\nInternational Publishing. https://doi.org/10.1007/978-3-319-21945-5.\n\n\nNorman, Philip B. 1945. A Quantitative Study of\nHarmonic Similarities in Certain Specified\nWorks of Bach, Beethoven, and\nWagner. C. Fischer, Incorporated.\n\n\nSchaffer, Kris. 2016. “What Is Computational Musicology?”\nhttps://medium.com/@krisshaffer/what-is-computational-musicology-f25ee0a65102.\n\n\nSethares, William A. 2005. Tuning, Timbre,\nSpectrum, Scale. 2nd ed. London:\nSpringer.\n\n\nShanahan, Daniel, John Ashley Burgoyne, and Ian Quinn, eds. 2022.\nOxford Handbook of Music and Corpus\nStudies. Oxford: Oxford University Press.\n\n\nWing, Jeannette M. 2006. “Computational Thinking.”\nCommun. ACM 49 (3): 33–35. https://doi.org/10.1145/1118178.1118215.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "07_audio.html#pure-tones",
+    "href": "07_audio.html#pure-tones",
+    "title": "8  Audio",
+    "section": "",
+    "text": "amplidute \\(A\\)\nfrequency \\(f\\)\nlimits of hearing, Audible range and volume\nintervals: octave and fifth\nphase \\(\\phi\\)",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Audio</span>"
+    ]
+  },
+  {
+    "objectID": "07_audio.html#harmonics",
+    "href": "07_audio.html#harmonics",
+    "title": "8  Audio",
+    "section": "8.2 Harmonics",
+    "text": "8.2 Harmonics\nAdding pure tones and decomposition via Fourier (link to 3b1b)\n\nTimbre\nWaveform to spectrogram\nreading melodies from a spectrogram",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Audio</span>"
+    ]
+  },
+  {
+    "objectID": "07_audio.html#digital-audio",
+    "href": "07_audio.html#digital-audio",
+    "title": "8  Audio",
+    "section": "8.3 Digital audio",
+    "text": "8.3 Digital audio\n\nSampling\n\n\n\n\n\n\n\nFurther reading\n\n\n\nExcellent introductions can be found in Sethares (2005), Müller (2015), and Eerola (2025).\n\n\n\n\n\n\nEerola, T. 2025. Music and Science: A Guide to Empirical Music Research. SEMPRE Studies in the Psychology of Music. London, UK: Routledge.\n\n\nMüller, Meinard. 2015. Fundamentals of Music Processing: Audio, Analysis, Algorithms, Applications. Springer International Publishing. https://doi.org/10.1007/978-3-319-21945-5.\n\n\nSethares, William A. 2005. Tuning, Timbre, Spectrum, Scale. 2nd ed. London: Springer.",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Audio</span>"
     ]
   }
 ]
