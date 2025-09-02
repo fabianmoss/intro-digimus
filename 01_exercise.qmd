@@ -1,4 +1,4 @@
-## Exercise for Week 1 {.unnumbered}
+## Exercise for Week 1
 
 In the remainder of the course, we will engage with data and computer code.
 While this is probably new for most of you, there are luckily many tools 

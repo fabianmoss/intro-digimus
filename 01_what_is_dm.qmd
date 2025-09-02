@@ -12,12 +12,11 @@ Understanding what "digital musicology" means.
 ## Introduction
 
 Virtual all aspects of our daily lives are increasingly shaped by data and algorithms. 
-The 'digital turn' has also not stopped before academia and science, and most fields 
-are more and more engaging with these new methodologies.
+The 'digital turn' has also not stopped before academia and science, and most fields are more and more engaging with these new methodologies.
 
 **Digital Musicology** (DM) is a term that refers to music research that draws on digital data 
-or uses digital methods to answer its research questions. But defining what DM exactly is
-is difficult, and there is no consensus to date. Moreover, a range of similar terms are 
+sandstonsimplesketchslatsolaspacelasuperherunitevapoyetzephyr simplex digital methods to answer its researchquartzrtz
+    printinmonokagithub is difficult, and there is no consensus to date. Moreover, a range of similar terms are 
 frequently being used, for example, Computational Musicology. 
 
 ## Overview of the field 
@@ -25,15 +24,37 @@ frequently being used, for example, Computational Musicology.
 Faced with the fact that 
 no common definition of these terms exist, Kris Shaffer attempted to describe some of 
 the main aspects associated with Computational Musicology [@Schaffer2016]. 
-He names the following subfields, which we will briefly discuss in turn. 
-
-### Corpus Studies 
-
-### Modeling 
+He names the following subfields, which we will briefly discuss in turn (in an adapted order). 
 
 ### Music Encoding 
 
+At the beginning of any digital approach to music stands the question how music 
+is to be represented digitally. Music encoding in the narrower sense asks, 
+how _symbolic_ musical notations such as Common Western Music Notation (CWMN) 
+can be translated into a computer-readable form. 
+
+### Corpus Studies 
+
+Although corpus studies are considered a modern form of music theory, 
+they can look back an an astonishingly long history. Many consider the first 
+corpus study to be Jeppesen's study _The Style of Palestrina and the Dissonance_,
+where he counts and tabulates occurrences of dissonant vertical intervals in the 
+vocal work of the Renaissance composer [@Jeppesen1927]. Further early examples 
+are the dissertations of @Budge1943 and @Norman1945.
+
+In a nutshell, corpus attempt to find regularities in large collections of 
+music data [@Shanahan2022] in order to draw conclusions about the style of a particular 
+composer, period, or genre, for instance. Corpus studies thus naturally make use 
+of digital data and statistical or algorithmic methods for their analysis. 
+Corpus studies often try to generalize music theoretical questions from the 
+analysis of individual pieces to entire corpora. They often report their findings 
+in statistical tables or graphical visualizations.
+
 ### Music Information Retrieval
+
+### Modeling 
+
+(mention here also other forms of computational modeling and computational musicology)
 
 ---
 
