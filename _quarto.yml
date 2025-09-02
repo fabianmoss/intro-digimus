@@ -17,7 +17,7 @@ book:
     - 04_RISM.qmd
     - 05_spotify_musicbrainz.qmd
     - 06_streaming_industry.qmd
-    - data/billboard_charts.ipynb
+    - billboard_charts.ipynb
   - part: MUSIC AS DATA
     chapters:
     - 07_audio.qmd
@@ -43,6 +43,8 @@ format:
   pdf:
     documentclass: scrbook
     papersize: a4
+    fig-format: pdf
+    pdf-engine: lualatex
 
 
 
