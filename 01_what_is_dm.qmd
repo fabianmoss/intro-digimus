@@ -9,15 +9,65 @@ Introduction and terminology
 Understanding what "digital musicology" means.
 :::
 
-- Introduction 
-- Overview of the field 
-- Terminology 
+## Introduction
+
+Virtual all aspects of our daily lives are increasingly shaped by data and algorithms. 
+The 'digital turn' has also not stopped before academia and science, and most fields 
+are more and more engaging with these new methodologies.
+
+**Digital Musicology** (DM) is a term that refers to music research that draws on digital data 
+or uses digital methods to answer its research questions. But defining what DM exactly is
+is difficult, and there is no consensus to date. Moreover, a range of similar terms are 
+frequently being used, for example, Computational Musicology. 
+
+## Overview of the field 
+
+Faced with the fact that 
+no common definition of these terms exist, Kris Shaffer attempted to describe some of 
+the main aspects associated with Computational Musicology [@Schaffer2016]. 
+He names the following subfields, which we will briefly discuss in turn. 
+
+### Corpus Studies 
+
+### Modeling 
+
+### Music Encoding 
+
+### Music Information Retrieval
+
+---
+
+::: {.callout-note}
+The aspects mentioned above are only part of what people nowadays may understand 
+by Computational Musicology. In that sense, Computational Musicology is part of the larger 
+movement of Computational Science, an endeavour that embeds computational methods and thinking 
+into domain-specific areas of research [@Wing2006]. If we have this extended view, 
+we also need to include computational models of music perception and cognition, acoustics, 
+and enthnological and anthropological approaches to music as well. However, this would go 
+beyond the scope of this course. 
+:::
+
+In this course, we focus on the following aspects of Digital Musicology, each of which 
+forms an integral part of its design:
+
+- **Data about music:**
+- **Music as data:** How can music, an ephemeral expression of human culture, be captured
+  or represented as digital data on a computer? What kinds of decisions do we have to make?
+  Which musical aspects are retained and which are lost? Is music as data translatable?
+- **Working with music data:** 
+- **Critical Digital Musicology**: What kinds of ethical and societal issues do we 
+  touch upon when doing Digital Musicology? Which important questions do we need to consider 
+  before planning or executing a research study? 
+
   - e.g. digital vs computational; the latter in 2nd semester
   - digital vs empirical vs quantiative
   - how does DM relate to "traditional" subdivisions of musicology?
 
 ::: {.callout-tip}
-# **Exercise**
-Read.
+# Homework
+1. Read @Schaffer2016. 
+2. Discuss with your peers unclear terms and find answers.
+3. Find aspects of Computational Musicology that you think are 
+   underrepresented in Schaffer's list. 
 :::
 

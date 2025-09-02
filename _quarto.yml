@@ -36,19 +36,28 @@ book:
     - 13_copyright.qmd
     - 14_representation.qmd
     - 15_discussion.qmd
+  - part: EXERCISES
+    chapters:
+    - 01_exercise.qmd
   - references.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: darkly
-    code-fold: true
+    theme: simplex # darkly
+    highlight-style: github
   pdf:
     documentclass: scrbook
     papersize: a4
+    geometry:
+      - top=2.5cm 
+      - bottom=2.5cm
+      - right=2cm 
+      - left=2cm
     fig-format: pdf
     pdf-engine: lualatex
+    toc-depth: 2
 
 
 

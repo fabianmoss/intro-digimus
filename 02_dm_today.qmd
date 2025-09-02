@@ -5,7 +5,41 @@
 Acquiring and overview of current activities in Digital Musicology.
 :::
 
-- Current research topics
-- Important institutions and people (also, e.g. NFDI4Culture)
-- Central journals and conferences
+## Important institutions and people (also, e.g. NFDI4Culture)
 
+- DCML 
+- Paderborn
+- Stanford 
+- Queen Mary 
+- Linz
+
+## Current research topics
+
+## Central journals and conferences
+
+### Journals 
+
+- EMR 
+- Music Perception 
+- Musicae Scientiae 
+- Music & Science 
+- Music Theory Online 
+- Music Theory Spectrum 
+
+### Conferences 
+
+- IMS Digital Musicology 
+- ISMIR 
+- DLfM 
+- ICMPC 
+- ICCCM
+- CMMR 
+- CHR 
+- SMC 
+- MEC 
+- DH Conference
+
+## Important tools
+
+- music21 
+- Verovio 
