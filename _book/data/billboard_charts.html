@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs – INTRODUCTION TO DIGITAL MUSICOLOGY</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../07_audio.html" rel="next">
+<link href="../06_streaming_industry.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_RISM.html">DATA ABOUT MUSIC</a></li><li class="breadcrumb-item"><a href="../data/billboard_charts.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">billboard_charts.html</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">INTRODUCTION TO DIGITAL MUSICOLOGY</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">INTRODUCTION</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_what_is_dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is Digital Musicology?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_dm_today.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digital Musicology today</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03_history_of_dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The history of Digital Musicology</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">DATA ABOUT MUSIC</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04_RISM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RISM metadata</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05_spotify_musicbrainz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spotify and MusicBrainz metadata</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06_streaming_industry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Music and the streaming industry</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data/billboard_charts.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">billboard_charts.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">MUSIC AS DATA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07_audio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Audio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08_MIDI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">MIDI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../09_MEI_header.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">MEI - header</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10_MEI_body.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI - the body</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">WORKING WITH MUSIC DATA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11_dma_harmony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Digital music analysis: harmony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../12_dma_melody.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Digital music analysis: melody</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">CRITICAL DIGITAL MUSICOLOGY</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../13_copyright.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Copyright</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../14_representation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Representation and representativeness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../15_discussion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_RISM.html">DATA ABOUT MUSIC</a></li><li class="breadcrumb-item"><a href="../data/billboard_charts.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">billboard_charts.html</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="0d22b11f-2f0f-45be-9f51-28619e50800d" class="cell" data-execution_count="277">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fa33e746-956e-418f-8e76-4ab20b0ae673" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f02f6a22-fd13-422d-93f8-9e18fee2183c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"charts.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="bf7d1845-8eea-42f7-88c5-02fa951a5c3a" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.date.<span class="bu">min</span>(), df.date.<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>('1958-08-04', '2021-11-06')</code></pre>
+</div>
+</div>
+<div id="ee7b968a-0d50-44d8-9171-909f830823d3" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top artists</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.artist.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>Taylor Swift                                      1023
+Elton John                                         889
+Madonna                                            857
+Drake                                              787
+Kenny Chesney                                      769
+                                                  ... 
+RiceGum Featuring Alissa Violet                      1
+XXXTENTACION Featuring PnB Rock &amp; Trippie Redd       1
+Justin Bieber Featuring Burna Boy                    1
+Justin Bieber Featuring BEAM                         1
+Frankie Vaughan                                      1
+Name: artist, Length: 10205, dtype: int64</code></pre>
+</div>
+</div>
+<div id="ec195a97-a5b0-47b6-9a0a-22bcb483bf09" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Longest in charts</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.sort_values(by<span class="op">=</span><span class="st">"weeks-on-board"</span>, ascending<span class="op">=</span><span class="va">True</span>).iloc[<span class="dv">50_000</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">rank</th>
+<th data-quarto-table-cell-role="th">song</th>
+<th data-quarto-table-cell-role="th">artist</th>
+<th data-quarto-table-cell-role="th">last-week</th>
+<th data-quarto-table-cell-role="th">peak-rank</th>
+<th data-quarto-table-cell-role="th">weeks-on-board</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">259625</td>
+<td>1972-02-05</td>
+<td>39</td>
+<td>My World</td>
+<td>Bee Gees</td>
+<td>65.0</td>
+<td>39</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">259626</td>
+<td>1972-02-05</td>
+<td>40</td>
+<td>Everything I Own</td>
+<td>Bread</td>
+<td>60.0</td>
+<td>40</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">17466</td>
+<td>2018-07-07</td>
+<td>67</td>
+<td>Bed</td>
+<td>Nicki Minaj Featuring Ariana Grande</td>
+<td>43.0</td>
+<td>43</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">260181</td>
+<td>1972-01-01</td>
+<td>95</td>
+<td>Do The Funky Penguin Part I</td>
+<td>Rufus Thomas</td>
+<td>97.0</td>
+<td>95</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">259676</td>
+<td>1972-02-05</td>
+<td>90</td>
+<td>Runaway/Happy Together</td>
+<td>Dawn Featuring Tony Orlando</td>
+<td>99.0</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1215</td>
+<td>2021-08-14</td>
+<td>16</td>
+<td>Blinding Lights</td>
+<td>The Weeknd</td>
+<td>17.0</td>
+<td>1</td>
+<td>87</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">39148</td>
+<td>2014-05-10</td>
+<td>49</td>
+<td>Radioactive</td>
+<td>Imagine Dragons</td>
+<td>48.0</td>
+<td>3</td>
+<td>87</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1117</td>
+<td>2021-08-21</td>
+<td>18</td>
+<td>Blinding Lights</td>
+<td>The Weeknd</td>
+<td>16.0</td>
+<td>1</td>
+<td>88</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1020</td>
+<td>2021-08-28</td>
+<td>21</td>
+<td>Blinding Lights</td>
+<td>The Weeknd</td>
+<td>18.0</td>
+<td>1</td>
+<td>89</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">919</td>
+<td>2021-09-04</td>
+<td>20</td>
+<td>Blinding Lights</td>
+<td>The Weeknd</td>
+<td>21.0</td>
+<td>1</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+
+<p>280087 rows × 7 columns</p>
+</div>
+</div>
+</div>
+<div id="8ed4f5c5-3411-41a4-b0f2-77ef71df9411" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"date"</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">"date"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="db2daad2-e0a6-4060-b901-e2f491b64cd7" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[df.artist<span class="op">==</span><span class="st">"Drake"</span>].song.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>God's Plan                36
+Hotline Bling             36
+Controlla                 26
+Nice For What             25
+Headlines                 25
+                          ..
+From Florida With Love     1
+Landed                     1
+When To Say When           1
+Deep Pockets               1
+Final Fantasy              1
+Name: song, Length: 108, dtype: int64</code></pre>
+</div>
+</div>
+<div id="6ed80094-b01b-48ad-911f-dab5fc5dbacc" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[df.artist<span class="op">==</span><span class="st">"Elton John"</span>].song.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>Candle In The Wind 1997/Something About The Way You Look Tonight               42
+Can You Feel The Love Tonight (From "The Lion King")                           26
+I Guess That's Why They Call It The Blues                                      23
+The One                                                                        22
+Candle In The Wind                                                             21
+Little Jeannie                                                                 21
+Blessed                                                                        20
+Believe                                                                        20
+Circle Of Life (From "The Lion King")                                          20
+The Last Song                                                                  20
+Recover Your Soul                                                              20
+Sad Songs (say So Much)                                                        19
+I Don't Wanna Go On With You Like That                                         18
+Mama Can't Buy You Love                                                        18
+Nikita                                                                         18
+Bennie And The Jets                                                            18
+Blue Eyes                                                                      18
+Empty Garden (Hey Hey Johnny)                                                  17
+Goodbye Yellow Brick Road                                                      17
+Crocodile Rock                                                                 17
+You Can Make History (Young Again)                                             17
+Sacrifice                                                                      17
+Club At The End Of The Street                                                  16
+Simple Life                                                                    16
+I'm Still Standing                                                             16
+Daniel                                                                         15
+Don't Let The Sun Go Down On Me                                                15
+Island Girl                                                                    15
+Rocket Man                                                                     15
+Someday Out Of The Blue                                                        15
+Healing Hands                                                                  15
+The Bitch Is Back                                                              14
+Your Song                                                                      14
+Who Wears These Shoes?                                                         14
+Wrap Her Up                                                                    14
+Sorry Seems To Be The Hardest Word                                             14
+Lucy In The Sky With Diamonds                                                  14
+Someone Saved My Life Tonight                                                  13
+You Gotta Love Someone                                                         13
+A Word In Spanish                                                              13
+Nobody Wins                                                                    13
+Chloe                                                                          13
+In Neon                                                                        13
+Saturday Night's Alright For Fighting                                          12
+Kiss The Bride                                                                 12
+(Sartorial Eloquence) Don't Ya Wanna Play This Game No More?                   12
+Grow Some Funk Of Your Own/I Feel Like A Bullet (In The Gun Of Robert Ford)    11
+Part-Time Love                                                                 10
+Victim Of Love                                                                 10
+Honky Cat                                                                      10
+Made In England                                                                10
+Levon                                                                          10
+Friends                                                                         9
+Ego                                                                             8
+Heartache All Over The World                                                    8
+Tiny Dancer                                                                     7
+Bite Your Lip (Get up and dance!)                                               6
+Border Song                                                                     5
+Name: song, dtype: int64</code></pre>
+</div>
+</div>
+<div id="866b9ad6-e21a-42ae-87ae-05695a128736" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chart_performance(artist, song):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> df[(df[<span class="st">"artist"</span>] <span class="op">==</span> artist) <span class="op">&amp;</span> (df[<span class="st">"song"</span>] <span class="op">==</span> song)]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> data.sort_values(by<span class="op">=</span><span class="st">"date"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">"date_rel"</span>] <span class="op">=</span> pd.to_timedelta(data[<span class="st">"date"</span>] <span class="op">-</span> data[<span class="st">"date"</span>][<span class="dv">0</span>]).dt.days</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2e4ae9de-8177-48d4-b43f-cfce8293cf90" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>test_cases <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Taylor Swift"</span>: <span class="st">"You Belong With Me"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Drake"</span>: <span class="st">"God's Plan"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Elton John"</span>: <span class="st">"Candle In The Wind 1997/Something About The Way You Look Tonight"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"The Weeknd"</span>: <span class="st">"Blinding Lights"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Elvis Presley"</span>: <span class="st">"Please Don't Stop Loving Me"</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="65d63490-956b-4ab9-b44c-b59b9a277bed" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>taylor <span class="op">=</span> chart_performance(<span class="st">"Taylor Swift"</span>, <span class="st">"You Belong With Me"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>drake <span class="op">=</span> chart_performance(<span class="st">"Drake"</span>, <span class="st">"God's Plan"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>elton <span class="op">=</span> chart_performance(<span class="st">"Elton John"</span>, <span class="st">"Candle In The Wind 1997/Something About The Way You Look Tonight"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>weeknd <span class="op">=</span> chart_performance(<span class="st">"The Weeknd"</span>, <span class="st">"Blinding Lights"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>elvis <span class="op">=</span> chart_performance(<span class="st">"Elvis Presley"</span>, <span class="st">"Please Don't Stop Loving Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f0446937-f83f-4ba5-bb4e-984eaed55069" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4ad93e6a-5289-48e1-988a-8d7be693f0e8" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> artist, song <span class="kw">in</span> test_cases.items():</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> chart_performance(artist, song)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> data[<span class="st">"date"</span>].values</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> data[<span class="st">"rank"</span>].values</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, marker<span class="op">=</span><span class="st">"."</span>, label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>song<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>artist<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>plt.gca().invert_yaxis()</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="billboard_charts_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="8f50cde0-99c7-4bd9-b8e1-e9145c1343f3" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> artist, song <span class="kw">in</span> test_cases.items():</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> chart_performance(artist, song)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> data[<span class="st">"date_rel"</span>].values</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> data[<span class="st">"rank"</span>].values</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, marker<span class="op">=</span><span class="st">"."</span>, label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>song<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>artist<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.gca().invert_yaxis()</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="billboard_charts_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="63f3f2aa-bbde-47f0-890f-4e5b812f18b0" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: remove lines for missing weeks (gaps in curves)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add two cases:</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  - short duration but high peak</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  - long duration but low peak</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a5ffa254-15a6-475e-a6a3-dc2c569d7a52" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q: can we predict a song's survival using the features given in the data?</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># --&gt; at least introduce notion of training/test data and discuss the epistemological problem of using 'all' historical </span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sources for explanation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2c7af1af-82af-4299-97c9-b34c3232bdf2" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try other data: https://www.kaggle.com/datasets/thedevastator/billboard-hot-100-audio-features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5df89a9a-ad34-47c3-92e7-f8581b1d18d0" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_charts <span class="op">=</span> pd.read_csv(<span class="st">"Hot Stuff.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df_charts[<span class="st">"WeekID"</span>] <span class="op">=</span> pd.to_datetime(df_charts[<span class="st">"WeekID"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="46a361dd-6747-4db9-a6a3-ccf51a74fa51" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_charts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">WeekID</th>
+<th data-quarto-table-cell-role="th">Week Position</th>
+<th data-quarto-table-cell-role="th">Song</th>
+<th data-quarto-table-cell-role="th">Performer</th>
+<th data-quarto-table-cell-role="th">SongID</th>
+<th data-quarto-table-cell-role="th">Instance</th>
+<th data-quarto-table-cell-role="th">Previous Week Position</th>
+<th data-quarto-table-cell-role="th">Peak Position</th>
+<th data-quarto-table-cell-role="th">Weeks on Chart</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">index</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>http://www.billboard.com/charts/hot-100/1965-0...</td>
+<td>1965-07-17</td>
+<td>34</td>
+<td>Don't Just Stand There</td>
+<td>Patty Duke</td>
+<td>Don't Just Stand TherePatty Duke</td>
+<td>1</td>
+<td>45.0</td>
+<td>34</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>http://www.billboard.com/charts/hot-100/1965-0...</td>
+<td>1965-07-24</td>
+<td>22</td>
+<td>Don't Just Stand There</td>
+<td>Patty Duke</td>
+<td>Don't Just Stand TherePatty Duke</td>
+<td>1</td>
+<td>34.0</td>
+<td>22</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>http://www.billboard.com/charts/hot-100/1965-0...</td>
+<td>1965-07-31</td>
+<td>14</td>
+<td>Don't Just Stand There</td>
+<td>Patty Duke</td>
+<td>Don't Just Stand TherePatty Duke</td>
+<td>1</td>
+<td>22.0</td>
+<td>14</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>http://www.billboard.com/charts/hot-100/1965-0...</td>
+<td>1965-08-07</td>
+<td>10</td>
+<td>Don't Just Stand There</td>
+<td>Patty Duke</td>
+<td>Don't Just Stand TherePatty Duke</td>
+<td>1</td>
+<td>14.0</td>
+<td>10</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>http://www.billboard.com/charts/hot-100/1965-0...</td>
+<td>1965-08-14</td>
+<td>8</td>
+<td>Don't Just Stand There</td>
+<td>Patty Duke</td>
+<td>Don't Just Stand TherePatty Duke</td>
+<td>1</td>
+<td>10.0</td>
+<td>8</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="1dea77e4-c49e-478b-9b2c-67772f1d1e88" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df_audio <span class="op">=</span> pd.read_csv(<span class="st">"Hot 100 Audio Features.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="132da3b3-f1d7-4531-b679-99313ad9f3ad" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df_audio.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">SongID</th>
+<th data-quarto-table-cell-role="th">Performer</th>
+<th data-quarto-table-cell-role="th">Song</th>
+<th data-quarto-table-cell-role="th">spotify_genre</th>
+<th data-quarto-table-cell-role="th">spotify_track_id</th>
+<th data-quarto-table-cell-role="th">spotify_track_preview_url</th>
+<th data-quarto-table-cell-role="th">spotify_track_duration_ms</th>
+<th data-quarto-table-cell-role="th">spotify_track_explicit</th>
+<th data-quarto-table-cell-role="th">spotify_track_album</th>
+<th data-quarto-table-cell-role="th">danceability</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">loudness</th>
+<th data-quarto-table-cell-role="th">mode</th>
+<th data-quarto-table-cell-role="th">speechiness</th>
+<th data-quarto-table-cell-role="th">acousticness</th>
+<th data-quarto-table-cell-role="th">instrumentalness</th>
+<th data-quarto-table-cell-role="th">liveness</th>
+<th data-quarto-table-cell-role="th">valence</th>
+<th data-quarto-table-cell-role="th">tempo</th>
+<th data-quarto-table-cell-role="th">time_signature</th>
+<th data-quarto-table-cell-role="th">spotify_track_popularity</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">index</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>-twistin'-White Silver SandsBill Black's Combo</td>
+<td>Bill Black's Combo</td>
+<td>-twistin'-White Silver Sands</td>
+<td>[]</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>¿Dònde Està Santa Claus? (Where Is Santa Claus...</td>
+<td>Augie Rios</td>
+<td>¿Dònde Està Santa Claus? (Where Is Santa Claus?)</td>
+<td>['novelty']</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>......And Roses And RosesAndy Williams</td>
+<td>Andy Williams</td>
+<td>......And Roses And Roses</td>
+<td>['adult standards', 'brill building pop', 'eas...</td>
+<td>3tvqPPpXyIgKrm4PR9HCf0</td>
+<td>https://p.scdn.co/mp3-preview/cef4883cfd1e0e53...</td>
+<td>166106.0</td>
+<td>False</td>
+<td>The Essential Andy Williams</td>
+<td>0.154</td>
+<td>...</td>
+<td>-14.063</td>
+<td>1.0</td>
+<td>0.0315</td>
+<td>0.91100</td>
+<td>0.000267</td>
+<td>0.112</td>
+<td>0.150</td>
+<td>83.969</td>
+<td>4.0</td>
+<td>38.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>...And Then There Were DrumsSandy Nelson</td>
+<td>Sandy Nelson</td>
+<td>...And Then There Were Drums</td>
+<td>['rock-and-roll', 'space age pop', 'surf music']</td>
+<td>1fHHq3qHU8wpRKHzhojZ4a</td>
+<td>NaN</td>
+<td>172066.0</td>
+<td>False</td>
+<td>Compelling Percussion</td>
+<td>0.588</td>
+<td>...</td>
+<td>-17.278</td>
+<td>0.0</td>
+<td>0.0361</td>
+<td>0.00256</td>
+<td>0.745000</td>
+<td>0.145</td>
+<td>0.801</td>
+<td>121.962</td>
+<td>4.0</td>
+<td>11.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>...Baby One More TimeBritney Spears</td>
+<td>Britney Spears</td>
+<td>...Baby One More Time</td>
+<td>['dance pop', 'pop', 'post-teen pop']</td>
+<td>3MjUtNVVq3C8Fn0MP3zhXa</td>
+<td>https://p.scdn.co/mp3-preview/da2134a161f1cb34...</td>
+<td>211066.0</td>
+<td>False</td>
+<td>...Baby One More Time (Digital Deluxe Version)</td>
+<td>0.759</td>
+<td>...</td>
+<td>-5.745</td>
+<td>0.0</td>
+<td>0.0307</td>
+<td>0.20200</td>
+<td>0.000131</td>
+<td>0.443</td>
+<td>0.907</td>
+<td>92.960</td>
+<td>4.0</td>
+<td>77.0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 22 columns</p>
+</div>
+</div>
+</div>
+<div id="eff2f870-b7f2-4b35-9ffb-645392a0ba55" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> df_charts.merge(df_audio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a8492758-4a14-487e-964b-b1d26c9818dc" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>d.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>(330208, 29)</code></pre>
+</div>
+</div>
+<div id="031bd7b1-4a36-4c6d-bd4f-09c4d5cde23f" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"WeekID"</span>] <span class="op">=</span> pd.to_datetime(d[<span class="st">"WeekID"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="6ca8b3e3-9153-4eba-908b-2b7f80716cb2" class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>d.sample(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="76">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">WeekID</th>
+<th data-quarto-table-cell-role="th">Week Position</th>
+<th data-quarto-table-cell-role="th">Song</th>
+<th data-quarto-table-cell-role="th">Performer</th>
+<th data-quarto-table-cell-role="th">SongID</th>
+<th data-quarto-table-cell-role="th">Instance</th>
+<th data-quarto-table-cell-role="th">Previous Week Position</th>
+<th data-quarto-table-cell-role="th">Peak Position</th>
+<th data-quarto-table-cell-role="th">Weeks on Chart</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">loudness</th>
+<th data-quarto-table-cell-role="th">mode</th>
+<th data-quarto-table-cell-role="th">speechiness</th>
+<th data-quarto-table-cell-role="th">acousticness</th>
+<th data-quarto-table-cell-role="th">instrumentalness</th>
+<th data-quarto-table-cell-role="th">liveness</th>
+<th data-quarto-table-cell-role="th">valence</th>
+<th data-quarto-table-cell-role="th">tempo</th>
+<th data-quarto-table-cell-role="th">time_signature</th>
+<th data-quarto-table-cell-role="th">spotify_track_popularity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">95610</td>
+<td>http://www.billboard.com/charts/hot-100/1995-0...</td>
+<td>1995-06-10</td>
+<td>95</td>
+<td>Secret Garden</td>
+<td>Bruce Springsteen</td>
+<td>Secret GardenBruce Springsteen</td>
+<td>1</td>
+<td>76.0</td>
+<td>63</td>
+<td>7</td>
+<td>...</td>
+<td>-16.560</td>
+<td>1.0</td>
+<td>0.0266</td>
+<td>0.4940</td>
+<td>0.099900</td>
+<td>0.1170</td>
+<td>0.131</td>
+<td>86.830</td>
+<td>4.0</td>
+<td>62.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">71803</td>
+<td>http://www.billboard.com/charts/hot-100/1998-0...</td>
+<td>1998-06-20</td>
+<td>6</td>
+<td>Everybody [Backstreet's Back]</td>
+<td>Backstreet Boys</td>
+<td>Everybody [Backstreet's Back]Backstreet Boys</td>
+<td>1</td>
+<td>6.0</td>
+<td>4</td>
+<td>10</td>
+<td>...</td>
+<td>-3.493</td>
+<td>0.0</td>
+<td>0.0402</td>
+<td>0.0250</td>
+<td>0.000003</td>
+<td>0.2650</td>
+<td>0.586</td>
+<td>108.021</td>
+<td>4.0</td>
+<td>63.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">245085</td>
+<td>http://www.billboard.com/charts/hot-100/1965-1...</td>
+<td>1965-11-20</td>
+<td>27</td>
+<td>Make Me Your Baby</td>
+<td>Barbara Lewis</td>
+<td>Make Me Your BabyBarbara Lewis</td>
+<td>1</td>
+<td>19.0</td>
+<td>11</td>
+<td>11</td>
+<td>...</td>
+<td>-15.879</td>
+<td>1.0</td>
+<td>0.0402</td>
+<td>0.7010</td>
+<td>0.000058</td>
+<td>0.6710</td>
+<td>0.649</td>
+<td>110.040</td>
+<td>4.0</td>
+<td>28.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9320</td>
+<td>https://www.billboard.com/charts/hot-100/2020-...</td>
+<td>2020-09-19</td>
+<td>72</td>
+<td>7 Summers</td>
+<td>Morgan Wallen</td>
+<td>7 SummersMorgan Wallen</td>
+<td>1</td>
+<td>56.0</td>
+<td>6</td>
+<td>4</td>
+<td>...</td>
+<td>-5.130</td>
+<td>1.0</td>
+<td>0.0328</td>
+<td>0.4170</td>
+<td>0.000061</td>
+<td>0.1250</td>
+<td>0.571</td>
+<td>203.903</td>
+<td>4.0</td>
+<td>75.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">120792</td>
+<td>http://www.billboard.com/charts/hot-100/1969-1...</td>
+<td>1969-10-25</td>
+<td>8</td>
+<td>Baby It's You</td>
+<td>Smith</td>
+<td>Baby It's YouSmith</td>
+<td>1</td>
+<td>13.0</td>
+<td>8</td>
+<td>8</td>
+<td>...</td>
+<td>-10.648</td>
+<td>0.0</td>
+<td>0.0304</td>
+<td>0.0177</td>
+<td>0.071200</td>
+<td>0.2600</td>
+<td>0.694</td>
+<td>95.398</td>
+<td>4.0</td>
+<td>45.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">139253</td>
+<td>http://www.billboard.com/charts/hot-100/2004-1...</td>
+<td>2004-10-30</td>
+<td>73</td>
+<td>Flap Your Wings</td>
+<td>Nelly</td>
+<td>Flap Your WingsNelly</td>
+<td>1</td>
+<td>66.0</td>
+<td>52</td>
+<td>9</td>
+<td>...</td>
+<td>-3.975</td>
+<td>1.0</td>
+<td>0.0617</td>
+<td>0.0246</td>
+<td>0.000001</td>
+<td>0.0874</td>
+<td>0.858</td>
+<td>105.623</td>
+<td>4.0</td>
+<td>43.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">308885</td>
+<td>http://www.billboard.com/charts/hot-100/1975-0...</td>
+<td>1975-01-04</td>
+<td>69</td>
+<td>Whatever You Got, I Want</td>
+<td>Jackson 5</td>
+<td>Whatever You Got, I WantJackson 5</td>
+<td>1</td>
+<td>60.0</td>
+<td>38</td>
+<td>11</td>
+<td>...</td>
+<td>-6.994</td>
+<td>0.0</td>
+<td>0.0547</td>
+<td>0.2550</td>
+<td>0.000000</td>
+<td>0.0792</td>
+<td>0.928</td>
+<td>76.892</td>
+<td>4.0</td>
+<td>21.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">231557</td>
+<td>http://www.billboard.com/charts/hot-100/2006-0...</td>
+<td>2006-09-30</td>
+<td>34</td>
+<td>Hate Me</td>
+<td>Blue October</td>
+<td>Hate MeBlue October</td>
+<td>1</td>
+<td>34.0</td>
+<td>32</td>
+<td>23</td>
+<td>...</td>
+<td>-5.724</td>
+<td>0.0</td>
+<td>0.0356</td>
+<td>0.5130</td>
+<td>0.000000</td>
+<td>0.0980</td>
+<td>0.202</td>
+<td>92.166</td>
+<td>4.0</td>
+<td>59.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">232458</td>
+<td>http://www.billboard.com/charts/hot-100/1966-0...</td>
+<td>1966-05-14</td>
+<td>89</td>
+<td>It's Over</td>
+<td>Jimmie Rodgers</td>
+<td>It's OverJimmie Rodgers</td>
+<td>1</td>
+<td>NaN</td>
+<td>89</td>
+<td>1</td>
+<td>...</td>
+<td>-24.218</td>
+<td>1.0</td>
+<td>0.0311</td>
+<td>0.9180</td>
+<td>0.000120</td>
+<td>0.1510</td>
+<td>0.603</td>
+<td>95.650</td>
+<td>4.0</td>
+<td>6.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">16052</td>
+<td>https://www.billboard.com/charts/hot-100/2019-...</td>
+<td>2019-01-05</td>
+<td>70</td>
+<td>Break Da Law</td>
+<td>21 Savage</td>
+<td>Break Da Law21 Savage</td>
+<td>1</td>
+<td>NaN</td>
+<td>70</td>
+<td>1</td>
+<td>...</td>
+<td>-7.823</td>
+<td>1.0</td>
+<td>0.3460</td>
+<td>0.0493</td>
+<td>0.000000</td>
+<td>0.2560</td>
+<td>0.359</td>
+<td>141.039</td>
+<td>4.0</td>
+<td>61.0</td>
+</tr>
+</tbody>
+</table>
+
+<p>10 rows × 29 columns</p>
+</div>
+</div>
+</div>
+<div id="ca2f5ab1-75da-4b2a-9a0d-eb80e928d91f" class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">## BOOTSTRAP!</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># d = d.sample(500_000, replace=True)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="030b96b8-9468-4d84-b0ee-bc9b83389942" class="cell" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>d.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 330208 entries, 0 to 330207
+Data columns (total 29 columns):
+ #   Column                     Non-Null Count   Dtype         
+---  ------                     --------------   -----         
+ 0   url                        330208 non-null  object        
+ 1   WeekID                     330208 non-null  datetime64[ns]
+ 2   Week Position              330208 non-null  int64         
+ 3   Song                       330208 non-null  object        
+ 4   Performer                  330208 non-null  object        
+ 5   SongID                     330208 non-null  object        
+ 6   Instance                   330208 non-null  int64         
+ 7   Previous Week Position     298048 non-null  float64       
+ 8   Peak Position              330208 non-null  int64         
+ 9   Weeks on Chart             330208 non-null  int64         
+ 10  spotify_genre              315700 non-null  object        
+ 11  spotify_track_id           287066 non-null  object        
+ 12  spotify_track_preview_url  169915 non-null  object        
+ 13  spotify_track_duration_ms  287066 non-null  float64       
+ 14  spotify_track_explicit     287066 non-null  object        
+ 15  spotify_track_album        287004 non-null  object        
+ 16  danceability               286508 non-null  float64       
+ 17  energy                     286508 non-null  float64       
+ 18  key                        286508 non-null  float64       
+ 19  loudness                   286508 non-null  float64       
+ 20  mode                       286508 non-null  float64       
+ 21  speechiness                286508 non-null  float64       
+ 22  acousticness               286508 non-null  float64       
+ 23  instrumentalness           286508 non-null  float64       
+ 24  liveness                   286508 non-null  float64       
+ 25  valence                    286508 non-null  float64       
+ 26  tempo                      286508 non-null  float64       
+ 27  time_signature             286508 non-null  float64       
+ 28  spotify_track_popularity   287066 non-null  float64       
+dtypes: datetime64[ns](1), float64(15), int64(4), object(9)
+memory usage: 75.6+ MB</code></pre>
+</div>
+</div>
+<div id="8799243e-ae1c-41bc-9da7-fa21627e4b10" class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Audio, HTML</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="325f4374-4416-48e6-81dc-7e04d686258b" class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>Audio(url<span class="op">=</span>d.loc[<span class="dv">1000</span>,<span class="st">"spotify_track_preview_url"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="80">
+
+                <audio controls="controls">
+                    <source src="https://p.scdn.co/mp3-preview/0f910499b0c891248fe57d7d168cd48d8282834b?cid=b8d3901151d34489a160e3cf0ab1fa94" type="None">
+                    Your browser does not support the audio element.
+                </audio>
+              
+</div>
+</div>
+<div id="3703c511-f18e-4dbc-ab72-d523f5f0e74a" class="cell" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> curves(performer, song):</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> d[(d.Performer <span class="op">==</span> performer) <span class="op">&amp;</span> (d.Song <span class="op">==</span> song)].sort_values(by<span class="op">=</span><span class="st">"WeekID"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">"date_rel"</span>] <span class="op">=</span> pd.to_timedelta(data[<span class="st">"WeekID"</span>] <span class="op">-</span> data[<span class="st">"WeekID"</span>][<span class="dv">0</span>]).dt.days</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> data[<span class="st">"date_rel"</span>].values <span class="co"># or date_rel or WeekID</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> data[<span class="st">"Week Position"</span>].values</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x,y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="98b98cab-d049-48aa-8b07-88a90f5a72c6" class="cell" data-execution_count="82">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>test_cases2 <span class="op">=</span> {</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Patty Duke"</span>: <span class="st">"Don't Just Stand There"</span>,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ace Of Base"</span>: <span class="st">"Don't Turn Around"</span>,</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Dan + Shay"</span>: <span class="st">"Speechless"</span>,</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"YoungBloodZ Featuring Lil Jon"</span>: <span class="st">"Damn!"</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"K-Ci &amp; JoJo"</span>: <span class="st">"All My Life"</span>,</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Trevor Daniel"</span>: <span class="st">"Falling"</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9990dffc-bb94-410f-a97d-0ed2f7b4561a" class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> performer, song <span class="kw">in</span> test_cases2.items():</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    x,y <span class="op">=</span> curves(performer, song)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, marker<span class="op">=</span><span class="st">"."</span>, label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>song<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>performer<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>plt.gca().invert_yaxis()</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="billboard_charts_files/figure-html/cell-37-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Modeling the life of a song in the Top 100:</p>
+<p>We assume that once a song has left the Top 100, it is impossible to re-enter (even though that does happen, of course)</p>
+<ol type="1">
+<li>Each song has a starting rank <span class="math inline">\(r_0\)</span>.</li>
+<li>For each following week, there is a bernoulli dropout probability <span class="math inline">\(\theta\)</span> that determines whether a song remains in the charts.</li>
+<li></li>
+</ol>
+<div id="1649c215-74d0-4aa4-8869-8e7b4733b50f" class="cell" data-execution_count="84">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observation: Genres tend to leave the Top 100 higher than they entered them</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4d4f598f-1c1b-4e9a-9272-c479439ed728" class="cell" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>entrances <span class="op">=</span> []</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>peaks <span class="op">=</span> []</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>exits <span class="op">=</span> []</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _, group <span class="kw">in</span> d.groupby(<span class="st">"SongID"</span>):</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    weeks <span class="op">=</span> group.sort_values(by<span class="op">=</span><span class="st">"WeekID"</span>)[<span class="st">"Week Position"</span>].values</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    entrances.append(weeks[<span class="dv">0</span>])</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    peaks.append(weeks.<span class="bu">min</span>())</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    exits.append(weeks[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3d757354-5b56-4f90-a604-f9549d58218c" class="cell" data-execution_count="86">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0b23b146-4ee2-4ff7-ab2d-b068f385095a" class="cell" data-execution_count="87">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from matplotlib.collections import LineCollection</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7d373553-eadd-4151-8553-d0a675bf16f0" class="cell" data-execution_count="88">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="bu">len</span>(entrances) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a, b, c <span class="kw">in</span> <span class="bu">zip</span>(entrances[:K], peaks[:K], exits[:K]):</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> a <span class="op">!=</span> b <span class="op">!=</span> c: <span class="co"># remove constants</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], [a, b, c], c<span class="op">=</span><span class="st">"k"</span>, lw<span class="op">=</span><span class="fl">.5</span>, alpha<span class="op">=</span><span class="fl">.01</span>)</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">100</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>plt.gca().invert_yaxis() <span class="co"># smaller is better</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/rise-decline.png"</span>, dpi<span class="op">=</span><span class="dv">600</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="billboard_charts_files/figure-html/cell-42-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>OBSERVATION</strong>: At least 3 types:</p>
+<ul>
+<li>constants</li>
+<li>low in, peak, low out</li>
+<li>low in, peak, mid out</li>
+</ul>
+<p>Try to disentangle what causes the difference</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../06_streaming_industry.html" class="pagination-link" aria-label="Music and the streaming industry">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Music and the streaming industry</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../07_audio.html" class="pagination-link" aria-label="Audio">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Audio</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -17,6 +17,7 @@ book:
     - 04_RISM.qmd
     - 05_spotify_musicbrainz.qmd
     - 06_streaming_industry.qmd
+    - data/billboard_charts.ipynb
   - part: MUSIC AS DATA
     chapters:
     - 07_audio.qmd
@@ -27,13 +28,11 @@ book:
     chapters:
     - 11_dma_harmony.qmd
     - 12_dma_melody.qmd
-    - 13_dma_copyright.qmd
   - part: CRITICAL DIGITAL MUSICOLOGY
     chapters:
-    - 14_ethics.qmd
+    - 13_copyright.qmd
+    - 14_representation.qmd
     - 15_discussion.qmd
-  # - intro.qmd
-  # - summary.qmd
   - references.qmd
 
 bibliography: references.bib

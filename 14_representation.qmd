@@ -1,0 +1,12 @@
+# Representation and representativeness
+
+::: {.callout-note}
+# Goal
+Understand the difference between representativeness and representation.
+Obtain a critical understanding of biases relevant for data selection.
+:::
+
+- Representation and the canon
+- Representing means modeling means abstraction (what is "music" in "music encoding"?)
+- biases: how to recognize them, how to deal with them, and when biases are a good thing.
+- FAIR and CARE 
