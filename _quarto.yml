@@ -28,6 +28,9 @@ book:
     chapters:
     - 11_dma_harmony.qmd
     - 12_dma_melody.qmd
+    - 03_melody_I.ipynb
+    - 04_jazz_solos.ipynb
+    - 05_data-driven_music_history.ipynb
   - part: CRITICAL DIGITAL MUSICOLOGY
     chapters:
     - 13_copyright.qmd
@@ -40,6 +43,7 @@ bibliography: references.bib
 format:
   html:
     theme: darkly
+    code-fold: true
   pdf:
     documentclass: scrbook
     papersize: a4
