@@ -1,4 +1,6 @@
-# Preface {.unnumbered}
+# Home {.unnumbered}
+
+![](img/abstract_bg.jpg){width=100%}
 
 This page contains material for the course 
 **Introduction to Digital Musicology**, held 
@@ -6,7 +8,13 @@ at Julius-Maximilians-Universität, Würzburg (Germany)
 in Fall 2025. 
 
 ::: {.callout-warning}
-This is work in progress.
+These pages are work in progress and will be continuously updated.
 :::
 
-Test citation @knuth84.
+::: {.callout-note}
+If you want to refer to these pages, you can cite them as follows:
+
+Moss, F. C. (2025). _Introduction to Digital Musicology._ 
+[https://fabianmoss.github.io/intro-digimus](https://fabianmoss.github.io/intro-digimus)
+:::
+
