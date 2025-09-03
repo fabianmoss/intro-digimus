@@ -1,10 +1,5 @@
 ---
 title: Data-Driven Music History
-jupyter:
-  kernelspec:
-    display_name: conda_kernel
-    language: python
-    name: conda_kernel
 ---
 
 
