@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>INTRODUCTION TO DIGITAL MUSICOLOGY - 1&nbsp; What is Digital Musicology?</title>
+<title>1&nbsp; What is Digital Musicology? – INTRODUCTION TO DIGITAL MUSICOLOGY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -37,10 +57,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,13 +98,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_what_is_dm.html">INTRODUCTION</a></li><li class="breadcrumb-item"><a href="./01_what_is_dm.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is Digital Musicology?</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -109,14 +129,14 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">INTRODUCTION</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -143,9 +163,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">DATA ABOUT MUSIC</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -168,13 +188,19 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Music and the streaming industry</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./billboard_charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Analyzing song survival</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">MUSIC AS DATA</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -182,34 +208,34 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_audio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Audio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Audio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_MIDI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">MIDI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">MIDI</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_MEI_header.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">MEI - header</span></span></a>
+  <a href="./09_ABC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ABC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_MEI_body.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">MEI - the body</span></span></a>
+  <a href="./10_MEI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">WORKING WITH MUSIC DATA</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -217,42 +243,83 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_dma_harmony.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Digital music analysis: harmony</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Digital music analysis: harmony</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_dma_melody.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Digital music analysis: melody</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Digital music analysis: melody</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13_dma_copyright.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Digital music analysis: copyright</span></span></a>
+  <a href="./04_jazz_solos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Solos in the <em>Weimar Jazz Database</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_data-driven_music_history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data-Driven Music History</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">CRITICAL DIGITAL MUSICOLOGY</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14_ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ethical issues</span></span></a>
+  <a href="./13_copyright.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Copyright</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_representation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Representation and representativeness</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">EXERCISES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ex/01_what_is_dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise for Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ex/02_python_primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">A Python primer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ex/03_melody_I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise for Week X</span></a>
   </div>
 </li>
       </ul>
@@ -260,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">REFERENCES</span></a>
   </div>
 </li>
     </ul>
@@ -269,7 +336,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#overview-of-the-field" id="toc-overview-of-the-field" class="nav-link" data-scroll-target="#overview-of-the-field"><span class="header-section-number">1.2</span> Overview of the field</a>
+  <ul class="collapse">
+  <li><a href="#music-encoding" id="toc-music-encoding" class="nav-link" data-scroll-target="#music-encoding"><span class="header-section-number">1.2.1</span> Music Encoding</a></li>
+  <li><a href="#corpus-studies" id="toc-corpus-studies" class="nav-link" data-scroll-target="#corpus-studies"><span class="header-section-number">1.2.2</span> Corpus Studies</a></li>
+  <li><a href="#music-information-retrieval" id="toc-music-information-retrieval" class="nav-link" data-scroll-target="#music-information-retrieval"><span class="header-section-number">1.2.3</span> Music Information Retrieval</a></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling"><span class="header-section-number">1.2.4</span> Modeling</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -293,8 +373,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- #  What is Digital Musicology? -->
-<p>Introduction and terminology</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -305,34 +383,75 @@ Goal
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Understanding what “digital musicology” means.</p>
+<p>Understanding the meanings of “digital musicology”.</p>
 </div>
 </div>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>Virtual all aspects of our daily lives are increasingly shaped by data and algorithms. The ‘digital turn’ has also not stopped before academia and science, and most fields are more and more engaging with these new methodologies.</p>
+<p><strong>Digital Musicology</strong> (DM) is a term that refers to music research that draws on digital data and digital methods to answer its research questions. Stating a concise definition for the field is difficult, and there is no consensus to date. Moreover, a range of similar terms are frequently being used, for example, Computational Musicology.</p>
+</section>
+<section id="overview-of-the-field" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="overview-of-the-field"><span class="header-section-number">1.2</span> Overview of the field</h2>
+<p>Faced with the fact that no common definition of these terms exist, Kris Shaffer attempted to describe some of the main aspects associated with Computational Musicology <span class="citation" data-cites="Schaffer2016">(<a href="references.html#ref-Schaffer2016" role="doc-biblioref">Schaffer 2016</a>)</span>. He names the following subfields, which we will briefly discuss in turn (in an adapted order).</p>
+<section id="music-encoding" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="music-encoding"><span class="header-section-number">1.2.1</span> Music Encoding</h3>
+<p>At the beginning of any digital approach to music stands the question how music is to be represented digitally. Music encoding in the narrower sense asks, how <em>symbolic</em> musical notations such as Common Western Music Notation (CWMN) can be translated into a computer-readable form. During this course, we will get to know a few fundamental symbolic music encoding formats, namely MIDI, ABC, and MEI. Other important formats, e.g.&nbsp;MusicXML or LilyPond, cannot be covered, unfortunately.</p>
+</section>
+<section id="corpus-studies" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="corpus-studies"><span class="header-section-number">1.2.2</span> Corpus Studies</h3>
+<p>Although corpus studies are considered a modern form of music theory, they can look back an an astonishingly long history. Many consider the first corpus study to be Jeppesen’s study <em>The Style of Palestrina and the Dissonance</em>, where he counts and tabulates occurrences of dissonant vertical intervals in the vocal work of the Renaissance composer <span class="citation" data-cites="Jeppesen1927">(<a href="references.html#ref-Jeppesen1927" role="doc-biblioref">Jeppesen 1927</a>)</span>. Further early examples are the dissertations of <span class="citation" data-cites="Budge1943">Budge (<a href="references.html#ref-Budge1943" role="doc-biblioref">1943</a>)</span> and <span class="citation" data-cites="Norman1945">Norman (<a href="references.html#ref-Norman1945" role="doc-biblioref">1945</a>)</span>.</p>
+<p>In a nutshell, corpus attempt to find regularities in large collections of music data <span class="citation" data-cites="Shanahan2022">(<a href="references.html#ref-Shanahan2022" role="doc-biblioref">Shanahan, Burgoyne, and Quinn 2022</a>)</span> in order to draw conclusions about the style of a particular composer, period, or genre, for instance. Corpus studies thus naturally make use of digital data and statistical or algorithmic methods for their analysis. Corpus studies often try to generalize music theoretical questions from the analysis of individual pieces to entire corpora. They often report their findings in statistical tables or graphical visualizations.</p>
+</section>
+<section id="music-information-retrieval" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="music-information-retrieval"><span class="header-section-number">1.2.3</span> Music Information Retrieval</h3>
+<p>Music information retrieval (MIR) is the largest part of DM, and research in this domain is directed both at academic as well as industrial contexts. MIR is closer to computer science, and some of its aspects can be understood as CS applied to music. The primary goal is not always a deeper understanding of music, but for instance improvements of recommendation or classification systems <span class="citation" data-cites="BurgoyneMIR2015">(<a href="references.html#ref-BurgoyneMIR2015" role="doc-biblioref">Burgoyne, Fujinaga, and Downie 2015</a>)</span>. Recently, the wave of artificial intelligence (AI) as inspired a renewed interest in music generation, and human-computer co-creativity.</p>
+</section>
+<section id="modeling" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="modeling"><span class="header-section-number">1.2.4</span> Modeling</h3>
+<p>(mention here also other forms of computational modeling and computational musicology)</p>
+<p>The aspects mentioned above are only part of what people nowadays may understand by Computational Musicology. In that sense, Computational Musicology is part of the larger movement of Computational Science, an endeavour that embeds computational methods and thinking into domain-specific areas of research <span class="citation" data-cites="Wing2006">(<a href="references.html#ref-Wing2006" role="doc-biblioref">Wing 2006</a>)</span>. If we have this extended view, we also need to include computational models of music perception and cognition, acoustics, and enthnological and anthropological approaches to music as well. However, this would go beyond the scope of this course.</p>
+<hr>
+<p>To sum up, what we understand by the term “Digital Musicology” depends on who you ask. What is common to the approaches above, however, is the development or use of digital methods as research tools (word processors don’t count, of course). In this course, we focus on the following aspects of Digital Musicology, each of which forms an integral part of its design:</p>
 <ul>
-<li>Introduction</li>
-<li>Overview of the field</li>
-<li>Terminology
+<li><p><strong>Data about music:</strong></p></li>
+<li><p><strong>Music as data:</strong> How can music, an ephemeral expression of human culture, be captured or represented as digital data on a computer? What kinds of decisions do we have to make? Which musical aspects are retained and which are lost? Is music as data translatable?</p></li>
+<li><p><strong>Working with music data:</strong></p></li>
+<li><p><strong>Critical Digital Musicology</strong>: What kinds of ethical and societal issues do we touch upon when doing Digital Musicology? Which important questions do we need to consider before planning or executing a research study?</p>
 <ul>
 <li>e.g.&nbsp;digital vs computational; the latter in 2nd semester</li>
 <li>digital vs empirical vs quantiative</li>
 <li>how does DM relate to “traditional” subdivisions of musicology?</li>
 </ul></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Read.</p>
-</div>
-</div>
+<p><a href="./ex/01_what_is_dm.html"><strong>Go to the Exercise for Week 1</strong></a></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Budge1943" class="csl-entry" role="listitem">
+Budge, Helen. 1943. <span>“A <span>Study</span> of <span>Chord Frequencies Based</span> on <span>Music</span> of <span>Representative Composers</span> of the <span>Eighteenth</span> and <span>Nineteenth</span> Centuries.”</span> PhD thesis, Columbia University.
+</div>
+<div id="ref-BurgoyneMIR2015" class="csl-entry" role="listitem">
+Burgoyne, John Ashley, Ichiro Fujinaga, and J. Stephen Downie. 2015. <span>“Music <span>Information Retrieval</span>.”</span> In <em>A <span>New Companion</span> to <span>Digital Humanities</span></em>, 213–28. John Wiley &amp; Sons, Ltd. <a href="https://doi.org/10.1002/9781118680605.ch15">https://doi.org/10.1002/9781118680605.ch15</a>.
+</div>
+<div id="ref-Jeppesen1927" class="csl-entry" role="listitem">
+Jeppesen, Knud. 1927. <em>The <span>Style</span> of <span>Palestrina</span> and the <span>Dissonance</span></em>. 1st ed. New York: Oxford University Press.
+</div>
+<div id="ref-Norman1945" class="csl-entry" role="listitem">
+Norman, Philip B. 1945. <em>A <span>Quantitative Study</span> of <span>Harmonic Similarities</span> in <span>Certain Specified Works</span> of <span>Bach</span>, <span>Beethoven</span>, and <span>Wagner</span></em>. C. Fischer, Incorporated.
+</div>
+<div id="ref-Schaffer2016" class="csl-entry" role="listitem">
+Schaffer, Kris. 2016. <span>“What Is Computational Musicology?”</span> https://medium.com/@krisshaffer/what-is-computational-musicology-f25ee0a65102.
+</div>
+<div id="ref-Shanahan2022" class="csl-entry" role="listitem">
+Shanahan, Daniel, John Ashley Burgoyne, and Ian Quinn, eds. 2022. <em>Oxford <span>Handbook</span> of <span>Music</span> and <span>Corpus Studies</span></em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-Wing2006" class="csl-entry" role="listitem">
+Wing, Jeannette M. 2006. <span>“Computational Thinking.”</span> <em>Commun. ACM</em> 49 (3): 33–35. <a href="https://doi.org/10.1145/1118178.1118215">https://doi.org/10.1145/1118178.1118215</a>.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -370,18 +489,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -413,7 +521,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -421,7 +551,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -746,8 +876,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Home">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
