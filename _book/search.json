@@ -333,7 +333,7 @@
     "href": "08_MIDI.html",
     "title": "9  MIDI",
     "section": "",
-    "text": "Goal\n\n\n\nBe able to name use cases for MIDI. Translate MIDI numbers to pitches.\n\n\nWe have seen last week that the fundamental frequency of complex tones roughly corresponds to what we perceive as pitch. For many musical styles, pitch is one of the most fundamental components, as it is used to construct melodies and harmonies.\nWith the invention of electronic instruments in the 20th century, and the possibility of representing continuous sounds as digital signals, it became important for those instruments to interact and communicate. This led to the development of the Musical Instruments Digital Interface (MIDI) format that is still a cornerstone for music information exchange.\nMIDI is relatively simple: it consists of so-called messages that have five components: - Time (in ticks) - Message (either NOTE ON or NOTE OFF) - Channel (up to 16 for classical MIDI) - Note number (integers between 0 and 127) - Velocity (simulating the speed of pressing down a key, proxy for volume)\nIn that way, MIDI resembles the much older ‘piano roll’ representation for musical notes.\nADD PIANO ROLL IMAGE HERE\nExercise:\n\nTranscribe simple melody to MIDI and plot using pypianoroll.\nDownload multitrack MIDI from the internet and visualize.\nDescribe what can be read from a pianoroll visualization, and what is missing.",
+    "text": "Goal\n\n\n\nBe able to name use cases for MIDI. Translate MIDI numbers to pitches.\n\n\nWe have seen last week that the fundamental frequency of complex tones roughly corresponds to what we perceive as pitch. For many musical styles, pitch is one of the most fundamental components, as it is used to construct melodies and harmonies.\nGiven the (fundamental) frequency \\(f\\) of some tone, we can calculate its corresponding MIDI pitch number by making use of a reference note. This is usually A4 in Scientific Pitch Notation, and with a frequency of 440 Hz.\nSo the frequency of that A4 is given by \\[f = 440 \\times 2^{(m-69)/12}\\]\nIn Python, we can write a simple calculation to do this for any given MIDI number:\n\ndef MIDI2frequency(m: int, K: float = 440.0) -&gt; int:\n    f = K * 2 ** ((m - 69) / 12)\n    return f\n\nIf we wanted to know the frequency of the note C5 (MIDI pitch 73), we could simply write:\n\nf_C5 = MIDI2frequency(73)\nprint(f_C5)\n\n554.3652619537442\n\n\nWith the invention of electronic instruments in the 20th century, and the possibility of representing continuous sounds as digital signals, it became important for those instruments to interact and communicate. This led to the development of the Musical Instruments Digital Interface (MIDI) format that is still a cornerstone for music information exchange.\nMIDI is relatively simple: it consists of so-called messages that have five components:\n\nTime (in ticks)\nMessage (either NOTE ON or NOTE OFF)\nChannel (up to 16 for classical MIDI)\nNote number (integers between 0 and 127)\nVelocity (simulating the speed of pressing down a key, proxy for volume)\n\nIn that way, MIDI resembles the much older ‘piano roll’ representation for musical notes.\nADD PIANO ROLL IMAGE HERE\nExercise:\n\nTranscribe simple melody to MIDI and plot using pypianoroll.\nDownload multitrack MIDI from the internet and visualize.\nDescribe what can be read from a pianoroll visualization, and what is missing.",
     "crumbs": [
       "MUSIC AS DATA",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>MIDI</span>"
@@ -344,7 +344,7 @@
     "href": "09_ABC.html",
     "title": "10  ABC",
     "section": "",
-    "text": "Goal\n\n\n\nUnderstanding monophonic symbolic notation.",
+    "text": "10.1 Pitches",
     "crumbs": [
       "MUSIC AS DATA",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>ABC</span>"
@@ -644,6 +644,39 @@
     "text": "Budge, H. (1943). A Study of Chord Frequencies\nBased on Music of Representative\nComposers of the Eighteenth and\nNineteenth centuries [PhD thesis]. Columbia\nUniversity.\n\n\nBurgoyne, J. A., Fujinaga, I., & Downie, J. S. (2015). Music\nInformation Retrieval. In A New Companion\nto Digital Humanities (pp. 213–228). John Wiley &\nSons, Ltd. https://doi.org/10.1002/9781118680605.ch15\n\n\nEerola, T. (2025). Music and science: A guide to empirical music\nresearch. Routledge.\n\n\nInskip, C., & Wiering, F. (2015, October). In their own words: Using\ntext analysis to identify musicologists’ attitudes towards technology.\nProceedings of the 16th International Society for\nMusic Information Retrieval Conference,\nMalaga, Spain. (2015).\n\n\nJeppesen, K. (1927). The Style of\nPalestrina and the Dissonance (1st ed.).\nOxford University Press.\n\n\nMüller, M. (2015). Fundamentals of Music Processing:\nAudio, Analysis, Algorithms,\nApplications. Springer International Publishing. https://doi.org/10.1007/978-3-319-21945-5\n\n\nNorman, P. B. (1945). A Quantitative Study of\nHarmonic Similarities in Certain Specified\nWorks of Bach, Beethoven, and\nWagner. C. Fischer, Incorporated.\n\n\nSchaffer, K. (2016). What is computational musicology?\nhttps://medium.com/@krisshaffer/what-is-computational-musicology-f25ee0a65102.\n\n\nSethares, W. A. (2005). Tuning, Timbre,\nSpectrum, Scale (2nd ed.). Springer.\n\n\nShanahan, D., Burgoyne, J. A., & Quinn, I. (Eds.). (2022).\nOxford Handbook of Music and Corpus\nStudies. Oxford University Press.\n\n\nWing, J. M. (2006). Computational thinking. Commun. ACM,\n49(3), 33–35. https://doi.org/10.1145/1118178.1118215",
     "crumbs": [
       "REFERENCES"
+    ]
+  },
+  {
+    "objectID": "09_ABC.html#footnotes",
+    "href": "09_ABC.html#footnotes",
+    "title": "10  ABC",
+    "section": "",
+    "text": "https://abcnotation.com↩︎\nThe following is a summary of the tutorial by Steve Mansfield.↩︎",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>ABC</span>"
+    ]
+  },
+  {
+    "objectID": "09_ABC.html#pitches",
+    "href": "09_ABC.html#pitches",
+    "title": "10  ABC",
+    "section": "",
+    "text": "Pitches in the middle octave (C4 – B4) are notated by uppercase letters: C D E F G A B.\nThe octave above is notated by lowercase letters. Together the two octaves from C4 to B5 are: C D E F G A B c d e f g a b.\nThe next upper octave gets an apostrophe: C D E F G A B c d e f g a b c’ d’ e’ f’ g’ a’ b’\nAnd the lower octaves are indicated by commas (a bit like inverted apostrophes). C, D, E, F, G, A, B, C D E F G A B c d e f g a b c’ d’ e’ f’ g’ a’ b’.\nExtending further up or down works by adding commas and apostrophes.",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>ABC</span>"
+    ]
+  },
+  {
+    "objectID": "09_ABC.html#durations",
+    "href": "09_ABC.html#durations",
+    "title": "10  ABC",
+    "section": "10.2 Durations",
+    "text": "10.2 Durations\nABC notation consists of two parts: a header with metadata and the body with the melody. We can set the default note duration in the header like so:\nL:1/8\nThis means that the default duration is an eighth note. Other default note duration values can be set analogously. Changing note durations during the course of a melody can be done by multiplying or dividing the default value:\nC/2 C2\nLet’s look at an example. To encode the following melody in the Figure below, we would write:\nX:1\nT:Speed The Plough\nM:4/4\nL:1/8\nN:Simple version\nZ:Steve Mansfield 1/2/2000\nK:G\nGABc dedB | dedB dedB | c2ec B2dB | A2A2 A2 BA|\nGABc dedB | dedB dedB | c2ec B2dB | A2A2 G4 ::\ng2g2 g4 | g2fe dBGB | c2ec B2dB | A2A2 A4 |\ng2g2 g4 | g2fe dBGB | c2ec B2dB | A2A2 G4 :|\nMelodies encoded in ABC notation can be easily rendered visually using the abcjs website.",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>ABC</span>"
     ]
   }
 ]

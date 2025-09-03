@@ -10,6 +10,28 @@ roughly corresponds to what we perceive as pitch. For many musical styles,
 pitch is one of the most fundamental components, as it is used to construct 
 melodies and harmonies. 
 
+Given the (fundamental) frequency $f$ of some tone, we can calculate its
+corresponding MIDI pitch number by making use of a reference note.
+This is usually A4 in Scientific Pitch Notation, and with a frequency of 440 Hz.
+
+So the frequency of that A4 is given by 
+$$f = 440 \times 2^{(m-69)/12}$$
+
+In Python, we can write a simple calculation to do this for any given MIDI number:
+
+```{python}
+def MIDI2frequency(m: int, K: float = 440.0) -> int:
+    f = K * 2 ** ((m - 69) / 12)
+    return f
+```
+
+If we wanted to know the frequency of the note C5 (MIDI pitch 73), we could simply write: 
+
+```{python}
+f_C5 = MIDI2frequency(73)
+print(f_C5)
+```
+
 With the invention of electronic instruments in the 20th century, 
 and the possibility of representing continuous sounds as digital signals, 
 it became important for those instruments to interact and communicate. 
