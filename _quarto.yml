@@ -4,7 +4,7 @@ project:
 book:
   title: "INTRODUCTION TO DIGITAL MUSICOLOGY"
   author: "Fabian C. Moss"
-  date: "7/5/2025"
+  date: "Fall 2025"
   chapters:
   - index.qmd
   - part: INTRODUCTION
@@ -22,13 +22,12 @@ book:
     chapters:
     - 07_audio.qmd
     - 08_MIDI.qmd
-    - 09_MEI_header.qmd
-    - 10_MEI_body.qmd
+    - 09_ABC.qmd
+    - 10_MEI.qmd
   - part: WORKING WITH MUSIC DATA
     chapters:
     - 11_dma_harmony.qmd
     - 12_dma_melody.qmd
-    - 03_melody_I.ipynb
     - 04_jazz_solos.ipynb
     - 05_data-driven_music_history.ipynb
   - part: CRITICAL DIGITAL MUSICOLOGY
@@ -38,7 +37,8 @@ book:
     - 15_discussion.qmd
   - part: EXERCISES
     chapters:
-    - 01_exercise.qmd
+    - ex/01_what_is_dm.qmd
+    - ex/03_melody_I.qmd
   - references.qmd
 
 bibliography: references.bib

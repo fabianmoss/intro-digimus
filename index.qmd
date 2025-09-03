@@ -2,14 +2,21 @@
 
 ![](img/abstract_bg.jpg){width=100%}
 
+::: {.callout-warning}
+These pages are work in progress and will be continuously updated.
+:::
+
 This page contains material for the course 
 **Introduction to Digital Musicology**, held 
 at Julius-Maximilians-Universität, Würzburg (Germany)
 in Fall 2025. 
 
-::: {.callout-warning}
-These pages are work in progress and will be continuously updated.
-:::
+The course takes place on Tuesdays from 10 to 12 AM (c.t.)
+in Room 107 (CIP-Pool), Domerschulstr. 13. 
+
+Each week treats a different topic and consists of 45 minutes
+instruction plus 45 minutes hands-on excercises. Homework 
+and reading material complement the lecture.
 
 ::: {.callout-note}
 If you want to refer to these pages, you can cite them as follows:

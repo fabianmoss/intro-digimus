@@ -1,0 +1,6 @@
+# ABC 
+
+::: {.callout-note}
+# Goal
+Understanding monophonic symbolic notation.
+:::

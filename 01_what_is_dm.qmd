@@ -1,12 +1,8 @@
-<!-- #  What is Digital Musicology? -->
-
 # What is Digital Musicology? 
-
-Introduction and terminology
 
 ::: {.callout-note}
 # Goal
-Understanding what "digital musicology" means.
+Understanding the meanings of "digital musicology".
 :::
 
 ## Introduction
@@ -15,8 +11,8 @@ Virtual all aspects of our daily lives are increasingly shaped by data and algor
 The 'digital turn' has also not stopped before academia and science, and most fields are more and more engaging with these new methodologies.
 
 **Digital Musicology** (DM) is a term that refers to music research that draws on digital data 
-sandstonsimplesketchslatsolaspacelasuperherunitevapoyetzephyr simplex digital methods to answer its researchquartzrtz
-    printinmonokagithub is difficult, and there is no consensus to date. Moreover, a range of similar terms are 
+and digital methods to answer its research questions. Stating a concise definition for the field 
+is difficult, and there is no consensus to date. Moreover, a range of similar terms are 
 frequently being used, for example, Computational Musicology. 
 
 ## Overview of the field 
@@ -32,6 +28,9 @@ At the beginning of any digital approach to music stands the question how music
 is to be represented digitally. Music encoding in the narrower sense asks, 
 how _symbolic_ musical notations such as Common Western Music Notation (CWMN) 
 can be translated into a computer-readable form. 
+During this course, we will get to know a few fundamental symbolic music encoding formats,
+namely MIDI, ABC, and MEI. Other important formats, e.g. MusicXML or LilyPond, 
+cannot be covered, unfortunately.
 
 ### Corpus Studies 
 
@@ -52,13 +51,17 @@ in statistical tables or graphical visualizations.
 
 ### Music Information Retrieval
 
+Music information retrieval (MIR) is the largest part of DM, and research in this domain 
+is directed both at academic as well as industrial contexts. MIR is closer to computer science, 
+and some of its aspects can be understood as CS applied to music. The primary goal is 
+not always a deeper understanding of music, but for instance improvements of recommendation 
+or classification systems [@BurgoyneMIR2015]. Recently, the wave of artificial intelligence (AI) as 
+inspired a renewed interest in music generation, and human-computer co-creativity. 
+
 ### Modeling 
 
 (mention here also other forms of computational modeling and computational musicology)
 
----
-
-::: {.callout-note}
 The aspects mentioned above are only part of what people nowadays may understand 
 by Computational Musicology. In that sense, Computational Musicology is part of the larger 
 movement of Computational Science, an endeavour that embeds computational methods and thinking 
@@ -66,8 +69,12 @@ into domain-specific areas of research [@Wing2006]. If we have this extended vie
 we also need to include computational models of music perception and cognition, acoustics, 
 and enthnological and anthropological approaches to music as well. However, this would go 
 beyond the scope of this course. 
-:::
 
+---
+
+To sum up, what we understand by the term "Digital Musicology" depends on who you ask. 
+What is common to the approaches above, however, is the development or use of digital 
+methods as research tools (word processors don't count, of course).
 In this course, we focus on the following aspects of Digital Musicology, each of which 
 forms an integral part of its design:
 
@@ -84,11 +91,6 @@ forms an integral part of its design:
   - digital vs empirical vs quantiative
   - how does DM relate to "traditional" subdivisions of musicology?
 
-::: {.callout-tip}
-# Homework
-1. Read @Schaffer2016. 
-2. Discuss with your peers unclear terms and find answers.
-3. Find aspects of Computational Musicology that you think are 
-   underrepresented in Schaffer's list. 
-:::
+
+[**Go to the Exercise for Week 1**](./ex/01_what_is_dm.qmd)
 

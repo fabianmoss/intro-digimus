@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -109,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -199,13 +219,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_MEI_header.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">MEI - header</span></span></a>
+  <a href="./09_ABC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ABC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_MEI_body.html" class="sidebar-item-text sidebar-link">
+  <a href="./10_MEI.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI - the body</span></span></a>
   </div>
 </li>
@@ -234,20 +254,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_melody_I.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Melodies in Folk Songs</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./04_jazz_solos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Solos in the <em>Weimar Jazz Database</em></span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Solos in the <em>Weimar Jazz Database</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_data-driven_music_history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Data-Driven Music History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data-Driven Music History</span></span></a>
   </div>
 </li>
       </ul>
@@ -264,19 +278,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_copyright.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Copyright</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Copyright</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14_representation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Representation and representativeness</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Representation and representativeness</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,8 +306,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Exercise for Week 1</span></span></a>
+  <a href="./ex/01_what_is_dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise for Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ex/03_melody_I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise for Week X</span></a>
   </div>
 </li>
       </ul>
@@ -301,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">REFERENCES</span></a>
   </div>
 </li>
     </ul>
@@ -314,7 +334,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#important-institutions-and-people-also-e.g.-nfdi4culture" id="toc-important-institutions-and-people-also-e.g.-nfdi4culture" class="nav-link active" data-scroll-target="#important-institutions-and-people-also-e.g.-nfdi4culture"><span class="header-section-number">2.1</span> Important institutions and people (also, e.g.&nbsp;NFDI4Culture)</a></li>
+  <li><a href="#istitutions-and-people" id="toc-istitutions-and-people" class="nav-link active" data-scroll-target="#istitutions-and-people"><span class="header-section-number">2.1</span> Istitutions and people</a>
+  <ul class="collapse">
+  <li><a href="#germany" id="toc-germany" class="nav-link" data-scroll-target="#germany"><span class="header-section-number">2.1.1</span> Germany</a></li>
+  <li><a href="#europe" id="toc-europe" class="nav-link" data-scroll-target="#europe"><span class="header-section-number">2.1.2</span> Europe</a></li>
+  <li><a href="#usa" id="toc-usa" class="nav-link" data-scroll-target="#usa"><span class="header-section-number">2.1.3</span> USA</a></li>
+  </ul></li>
   <li><a href="#current-research-topics" id="toc-current-research-topics" class="nav-link" data-scroll-target="#current-research-topics"><span class="header-section-number">2.2</span> Current research topics</a></li>
   <li><a href="#central-journals-and-conferences" id="toc-central-journals-and-conferences" class="nav-link" data-scroll-target="#central-journals-and-conferences"><span class="header-section-number">2.3</span> Central journals and conferences</a>
   <ul class="collapse">
@@ -322,6 +347,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#conferences" id="toc-conferences" class="nav-link" data-scroll-target="#conferences"><span class="header-section-number">2.3.2</span> Conferences</a></li>
   </ul></li>
   <li><a href="#important-tools" id="toc-important-tools" class="nav-link" data-scroll-target="#important-tools"><span class="header-section-number">2.4</span> Important tools</a></li>
+  <li><a href="#study-programs-and-summer-schools" id="toc-study-programs-and-summer-schools" class="nav-link" data-scroll-target="#study-programs-and-summer-schools"><span class="header-section-number">2.5</span> Study programs and summer schools</a></li>
   </ul>
 </nav>
     </div>
@@ -360,15 +386,48 @@ Goal
 <p>Acquiring and overview of current activities in Digital Musicology.</p>
 </div>
 </div>
-<section id="important-institutions-and-people-also-e.g.-nfdi4culture" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="important-institutions-and-people-also-e.g.-nfdi4culture"><span class="header-section-number">2.1</span> Important institutions and people (also, e.g.&nbsp;NFDI4Culture)</h2>
+<p><strong>TODO:</strong> Summarize findings of <span class="citation" data-cites="inskipTheirOwnWords2015">Inskip and Wiering (<a href="references.html#ref-inskipTheirOwnWords2015" role="doc-biblioref">2015</a>)</span>.</p>
+<section id="istitutions-and-people" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="istitutions-and-people"><span class="header-section-number">2.1</span> Istitutions and people</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Obviously, the following institutional lists are incomplete. Luckily for the field of DM, it has grown so extensively that a complete overview is not possible. The selection below is thus not an evaluation, but rather reflects the familiarity of the author with those institutions and the people there.</p>
+</div>
+</div>
+<section id="germany" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="germany"><span class="header-section-number">2.1.1</span> Germany</h3>
 <ul>
-<li>DCML</li>
-<li>Paderborn</li>
-<li>Stanford</li>
+<li>Paderborn/Detmold</li>
+<li>Würzburg</li>
+<li>Erlangen</li>
+<li>Mainz</li>
+</ul>
+</section>
+<section id="europe" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="europe"><span class="header-section-number">2.1.2</span> Europe</h3>
+<ul>
 <li>Queen Mary</li>
 <li>Linz</li>
+<li>Barcelona</li>
+<li>DCML</li>
+<li>Amsterdam</li>
 </ul>
+</section>
+<section id="usa" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="usa"><span class="header-section-number">2.1.3</span> USA</h3>
+<ul>
+<li>Stanford</li>
+<li>Georgia Tech</li>
+</ul>
+</section>
 </section>
 <section id="current-research-topics" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="current-research-topics"><span class="header-section-number">2.2</span> Current research topics</h2>
@@ -408,8 +467,16 @@ Goal
 <li>music21</li>
 <li>Verovio</li>
 </ul>
+</section>
+<section id="study-programs-and-summer-schools" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="study-programs-and-summer-schools"><span class="header-section-number">2.5</span> Study programs and summer schools</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-inskipTheirOwnWords2015" class="csl-entry" role="listitem">
+Inskip, C., and F. Wiering. 2015. <span>“In Their Own Words: Using Text Analysis to Identify Musicologists’ Attitudes Towards Technology.”</span> In <em>Proceedings of the 16th <span>International Society</span> for <span>Music Information Retrieval Conference</span>, <span>Malaga</span>, <span>Spain</span>. (2015)</em>. Malaga, Spain: 16th International Society for Music Information Retrieval Conference.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

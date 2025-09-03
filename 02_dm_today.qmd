@@ -5,13 +5,37 @@
 Acquiring and overview of current activities in Digital Musicology.
 :::
 
-## Important institutions and people (also, e.g. NFDI4Culture)
+**TODO:** Summarize findings of  @inskipTheirOwnWords2015.
 
-- DCML 
-- Paderborn
-- Stanford 
+## Istitutions and people
+
+::: {.callout-warning}
+Obviously, the following institutional lists 
+are incomplete. Luckily for the field of DM, 
+it has grown so extensively that a complete overview is not possible. 
+The selection below is thus not an evaluation, but rather reflects 
+the familiarity of the author with those institutions and the people there.
+:::
+
+### Germany
+
+- Paderborn/Detmold
+- Würzburg
+- Erlangen
+- Mainz
+
+### Europe 
+
 - Queen Mary 
 - Linz
+- Barcelona
+- DCML 
+- Amsterdam
+
+### USA
+
+- Stanford 
+- Georgia Tech
 
 ## Current research topics
 
@@ -43,3 +67,5 @@ Acquiring and overview of current activities in Digital Musicology.
 
 - music21 
 - Verovio 
+
+## Study programs and summer schools

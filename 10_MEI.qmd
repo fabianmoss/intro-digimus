@@ -1,0 +1,17 @@
+# MEI - the body
+
+::: {.callout-note}
+# Goal
+Understand basic XML encoding and the skeleton structure of MEI.
+:::
+
+- mei friend
+
+::: {.callout-note}
+# Goal
+Understand the relation between CWMN and the MEI music element.
+:::
+
+- MuseScore export
+- mei friend
+
