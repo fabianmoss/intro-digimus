@@ -1,0 +1,498 @@
+---
+title: Data-Driven Music History
+jupyter:
+  kernelspec:
+    display_name: conda_kernel
+    language: python
+    name: conda_kernel
+---
+
+
+
+```{python}
+#| slideshow: {slide_type: skip}
+import pandas as pd # for working with tabular data
+pd.set_option('display.max_columns', 500)
+import matplotlib.pyplot as plt # for plotting
+plt.style.use("fivethirtyeight") # select specific plotting style
+import seaborn as sns; sns.set_context("talk")
+import numpy as np
+```
+
+## Research Questions
+
+* General: How can we study historical changes quantitatively?
+* Specific: What can we say about the history of tonality based on a dataset of musical pieces?
+
+## A bit of theory
+
+```{python}
+#| slideshow: {slide_type: fragment}
+note_names = list("FCGDAEB") # diatonic note names in fifths ordering
+note_names
+```
+
+```{python}
+#| slideshow: {slide_type: fragment}
+accidentals = ["bb", "b", "", "#", "##"] # up to two accidentals is suffient here
+accidentals
+```
+
+```{python}
+#| slideshow: {slide_type: fragment}
+lof = [ n + a for a in accidentals for n in note_names ] # lof = "Line of Fifths"
+print(lof)
+```
+
+```{python}
+#| slideshow: {slide_type: fragment}
+len(lof) # how long is this line-of-fifths segment?
+```
+
+We call the elements on the line of fifths **tonal pitch-classes**
+
+## Data
+
+### A (kind of) large corpus: TP3C
+
+Here, we use a dataset that was specifically compiled for this kind of analysis, the [**Tonal pitch-class counts corpus (TP3C)**](https://github.com/DCMLab/TP3C) (Moss, Neuwirth, Rohrmeier, 2020)
+
+- 2,012 pieces
+- 75 composers
+- approx. spans 600 years of music history
+- does not contain complete pieces but only counts of tonal pitch-classes
+
+```{python}
+#| slideshow: {slide_type: subslide}
+import pandas as pd # to work with tabular data
+
+url = "https://raw.githubusercontent.com/DCMLab/TP3C/master/tp3c.tsv"
+data = pd.read_table(url)
+
+data.sample(10)
+```
+
+```{python}
+#| slideshow: {slide_type: subslide}
+data["display_year"].plot(kind="hist", bins=50, figsize=(15,6)); # historical overview
+```
+
+- it can be seen that there are large gaps and that some historical periods are underrepresented
+- however, it is not so obvious how to fix that
+- do we want a uniform distribution over time?
+- do we want a "historically accurate" distribution?
+- do we want to remove geographical/gender/class/instrument/etc. biases? 
+- on one hand, balanced datasets are likely not to reflect historical realities
+- on the other hand, such datasets rather represent the "canon", that is a contemporary selection of "valuable" compositions that may differ greatly from what was considered relevant at the time
+
+--> There is no unique objective answer to these questions. It is important to be aware of these limitations and take them into account when interpreting the results
+
+For this workshop we ignore all the metadata about the pieces (titles, composer names etc.) but only focus on their tonal material. Therefore, we don't need all the columns of the table.
+
+```{python}
+#| slideshow: {slide_type: fragment}
+tpc_counts = data.loc[:, lof] # select all rows (":") and the lof columns
+tpc_counts.sample(20)
+```
+
+```{python}
+#| slideshow: {slide_type: skip}
+piece = tpc_counts.iloc[10]
+
+fig, axes = plt.subplots(2, 1, figsize=(20,10))
+
+axes[0].bar(piece.sort_values(ascending=False).index, piece.sort_values(ascending=False))
+axes[0].set_title("'without theory'")
+
+axes[1].bar(piece.index, piece)
+axes[1].set_title("'with theory'")
+
+# plt.savefig("img/random_piece.png")
+# plt.show()
+```
+
+Let us have an overview of the note counts in these pieces!
+
+If we would just look at the raw counts of the tonal pitch-classe, we could not learn much from it. 
+Using a theoretical model (the line of fifths) shows that the notes in pieces are usually come from few adjacent keys (you don't say!).
+
+We probably have very long pieces (sonatas) and very short pieces (songs) in the dataset. Since we don't want length (or the absolute number of notes in a piece) to have an effect, we rather consider tonal pitch-class distributions instead counts, by normalizing all pieces to sum to one.
+
+```{python}
+#| slideshow: {slide_type: subslide}
+tpc_dists = tpc_counts.div(tpc_counts.sum(axis=1), axis=0)
+tpc_dists.sample(20)
+```
+
+For further numerical analysis, we extract the data from this table and assign it to a variable `X`.
+
+```{python}
+#| slideshow: {slide_type: fragment}
+# extract values of table to matrix
+X = tpc_dists.values
+
+X.shape # shows (#rows, #columns) of X
+```
+
+Now, `X` is a 2012 $\times$ 35 matrix where the rows represent the pieces and the columns (also called "features" or "dimensions") represent the relative frequency of tonal pitch-classes.
+
+Thinking in 35 dimensions is quite difficult for most people. Without trying to imagine what this would look like, what can we already say about this data?
+
+Since each piece is a point in this 35-D space and pieces are represented as vectors, pieces that have similar tonal pitch-class distributions must be close in this space (whatever this looks like).
+
+What groups of pieces that cluster together? Maybe pieces of the same composer are similar to each other? Maybe pieces from a similar time? Maybe pieces for the same instruments?
+
+If we find clusters, these would still be in 35-D and thus difficult to interpret. Luckily, there are a range of so-called *dimensionality reduction* methods that transform the data into lower-dimensional spaces so that we actually can look at them. 
+
+A very common dimensionality reduction method is **Principal Components Analysis (PCA)**. 
+
+The basic idea of PCA is:
+
+- find dimensions in the data that maximize the variance in this direction
+- these dimensions have to be orthogonal to each other (mutually independent)
+- these dimensions are called the *principal components*
+- each principal component is associated with how much of the data variance it explains
+
+```{python}
+#| slideshow: {slide_type: subslide}
+import numpy as np # for numerical computations
+import sklearn
+from sklearn.decomposition import PCA # for dimensionality reduction
+
+pca = sklearn.decomposition.PCA(n_components=35) # initialize PCA with 35 dimensions
+pca.fit(X) # apply it to the data
+variance = pca.explained_variance_ratio_ # assign explained variance to variable
+```
+
+```{python}
+#| slideshow: {slide_type: skip}
+fig, ax = plt.subplots(figsize=(14,5))
+x = np.arange(35)
+ax.plot(x, variance, label="relative", marker="o")
+ax.plot(x, variance.cumsum(), label="cumulative", marker="o")
+ax.set_xlim(-0.5, 35)
+ax.set_ylim(-0.1, 1.1)
+ax.set_xlabel("Principal Components")
+ax.set_ylabel("Explained variance")
+plt.xticks(np.arange(len(lof)), np.arange(len(lof)) + 1) # because Pyhon starts counting at 0
+
+plt.legend(loc="center right")
+plt.tight_layout()
+# plt.savefig("img/explained_variance.png")
+# plt.show()
+```
+
+```{python}
+#| slideshow: {slide_type: subslide}
+variance[:5]
+```
+
+The first principal component explains 41.1% of the variance of the data, the second explains 23.4% and the third 9%. Together, this amounts to 73.6%. 
+
+Almost three quarters of the variance in the dataset is retained by reducing the dimensionality from 35 to 3 dimensions (8.6%)!
+If we reduce the data to two dimensions, we still can explain $\approx$ 65% of the variance.
+
+This is great because it means that we can look at the data in 2 or 3 dimensions without loosing too much information.
+
+## Recovering the line of fifths from data
+
+```{python}
+#| slideshow: {slide_type: subslide}
+pca3d = PCA(n_components=3)
+pca3d.fit(X)
+
+X_ = pca3d.transform(X)
+X_.shape
+```
+
+```{python}
+#| slideshow: {slide_type: skip}
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure(figsize=(6,6))
+
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(X_[:,0], X_[:,1], X_[:,2], s=50, alpha=.25) # c=cs,
+ax.set_xlabel("PC 1", labelpad=30)
+ax.set_ylabel("PC 2", labelpad=30)
+ax.set_zlabel("PC 3", labelpad=30)
+
+plt.tight_layout()
+# plt.savefig("img/3d_scatter.png")
+# plt.show()
+```
+
+Each piece in this plot is represented by a point in 3-D space. But remember that this location represents ~75% of the information contained in the full tonal pitch-class distribution.
+In 35-D space each dimension corresponded to the relative frequency of a tonal pitch-class in a piece.
+
+- What do these three dimensions signify?
+- How can we interpret them? 
+
+Fortunately, we can inspect them individually and try to interpret what we see.
+
+```{python}
+#| slideshow: {slide_type: skip}
+from itertools import combinations
+
+fig, axes = plt.subplots(1,3, sharey=True, figsize=(24,8))
+
+for k, (i, j) in enumerate(combinations(range(3), 2)):
+
+    axes[k].scatter(X_[:,i], X_[:,j], s=50, alpha=.25, edgecolor=None)
+    axes[k].set_xlabel(f"PC {i+1}")
+    axes[k].set_ylabel(f"PC {j+1}")
+    axes[k].set_aspect("equal")
+
+plt.tight_layout()
+# plt.savefig("img/3d_dimension_pairs.png")
+# plt.show()
+```
+
+Clearly, looking at two principal components at a time shows that there is some latent structure in the data. How can we understand it better? 
+
+One way to see whether the pieces are clustered together systematically be coloring them according to some criterion.
+
+As always, many different options are available. For the present purpose we will use the most simple summary of the piece: its most frequent note (which is the *mode* of its pitch-class distribution in statistical terms) and call this note its **tonal center**.
+
+This will also allow to map the tonal pitch-classes on the line of fifths to colors.
+
+```{python}
+#| scrolled: true
+#| slideshow: {slide_type: subslide}
+tpc_dists["tonal_center"] = tpc_dists.apply(lambda piece: np.argmax(piece[lof].values) - 15, axis=1)
+tpc_dists.sample(10)
+```
+
+```{python}
+#| slideshow: {slide_type: skip}
+from matplotlib import cm
+from matplotlib.colors import Normalize
+
+#normalize item number values to colormap
+norm = Normalize(vmin=-15, vmax=20)
+
+# cs = [ cm.seismic(norm(c)) for c in data["tonal_center"]]
+cs = [ cm.seismic(norm(c)) for c in tpc_dists["tonal_center"]]
+```
+
+```{python}
+#| slideshow: {slide_type: skip}
+from itertools import combinations
+
+fig, axes = plt.subplots(1,3, sharey=True, figsize=(24,8))
+
+for k, (i, j) in enumerate(combinations(range(3), 2)):
+
+    axes[k].scatter(X_[:,i], X_[:,j], s=50, c=[ np.abs(c) for c in cs], edgecolor=None)
+    axes[k].set_xlabel(f"PC {i}")
+    axes[k].set_ylabel(f"PC {j}")
+    axes[k].set_aspect("equal")
+
+plt.tight_layout()
+# plt.savefig("img/3d_dimension_pairs_colored.png")
+# plt.show()
+```
+
+## Historical development of tonality
+
+The line of fifths is an important underlying structure for pitch-class distributions in tonal compositions
+
+But we have treated all pieces in our dataset as synchronic and have not yet taken their historical location into account.
+
+Let's assume the pitch-class content of a piece spreads on the line of fifths from F to A$\sharp$. 
+This means, its range on the line of fifths is $10 - (-1) = 11$. The piece covers eleven consecutive fifths on the lof.
+
+We can generalize this calculation and write a function that calculates the range for each piece in the dataset.
+
+```{python}
+#| slideshow: {slide_type: fragment}
+def lof_range(piece):
+    l = [i for i, v in enumerate(piece) if v!=0]
+    return max(l) - min(l)
+```
+
+```{python}
+#| slideshow: {slide_type: subslide}
+data["lof_range"] = data.loc[:, lof].apply(lof_range, axis=1) # create a new column
+data.sample(20)
+```
+
+This allows us now to take the `display_year` (composition or publication) and `lof_range` (range on the line of fifths) features to observe historical changes.
+
+```{python}
+#| slideshow: {slide_type: skip}
+fig, ax = plt.subplots(figsize=(18,9))
+ax.scatter(data["display_year"].values, data["lof_range"].values, alpha=.5, s=50)
+ax.set_ylim(0,35)
+ax.set_xlabel("year")
+ax.set_ylabel("line-of-fifths range");
+# plt.savefig("img/hist_scatter.png");
+```
+
+We could try to fit a line to this data to see whether there is a trend (kinda obvious here).
+
+```{python}
+#| slideshow: {slide_type: skip}
+g = sns.lmplot(
+    data=data, 
+    x="display_year", 
+    y="lof_range", 
+    line_kws={"color":"k"},
+    scatter_kws={"alpha":.5},
+#     lowess=True,
+    height=8,
+    aspect=2
+);
+# g.savefig("img/hist_scatter_line.png");
+```
+
+But actually, this is not the best idea. Why should any historical process be linear? More complex models might make more sense.
+
+A more versatile technique is *Locally Weighted Scatterplot Smoothing* (LOWESS) that locally fits a polynomial. Using this method, we see that a non-linear process is displayed.
+
+```{python}
+#| slideshow: {slide_type: skip}
+from statsmodels.nonparametric.smoothers_lowess import lowess
+
+x = data.display_year
+y = data.lof_range
+l = lowess(y,x)
+
+fig, ax = plt.subplots(figsize=(15,10))
+
+ax.scatter(x,y, s=50)
+ax.plot(l[:,0], l[:,1], c="k")
+ax.set_ylabel("line-of-fifths range");
+# plt.savefig("img/hist_scatter_lowess.png")
+# plt.show()
+```
+
+## If there is time: some more advanced stuff
+
+```{python}
+#| slideshow: {slide_type: skip}
+B = 200
+delta = 1/10 
+
+fig, ax = plt.subplots(figsize=(16,9))
+
+x = data.display_year
+y = data.lof_range
+l = lowess(y,x, frac=delta)
+
+ax.scatter(x,y, s=50, alpha=.25)
+
+for _ in range(B):
+    resampled = data.sample(data.shape[0], replace=True)
+    
+    xx = resampled.display_year
+    yy = resampled.lof_range
+    ll = lowess(yy,xx, frac=delta)
+    
+    ax.plot(ll[:,0], ll[:,1], c="k", alpha=.05)
+    
+ax.plot(l[:,0], l[:,1], c="yellow")
+
+## REGIONS
+from matplotlib.patches import Rectangle
+
+text_kws = {
+    "rotation" : 90,
+    "fontsize" : 16,
+    "bbox" : dict(
+        facecolor="white", 
+        boxstyle="round"
+    ),
+    "horizontalalignment" : "center",
+    "verticalalignment" : "center"
+}
+
+rect_props = {
+    "width" : 40,
+    "zorder" : -1,
+    "alpha" : 1.
+}
+
+stylecolors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+
+ax.text(1980, 3, "diatonic", **text_kws)
+ax.axhline(6.5, c="gray", linestyle="--", lw=2) # dia / chrom.
+ax.add_patch(Rectangle((1960,0), height=6.5, facecolor=stylecolors[0], **rect_props))
+
+ax.text(1980, 9.5, "chromatic", **text_kws)
+ax.axhline(12.5, c="gray", linestyle="--", lw=2) # chr. / enh.
+ax.add_patch(Rectangle((1960,6.5), height=6, facecolor=stylecolors[1], **rect_props))
+
+ax.text(1980, 23.5, "enharmonic", **text_kws)
+ax.add_patch(Rectangle((1960,12.5), height=28, facecolor=stylecolors[2], **rect_props))
+
+ax.set_ylim(0,35)
+ax.set_xlim(1300,2000)
+
+ax.set_ylabel("line-of-fifths range");
+# plt.savefig("img/final.png", dpi=300)
+# plt.show()
+```
+
+Usung bootstrap sampling we achieve an estimation of the local varience of the data and thus of the diversity in the note usage of the musical pieces.
+
+We also can distinguish three regions in terms of line-of-fifth range: diatonic, chromatic, and enharmonic.
+
+Grouping the data together in these three regions, we see a clear change from diatonic and chromatic to chromatic and enharmonic pieces over the course of history.
+
+```{python}
+#| slideshow: {slide_type: skip}
+epochs = {
+    "Renaissance" : [1300, 1549],
+    "Baroque" : [1550, 1649],
+    "Classical" : [1650, 1749],
+    "Early\nRomantic" : [1750, 1819],
+    "Late Romantic/\nModern" : [1820, 2000]
+}   
+
+strata = [
+    "diatonic",
+    "chromatic",
+    "enharmonic"
+]
+
+widths = data[["display_year", "lof_range"]].sort_values(by="display_year").reset_index(drop=True)
+
+df = pd.concat(
+    [
+        widths[ 
+            (widths.display_year >= epochs[e][0]) & (widths.display_year <= epochs[e][1]) 
+        ]["lof_range"].value_counts(normalize=True).sort_index().groupby( 
+            lambda x: strata[0] if x <= 6 else strata[1] if x <= 12 else strata[2]
+        ).sum() for e in epochs
+    ], axis=1, sort=True
+)
+
+df.columns = epochs.keys()
+df = df.reindex(strata)
+df.T.plot(kind="bar", stacked=True, figsize=(12,5))
+# plt.title("Epochs")
+plt.legend(bbox_to_anchor=(1.3,0.75))
+plt.gca().set_xticklabels(epochs.keys(), rotation="horizontal")
+plt.tight_layout()
+# plt.savefig("img/epochs_regions.png")
+plt.show()
+```
+
+- Renaissance: largest diatonic proportion overall but mostly chromatic
+- Baroque: alost completely chromatic
+- Classical: enharmonic proportion increases -> more distant modulations
+- This trend continues through the Romantic eras
+
+## Summary
+
+1. We have analyzed a very specific aspect of Western classical music.
+2. We have used a large(-ish) corpus to answer our research question.
+3. We have operationalized musical pieces as vectors that represent distributions of tonal pitch-classes.
+4. We have used the dimensionality-reduction technique Principal Component Analysis (PCA) in order to visually inspect the distribution of the data in 2 and 3 dimensions.
+5. We have used music-theoretical domain knowledge to find meaningful structure in this space.
+6. We have seen that pieces are largely distributed along the line of fifths.
+7. We have used Locally Weighted Scatterplot Smoothing (LOWESS) to estimate the variance in this historical process.
+8. We have seen that, historically, composers explore ever larger regions on this line and that the variance also increases.
+
+
