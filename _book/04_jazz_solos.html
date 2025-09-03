@@ -392,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Pfleiderer, M., Frieler, K., Abeßer, J., Zaddach, W.-G., &amp; Burkhard, B. (Eds.) (2017). Inside the Jazzomat. New Perspectives for Jazz Research. Mainz: Schott Campus (<a href="https://schott-campus.com/jazzomat/">Open Access</a>).</li>
 </ul>
-<div id="ab95c5d9" class="cell" data-execution_count="1">
+<div id="38fb6883" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -404,33 +404,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The WJazzD can be downloaded at https://jazzomat.hfm-weimar.de/download/download.html A local copy of the database is stored at <code>data/wjazz.db</code>. We use the <code>sqlite3</code> library to connect to this database.</p>
-<div id="b64ebc58" class="cell" data-execution_count="2">
+<div id="7a1e18bb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"data/wjazzd.db"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="250f5697" class="cell" data-execution_count="3">
+<div id="b8a36a27" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>conn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>&lt;sqlite3.Connection at 0x7457ddc3f100&gt;</code></pre>
+<pre><code>&lt;sqlite3.Connection at 0x705b625767a0&gt;</code></pre>
 </div>
 </div>
 <p>We can now use <code>pandas</code> to read the data out of the database.</p>
-<div id="99855cb3" class="cell" data-execution_count="4">
+<div id="01e2a12e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>solos <span class="op">=</span> pd.read_sql(<span class="st">"SELECT * FROM melody"</span>, con<span class="op">=</span>conn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>"SELECT * FROM melody"</code> means “Select everything from the table ‘melody’ in the database”. Let’s look at the first ten entries.</p>
 <p>Likewise, we can select the <code>composition_info</code> table that contains a lot of metadata for the solos:</p>
-<div id="d0481b38" class="cell" data-execution_count="5">
+<div id="0674f690" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>solos_meta <span class="op">=</span> pd.read_sql(<span class="st">"SELECT * from solo_info"</span>, con<span class="op">=</span>conn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>.shape</code> attribute shows us how many solos are in the database.</p>
-<div id="5b688cb8" class="cell" data-execution_count="6">
+<div id="8147a053" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>solos_meta.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>(456, 17)</code></pre>
 </div>
 </div>
 <p>The <code>.sample()</code> method draws a number of rows at random from a DataFrame.</p>
-<div id="7f81e442" class="cell" data-execution_count="7">
+<div id="6b88b70d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>solos_meta.sample(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -462,104 +462,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">69</td>
-<td>70</td>
-<td>65</td>
-<td>64</td>
-<td>29</td>
-<td>Chet Baker</td>
-<td>I Fall in Love Too Easily</td>
+<td data-quarto-table-cell-role="th">454</td>
+<td>455</td>
+<td>344</td>
+<td>20</td>
+<td>183</td>
+<td>Zoot Sims</td>
+<td>Night and Day</td>
 <td></td>
 <td>1</td>
-<td>tp</td>
+<td>ts</td>
 <td>COOL</td>
-<td>65.2</td>
-<td>SLOW</td>
+<td>216.7</td>
+<td>UP</td>
 <td>SWING</td>
-<td>Eb-maj</td>
+<td>D-maj</td>
 <td>4/4</td>
-<td>A1: ||F-7 Bb7 |Ebj7 C-7 |Dm7b5 G79b |C-7 |Dm...</td>
-<td>1</td>
+<td>A1: ||Em7b5 |A7 |Dj7 |Dj7 |Em7b5 |A7...</td>
+<td>2</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">389</td>
-<td>390</td>
-<td>263</td>
-<td>239</td>
-<td>143</td>
-<td>Sonny Rollins</td>
-<td>Vierd Blues</td>
+<td data-quarto-table-cell-role="th">264</td>
+<td>265</td>
+<td>228</td>
+<td>206</td>
+<td>108</td>
+<td>Kid Ory</td>
+<td>Who's it</td>
 <td></td>
 <td>1</td>
-<td>ts</td>
-<td>HARDBOP</td>
-<td>114.4</td>
-<td>MEDIUM</td>
-<td>SWING</td>
-<td>Bb-maj</td>
+<td>tb</td>
+<td>TRADITIONAL</td>
+<td>211.6</td>
+<td>UP</td>
+<td>TWOBEAT</td>
+<td>C-maj</td>
 <td>4/4</td>
-<td>A1: ||Bb7 |Eb7 |Bb7 |Bb7 |Eb7 |Eb7 ...</td>
-<td>6</td>
+<td>A1: ||C |A7 |D7 |D7 |G7 |G7 |C |...</td>
+<td>1</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">141</td>
-<td>142</td>
-<td>128</td>
-<td>117</td>
-<td>66</td>
-<td>Don Byas</td>
-<td>Harvard Blues</td>
+<td data-quarto-table-cell-role="th">30</td>
+<td>31</td>
+<td>27</td>
+<td>27</td>
+<td>11</td>
+<td>Bob Berg</td>
+<td>Angles</td>
+<td></td>
+<td>1</td>
+<td>ts</td>
+<td>POSTBOP</td>
+<td>270.1</td>
+<td>UP</td>
+<td>SWING</td>
+<td>Ab-maj</td>
+<td>4/4</td>
+<td>A1: ||Abj7 |Abj7 |Abj7 |Abj7 |C-7 |C...</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">277</td>
+<td>278</td>
+<td>39</td>
+<td>39</td>
+<td>16</td>
+<td>Lester Young</td>
+<td>After Theatre Jump</td>
 <td></td>
 <td>1</td>
 <td>ts</td>
 <td>SWING</td>
-<td>98.5</td>
+<td>176.0</td>
+<td>MEDIUM UP</td>
+<td>SWING</td>
+<td>Db-maj</td>
+<td>4/4</td>
+<td>A1: ||Db Bb7 |Eb-7 Ab7 |F-7 Bb-7 |Eb-7 Ab7 |Ab...</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">139</td>
+<td>140</td>
+<td>127</td>
+<td>75</td>
+<td>65</td>
+<td>Don Byas</td>
+<td>Body and Soul</td>
+<td></td>
+<td>1</td>
+<td>ts</td>
+<td>SWING</td>
+<td>98.6</td>
 <td>MEDIUM SLOW</td>
 <td>SWING</td>
 <td>Db-maj</td>
 <td>4/4</td>
-<td>A1: ||Db7 |Gb7 Go |Db Db7 |Bb-7 Db7 |Gb7 |...</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">154</td>
-<td>155</td>
-<td>139</td>
-<td>126</td>
-<td>69</td>
-<td>Eric Dolphy</td>
-<td>Dahomey Dance</td>
-<td></td>
-<td>1</td>
-<td>as</td>
-<td>POSTBOP</td>
-<td>128.9</td>
-<td>MEDIUM</td>
-<td>SWING</td>
-<td>G-maj</td>
-<td>4/4</td>
-<td>A1: ||G7 |G7 |G7 |G7913 |F7 |F7 |G...</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">199</td>
-<td>200</td>
-<td>177</td>
-<td>121</td>
-<td>89</td>
-<td>Joe Henderson</td>
-<td>Johnny Come Lately</td>
-<td></td>
-<td>1</td>
-<td>ts</td>
-<td>POSTBOP</td>
-<td>247.6</td>
-<td>UP</td>
-<td>SWING</td>
-<td>G-min</td>
-<td>4/4</td>
-<td>A1: ||G-6 |Eb7 D79b |G-6 |Eb7 D79b |G-6 ...</td>
-<td>3</td>
+<td>A1: ||Eb-7 Bb79b |Eb-7 D7 |Dbj7 Gb7 |F-7 Eo7 |...</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -569,7 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The first rows of a DataFrame can be accessed with the <code>.head()</code> method…</p>
-<div id="c06e898f" class="cell" data-execution_count="8">
+<div id="517aeb4d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>solos.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -733,7 +733,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>… and the last rows with the <code>.tail()</code> method.</p>
-<div id="48fed4b6" class="cell" data-execution_count="9">
+<div id="80abf53d" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>solos.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -897,14 +897,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>As we already know, the <code>.shape</code> attribute shows the overall size of the table.</p>
-<div id="817a00a4" class="cell" data-execution_count="10">
+<div id="33f06f57" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>solos.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>(200809, 26)</code></pre>
 </div>
 </div>
 <p>The <code>solos</code> table contains 26 columns that cannot be displayed at once. We can have a look at the column names by using the <code>.columns</code> attribute.</p>
-<div id="c92bfb56" class="cell" data-execution_count="11">
+<div id="0292a118" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>solos.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>Index(['eventid', 'melid', 'onset', 'pitch', 'duration', 'period', 'division',
@@ -917,7 +917,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>A description of what these columns contain is stated on the website: https://jazzomat.hfm-weimar.de/dbformat/dbformat.html</p>
 <p>For our analyses it will be usefull to have also the name of the performer in the <code>solos</code> DataFrame. We create a <strong>dictionary</strong> that maps the <code>melid</code> (unique identification number for each solo) to the name of the performer.</p>
-<div id="53a89d92" class="cell" data-execution_count="12">
+<div id="a015eada" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mapper <span class="op">=</span> <span class="bu">dict</span>( solos_meta[[<span class="st">"melid"</span>, <span class="st">"performer"</span>]].values )</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>mapper</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -1380,10 +1380,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can now use this dictionary to create a new column <code>performer</code> in the <code>solos</code> DataFrame.</p>
-<div id="9ea9f3da" class="cell" data-execution_count="13">
+<div id="90a50505" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>solos[<span class="st">"performer"</span>] <span class="op">=</span> solos[<span class="st">"melid"</span>].<span class="bu">map</span>(mapper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1d959716" class="cell" data-execution_count="14">
+<div id="663d32c5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>solos.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -1546,7 +1546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="97e9f85f" class="cell" data-execution_count="15">
+<div id="699de9e2" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>solos.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
@@ -1712,7 +1712,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="melodic-arc" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="melodic-arc"><span class="header-section-number">14.1</span> Melodic arc?</h2>
 <p>Does the melodic arc also appear in the Jazz solos?</p>
-<div id="12036b71" class="cell" data-execution_count="16">
+<div id="fb670197" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> notelist(melid):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    solo <span class="op">=</span> solos[solos[<span class="st">"melid"</span>] <span class="op">==</span> melid]</span>
@@ -1721,7 +1721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    solo[<span class="st">"onset"</span>] <span class="op">=</span> solo[<span class="st">"duration"</span>].cumsum()</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> solo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f469d6d0" class="cell" data-execution_count="17">
+<div id="ce7f6f3f" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>notelist(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
@@ -1812,7 +1812,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="aa11c7e4" class="cell" data-execution_count="18">
+<div id="c32d53d9" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_melodic_profile(notelist, ax<span class="op">=</span><span class="va">None</span>, c<span class="op">=</span><span class="va">None</span>, mean<span class="op">=</span><span class="va">False</span>, Z<span class="op">=</span><span class="va">False</span>, sections<span class="op">=</span><span class="va">False</span>, standardized<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="op">==</span> <span class="va">None</span>:</span>
@@ -1834,7 +1834,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> l <span class="kw">in</span> [ x.<span class="bu">max</span>() <span class="op">*</span> i <span class="cf">for</span> i <span class="kw">in</span> [ <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">3</span><span class="op">/</span><span class="dv">4</span>] ]:</span>
 <span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>            ax.axvline(l, color<span class="op">=</span><span class="st">"gray"</span>, linewidth<span class="op">=</span><span class="dv">1</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="debe20c3" class="cell" data-execution_count="19">
+<div id="f5a31341" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">9</span>))</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1850,7 +1850,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="01f636da" class="cell" data-execution_count="20">
+<div id="fbfd1581" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> standardize(notelist):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Takes a notelist as input and returns a standardized version.</span></span>
@@ -1862,7 +1862,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> notelist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9529fcec" class="cell" data-execution_count="21">
+<div id="90b42a77" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>standardize(notelist(<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
@@ -1989,7 +1989,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="b13861a1" class="cell" data-execution_count="22">
+<div id="3d43813a" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">5</span>))</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
@@ -2006,10 +2006,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="7e611a76" class="cell" data-execution_count="23">
+<div id="e16eb3e0" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>big_df <span class="op">=</span> pd.concat([standardize(notelist(i)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(solos_meta.shape[<span class="dv">0</span>])])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f2541056" class="cell" data-execution_count="24">
+<div id="56fe8296" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>solos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
@@ -2316,7 +2316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="1b4d8d56" class="cell" data-execution_count="25">
+<div id="38c4522c" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>big_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <div>
@@ -2443,7 +2443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="20726c3a" class="cell" data-execution_count="26">
+<div id="d6fc694f" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>solos_meta[<span class="st">"performer"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>array(['Art Pepper', 'Benny Carter', 'Benny Goodman', 'Ben Webster',
@@ -2469,7 +2469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
        'Wynton Marsalis', 'Zoot Sims'], dtype=object)</code></pre>
 </div>
 </div>
-<div id="fe755815" class="cell" data-execution_count="27">
+<div id="2ecff0f2" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">8</span>))</span>
@@ -2519,8 +2519,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 3.45 s, sys: 9.1 ms, total: 3.46 s
-Wall time: 3.47 s</code></pre>
+<pre><code>CPU times: user 3.59 s, sys: 9.09 ms, total: 3.6 s
+Wall time: 3.61 s</code></pre>
 </div>
 </div>
 </section>
@@ -2528,10 +2528,10 @@ Wall time: 3.47 s</code></pre>
 <h2 data-number="14.2" class="anchored" data-anchor-id="pitch-vs-loudness"><span class="header-section-number">14.2</span> Pitch vs loudness</h2>
 <p>Above we have already analyzed some melodic profiles and seen that, on average, the Jazz solos tend not to follow the melodic arch on a global scale. Now, we ask whether the pitch of the notes in the solos are related to another important feature of performance: loudness. The WJazzD contains several measures for loudness (compare the columns in the <code>solos</code> DataFrame). Here, we focus on the “Median loudness” which is stored in the <code>loud_med</code> column.</p>
 <p>Let us look at an example.</p>
-<div id="d90b6879" class="cell" data-execution_count="28">
+<div id="3ff4777c" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>example_solo <span class="op">=</span> solos[ solos[<span class="st">"melid"</span>] <span class="op">==</span> <span class="dv">233</span> ][[<span class="st">"pitch"</span>, <span class="st">"loud_med"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cbef6d86" class="cell" data-execution_count="29">
+<div id="1a28e69b" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>example_solo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
@@ -2611,7 +2611,7 @@ Wall time: 3.47 s</code></pre>
 </div>
 </div>
 <p>We can get a visual impression of whether there might be a direct relation between the two features by plotting it and drawing a regression line. For this, the <code>regplot()</code> function of the <code>seaborn</code> library is well-suited.</p>
-<div id="fba5f6d0" class="cell" data-execution_count="30">
+<div id="231cc8d6" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>example_solo, x<span class="op">=</span><span class="st">"pitch"</span>, y<span class="op">=</span><span class="st">"loud_med"</span>, line_kws<span class="op">=</span>{<span class="st">"color"</span>:<span class="st">"black"</span>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -2622,7 +2622,7 @@ Wall time: 3.47 s</code></pre>
 </div>
 </div>
 <p>There seems to be no clear relation; no matter how high the pitch, the loudness stays more or less the same. Let’s look at another example!</p>
-<div id="0d38f7e3" class="cell" data-execution_count="31">
+<div id="a0a11df2" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>example_solo2 <span class="op">=</span> solos[ solos[<span class="st">"melid"</span>] <span class="op">==</span> <span class="dv">333</span> ][[<span class="st">"pitch"</span>, <span class="st">"loud_med"</span>]]</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>example_solo2, x<span class="op">=</span><span class="st">"pitch"</span>, y<span class="op">=</span><span class="st">"loud_med"</span>, line_kws<span class="op">=</span>{<span class="st">"color"</span>:<span class="st">"black"</span>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2639,7 +2639,7 @@ Wall time: 3.47 s</code></pre>
 <section id="the-rain-cloud-of-jazz-solos" class="level2" data-number="14.3">
 <h2 data-number="14.3" class="anchored" data-anchor-id="the-rain-cloud-of-jazz-solos"><span class="header-section-number">14.3</span> The “rain cloud” of Jazz solos</h2>
 <p>We now take all 200’809 notes from all solos and look at the relation between their pitch and their median loudness.</p>
-<div id="348a848e" class="cell" data-execution_count="32">
+<div id="57b9f19c" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> solos[[<span class="st">"pitch"</span>, <span class="st">"loud_med"</span>]].values</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> X[:,<span class="dv">0</span>]</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> X[:,<span class="dv">1</span>]</span>
@@ -2663,13 +2663,13 @@ Wall time: 3.47 s</code></pre>
 <section id="comparing-performers" class="level2" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="comparing-performers"><span class="header-section-number">14.4</span> Comparing performers</h2>
 <p>Taking all pieces together was not really informative. Maybe a somewhat closer look brings more to the front. Let us some specific performers whose solos we want to compare.</p>
-<div id="1c37c6d8" class="cell" data-execution_count="33">
+<div id="4b31585c" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>selected_performers <span class="op">=</span> [<span class="st">"Charlie Parker"</span>, <span class="st">"Miles Davis"</span>, <span class="st">"Louis Armstrong"</span>, <span class="st">"Herbie Hancock"</span>, <span class="st">"Von Freeman"</span>, <span class="st">"Red Garland"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3ddfcc20" class="cell" data-execution_count="34">
+<div id="8772b946" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>grouped_df <span class="op">=</span> solos.groupby(<span class="st">"performer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="26a195e1" class="cell" data-execution_count="35">
+<div id="d86588fe" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> performer, df <span class="kw">in</span> grouped_df:</span>
