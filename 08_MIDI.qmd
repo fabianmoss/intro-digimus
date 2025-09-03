@@ -17,6 +17,7 @@ This led to the development of the Musical Instruments Digital Interface (MIDI)
 format that is still a cornerstone for music information exchange.
 
 MIDI is relatively simple: it consists of so-called messages that have five components:
+
 - Time (in ticks)
 - Message (either NOTE ON or NOTE OFF)
 - Channel (up to 16 for classical MIDI)

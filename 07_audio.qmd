@@ -18,7 +18,7 @@ we need a basic understanding of how sound works.
 - intervals: octave and fifth 
 - phase $\phi$
 
-$$x(t) = A \sin(2\pi ft + phi)$$
+$$x(t) = A \sin(2\pi ft + \phi)$$
 
 ## Harmonics 
 

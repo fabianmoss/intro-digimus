@@ -1,0 +1,328 @@
+# A Python primer {#sec-python_primer}
+
+:::{.callout-note}
+From now on, we will assume that you have a working Python installation running on your computer. You can check this by typing the following into a terminal/console/command line:
+
+```{terminal}
+python --version
+```
+
+If the version number starts with a 3, you're all set. If not, please consider one of the many tutorials online on how to install Python.
+:::
+
+## Variables and types
+
+Variable assignment in Python is straight-forward. You choose a name for the variable, and assign a value to it using the `=` operator, for example:
+
+```{python}
+x = 100
+```
+
+assigns the value `100` to the variable `x`. If we call the variable now, 
+we can see that it has the value we assigned to it:
+
+```{python}
+x
+```
+
+Of course, we can also assign things other than numbers, for example:
+```{python}
+name = "Fabian"
+```
+
+What we assigned to the variable `name` is called a _string_,
+it has the value `"Fabian"`. Strings are sequences of characters.
+
+::: {.callout-tip}
+Note that `"Fabian"` is enclosed by double-quotes.
+Why is this the case? Why could we not just type `name = Fabian`?
+:::
+
+We can also assign a list of things to a variable:
+
+```{python}
+mylist = [1, 2, 3, "A", "B", "C"]
+```
+
+Lists are enclosed by square brackets. As you can see, Python allows you 
+to store any kind of data in lists (here: integer numbers and character strings). 
+However, it is good practice to include only items of the same type in 
+lists---you'll understand later why.
+
+Another structured data type in python are dictionaries. Dictionaries are
+collections of key-value pairs. For example, a dictionary `addresses` 
+could store the email addresses of certain people:
+
+```{python}
+addresses = {
+    "Andrew" : "andrew@example.com",
+    "Zoe" : "zoe@example.com"
+}
+```
+
+Now, if we wanted to look up Zoe's email address, we could to so with:
+
+```{python}
+addresses["Zoe"]
+```
+
+
+## On repeat
+
+Coding something is only useful if you can't do the job as fast or as efficient by yourself. Especially when it comes to repeating the same little thing many, many times, knowing how to code comes in handy.
+
+As a simple example, imagine you want to write down all numbers from 1 to 10, or from 1 to 100, or... you get the idea.
+In Python, you would do it as follows:
+
+```{python}
+for i in range(10):
+    print(i)
+```
+
+You see that this is not exactly what we wanted. We're seeing numbers from 0 to 9, 
+each one being printed on a new line. But what we wanted was all numbers from 1 to 10. 
+Before we fix the code to produce the desired result, let's explain the bits and pieces of the code above. 
+
+What we just did was to use a so-called _for-loop_, probably the most common way to repeat things in Python. 
+First we create an _iterator variable_ `i` (we could have named any other variable name as well), 
+which takes its value from the list of numbers specified by `range(10)`. 
+If only one number `n` is provided to `range(n)`, it will enumerate all 
+numbers from 0 to `n-1`. If instead two arguments are provided, 
+the first one determines the starting number, and the second one stands
+for the terminating number minus one---confusing, right? 
+
+So, in order to enumerate all numbers from 1 to 10, we have to write `range(1,11)`. 
+Additionally, we can use the `end` keyword of the `print` function
+that allows us to print all numbers in one line, separated only
+by a single white space instead of each one on a new line.
+
+```{python}
+for i in range(1,11):
+    print(i, end=" ")
+```
+
+Voilà!
+
+## Just in case
+
+Often we encounter a situation where we would execute some code **only if** certain 
+conditions are met. In python, this is done with the `if` statement. For example, 
+if we want to only print the even numbers in the range from 1 to 10, we 
+could adapt the code from above as follows:
+
+```{python}
+for i in range(1,11):
+    if i % 2 == 0:
+        print(i, "is even")
+```
+
+You can read this as "if the remainder of dividing i by 2 is zero, then print 'i is even'".
+
+Now, we could also want to print a similar statement in the case that `i` is odd:
+
+```{python}
+for i in range(1,11):
+    if i % 2 == 0:
+        print(i, "is even")
+    else:
+        print(i, "is odd")
+```
+
+And, finally, we could also have more than just one condition. An if-statement
+allows for arbitrary many if-else clauses, with which we can formulate several different 
+conditions by writing `elif` (shorthand for 'or else if'):
+
+```{python}
+for i in range(1,11):
+    if i % 2 == 0:
+        print(i, "is even")
+    elif i % 3 == 0:
+        print(i, "is divisible by 3")
+    else:
+        print(i, "is odd")
+```
+
+We now know when a number is even and when it is divisible by 3.
+But what about numbers that are _both_ even _and_ divisible by 3? 
+We just add another condition to the `elif` statement and enclose each condition in parentheses, so that Python knows how things group together:
+
+```{python}
+for i in range(1,11):
+    if i % 2 == 0:
+        print(i, "is even")
+    elif (i % 2 == 0) and (i % 3 == 0):
+        print(i, "is even and divisible by 3")
+    else:
+        print(i, "is odd")
+```
+
+Why did this not work? The number 6 is even _and_ divisible by 3!
+The reason is that the three statements (`if`, `elif`, and `else`)
+are being executed in the order that we wrote them down. 
+That means, that Python will first check for each number whether 
+it is even (and nothing more), and if it is, it will follow the instruction to print 
+it and go on to the next number. So, once we arrived at 6, the programm 
+will only check if the number is even. That is not the desired result and we have to 
+make a little change to it. We will switch the conditions in the `if` and `elif` 
+statements:
+
+```{python}
+for i in range(1,11):
+    if (i % 2 == 0) and (i % 3 == 0):
+        print(i, "is even and divisible by 3")
+    elif i % 2 == 0:
+        print(i, "is even")
+    else:
+        print(i, "is odd")
+```
+
+Now it works! Note that new never specified any conditions for the `else`
+statement. This is because whatever follows it will be executed in case 
+none of the conditions in `if` or `elif` are met.
+
+## Functions
+
+With more and more experience in programming, 
+it is likely that your code will become more and more complex.
+That means that it will become harder to keep track of what every piece 
+of it is supposed to do. A good strategy to deal with this is to aim 
+for writing code that is _modular_: it can be broken down into smaller 
+units (modules) that are easier to understand. Moreover, it is sometimes 
+necessary to reuse the same code several times. It would, however, 
+be inefficient to write the same lines over and over again. 
+With your code being modular you can wrap the pieces that you
+need in several places into a _function_. 
+
+Let's look at an example! Assume, your (fairly) complex code involves
+calculating the sum of the squares of two numbers. 
+In Python, we use the `+` operator to calculate sums and the `**` operator 
+to raise a number to a certain power (`**2` for the square of a number). 
+
+```{python}
+x = 3
+y = 5
+
+sum_of_squares = x**2 + y**2
+```
+
+The variable `sum_of_squares` now contains the sum of squares of `x=3` and `y=5`. 
+We can inspect the result by calling the variable:
+
+```{python}
+sum_of_squares 
+```
+
+Now, imagine that you would have to do the same calculation 
+several times for different combinations of values for `x` and `y` 
+(and always keeping in mind that this stands in for much more 
+complex examples with several lines of code). We can code this in a function:
+
+```{python}
+def func_sum_of_squares(x, y):
+    return x**2 + y**2
+```
+
+Now, each time we want to calculate a sum of squares, we can do so by simply invoking 
+
+```{python}
+func_sum_of_squares(5,4)
+```
+
+And, of course, we could chose a shorter name for the function as well,
+although I would recommend to always use function names that make clear what
+the function does:
+
+```{python}
+
+f = func_sum_of_squares
+
+f(5,4)
+```
+
+## Libraries you'll love
+
+Luckily, you don't have to programm all functions by yourself.
+There is a huge community of Python programmers out there that 
+works and collaborates on several _libraries_. A library is (more or less)
+simply a collection of certain functions (and some more, but we don't get into this here). This means, instead of writing a function yourself, you can rely on functions that someone else has programmed.
+
+::: {.callout-caution}
+Whether a Python library or function does actually do what it promises is
+another story. Popular libraries with tens of thousands of users 
+are very trust-worthy because you can be almost sure that someone would 
+have noticed erroneous behavior. But it is certainly possible that 
+badly-maintained libraries contain errors. So be prudent when using the code of others.
+:::
+
+### NumPy
+
+One of the most popular Python libaries is [NumPy](https://numpy.org/) for numerical computations. We will rely a lot on the functions in this library, especially in order to draw random samples---more on this later!
+To use the functions or variables from this library, they have to be _imported_ so that you can use them. There are several ways to do this.
+For example, you can import the libary entirely:
+
+```{python}
+import numpy
+```
+
+Now, you can use the (approximated) value of $\pi$ stored in this library by typing 
+
+```{python}
+numpy.pi
+```
+
+A different way is to just import everything from the library by writing 
+
+```{python}
+from numpy import * 
+```
+
+Here, the `*` stands for 'everything'. Now, to use the value of $\pi$ we could simply type
+
+```{python}
+pi
+```
+
+This is, however discouraged for the following reason: imagine we had another library, `numpy2` that also stores the value of $\pi$, but less precisely (e.g. only as `3.14`). If we write 
+
+```{python}
+#| eval: false
+from numpy import * 
+from numpy2 import * 
+```
+
+We would have imported the variables holding the value of $\pi$ from both libraries. But, because they have the same name `pi`. In this case, `pi` would equal `3.14` because we imported `numpy2` last. This is confusing and shouldn't be so! To avoid this, it is better to keep references to imported libraries explicit. In order not to have to type too much (we're all lazy, after all), we can define an alias for the library.
+
+```{python}
+import numpy as np
+np.pi
+```
+
+All functions of NumPy are now accessible with the prefix `np.`. 
+
+### Pandas
+
+[TODO]
+
+### Matplotlib
+
+[TODO]
+
+### Summary
+
+You can choose any alias when importing a library (it can even by longer than the library name) but certain conventions have emerged that you're encouraged to follow. Importing the most commonly used Python libraries for data-science tasks ("The data science triad"), use the following:
+
+```{python}
+import numpy as np # for numerical computations
+import pandas as pd # for tabular data 
+import matplotlib.pyplot as plt # for data visualization
+```
+
+We will use all three of them in the following chapters and you'll learn to love them.
+
+:::{.callout-tip title="Concepts covered"}
+
+* variables
+* types (integers, strings, lists, dictionaries)
+* functions
+* libraries, importing and aliases
+:::

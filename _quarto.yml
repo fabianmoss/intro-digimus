@@ -38,6 +38,7 @@ book:
   - part: EXERCISES
     chapters:
     - ex/01_what_is_dm.qmd
+    - ex/02_python_primer.qmd
     - ex/03_melody_I.qmd
   - references.qmd
 

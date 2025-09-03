@@ -234,7 +234,7 @@
     "href": "02_dm_today.html#study-programs-and-summer-schools",
     "title": "2  Digital Musicology today",
     "section": "2.5 Study programs and summer schools",
-    "text": "2.5 Study programs and summer schools\n\n\n\n\nInskip, C., and F. Wiering. 2015. “In Their Own Words: Using Text Analysis to Identify Musicologists’ Attitudes Towards Technology.” In Proceedings of the 16th International Society for Music Information Retrieval Conference, Malaga, Spain. (2015). Malaga, Spain: 16th International Society for Music Information Retrieval Conference.",
+    "text": "2.5 Study programs and summer schools\n**Go to the exercises for Week 2.\n\n\n\n\nInskip, C., and F. Wiering. 2015. “In Their Own Words: Using Text Analysis to Identify Musicologists’ Attitudes Towards Technology.” In Proceedings of the 16th International Society for Music Information Retrieval Conference, Malaga, Spain. (2015). Malaga, Spain: 16th International Society for Music Information Retrieval Conference.",
     "crumbs": [
       "INTRODUCTION",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Digital Musicology today</span>"
@@ -353,12 +353,67 @@
   {
     "objectID": "10_MEI.html",
     "href": "10_MEI.html",
-    "title": "11  MEI - the body",
+    "title": "11  MEI",
     "section": "",
-    "text": "Goal\n\n\n\nUnderstand basic XML encoding and the skeleton structure of MEI.\n\n\n\nmei friend\n\n\n\n\n\n\n\nGoal\n\n\n\nUnderstand the relation between CWMN and the MEI music element.\n\n\n\nMuseScore export\nmei friend",
+    "text": "11.1 XML\nFor a computer, text is merely a string of characters, including ‘invisible’ characters such as spaces between words and line breaks. But texts are usually more structured than that. For instance, they can contain headings, sections, subsections or paragraphs; they can be printed onto different pages, and they can change their appearance by including boldfaced or italicized text, for example. If we want to encode these structural aspects of texts in machine-readable formats, they need to be explicitly marked up.\nThe most popular mark-up language for all sorts of texts is the eXtensible Markup Language (XML). XML documents consist of a so-called XML declaration that tells the computer which structuring elements are available and how to interpret them, as well as several tags and their attributes. This is easily explained with an example:\nThis example contains two types of elements: message and greeting. Elements work a little bit like parentheses ((, )) or brackets ([, ]) because there is (almost) always an opening tag and a closing tag. Closing tags contain a slash (/).\nThe example also shows that tags can be hierarchically nested. If the message consisted of several parts, it could be encoded as follows:\nWe say that greeting and politeness are children of message (they are siblings), and greeting is the parent element.\nElements can contain so-called attributes that modify the element. Attributes are listed only in the opening tag of the element. In the example above, the greeting element contained the attribute @emotion with the value \"joyful\". It is customary to add an @ when talking about an attribute. Attribute values need to be enclosed in quotation marks (\"), see also attributes @version and @encoding of the XML declaration in the first code line.",
     "crumbs": [
       "MUSIC AS DATA",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI - the body</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI</span>"
+    ]
+  },
+  {
+    "objectID": "10_MEI.html#xml",
+    "href": "10_MEI.html#xml",
+    "title": "11  MEI",
+    "section": "",
+    "text": "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n\n&lt;message&gt;\n  &lt;greeting&gt;\n    Hello world!\n  &lt;/greeting&gt;\n&lt;/message&gt;\n\n\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n\n&lt;message&gt;\n  &lt;greeting emotion=\"joyful\"&gt;\n    Hello world!\n  &lt;/greeting&gt;\n  &lt;politeness&gt;\n    Sincerely,\n  &lt;/politeness&gt;\n  &lt;!-- This is a comment that the computer will ignore --&gt;\n&lt;/message&gt;",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI</span>"
+    ]
+  },
+  {
+    "objectID": "10_MEI.html#header-and-body",
+    "href": "10_MEI.html#header-and-body",
+    "title": "11  MEI",
+    "section": "11.2 Header and body",
+    "text": "11.2 Header and body\nThe basic structure of an MEI document conists of two major parts, the head and the music, roughly corresponding to metadata describing the source and the music ‘itself’, respectively.\n&lt;mei meiversion=\"5.0\"&gt;\n  &lt;meiHead&gt;\n  &lt;!-- metadata goes here --&gt;\n  &lt;/meiHead&gt;\n  &lt;music&gt;\n  &lt;!-- description of musical text goes here --&gt;\n  &lt;/music&gt;\n&lt;/mei&gt;",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI</span>"
+    ]
+  },
+  {
+    "objectID": "10_MEI.html#a-minimal-example",
+    "href": "10_MEI.html#a-minimal-example",
+    "title": "11  MEI",
+    "section": "11.3 A minimal example",
+    "text": "11.3 A minimal example",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI</span>"
+    ]
+  },
+  {
+    "objectID": "10_MEI.html#mei-for-digital-scholarly-editions",
+    "href": "10_MEI.html#mei-for-digital-scholarly-editions",
+    "title": "11  MEI",
+    "section": "11.4 MEI for digital scholarly editions",
+    "text": "11.4 MEI for digital scholarly editions\nOne of the main reasons for the development of MEI was that existing music encoding standards did not accomodate all needs of music scholars engaged in editing music. Apart from merely representing what is written or printed in a musical score, musicologists understand that musical texts always stand in certain contexts, and that musical sources need commentaries, corrections, and critical treatment more generally. In short, while CWMN is easily represented by other encoding formats such as MusicXML and LilyPond, MEI is the prime candidate for musicological applications due to this critical layer.",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI</span>"
+    ]
+  },
+  {
+    "objectID": "10_MEI.html#community",
+    "href": "10_MEI.html#community",
+    "title": "11  MEI",
+    "section": "11.5 Community",
+    "text": "11.5 Community\nBesides being a digital format for music encoding, MEI is at the same time a community of scholars and practicioners. In fact, the community aspect is very strong, and people very regularly exchange ideas and issues on their Slack communication channel as well in the annual Music Encoding Conference (MEC).\n\nMuseScore export\nmei friend",
+    "crumbs": [
+      "MUSIC AS DATA",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>MEI</span>"
     ]
   },
   {
@@ -425,6 +480,72 @@
     "crumbs": [
       "EXERCISES",
       "Exercise for Week 1"
+    ]
+  },
+  {
+    "objectID": "ex/02_python_primer.html",
+    "href": "ex/02_python_primer.html",
+    "title": "19  A Python primer",
+    "section": "",
+    "text": "19.1 Variables and types\nVariable assignment in Python is straight-forward. You choose a name for the variable, and assign a value to it using the = operator, for example:\nx = 100\nassigns the value 100 to the variable x. If we call the variable now, we can see that it has the value we assigned to it:\nx\n\n100\nOf course, we can also assign things other than numbers, for example:\nname = \"Fabian\"\nWhat we assigned to the variable name is called a string, it has the value \"Fabian\". Strings are sequences of characters.\nWe can also assign a list of things to a variable:\nmylist = [1, 2, 3, \"A\", \"B\", \"C\"]\nLists are enclosed by square brackets. As you can see, Python allows you to store any kind of data in lists (here: integer numbers and character strings). However, it is good practice to include only items of the same type in lists—you’ll understand later why.\nAnother structured data type in python are dictionaries. Dictionaries are collections of key-value pairs. For example, a dictionary addresses could store the email addresses of certain people:\naddresses = {\n    \"Andrew\" : \"andrew@example.com\",\n    \"Zoe\" : \"zoe@example.com\"\n}\nNow, if we wanted to look up Zoe’s email address, we could to so with:\naddresses[\"Zoe\"]\n\n'zoe@example.com'",
+    "crumbs": [
+      "EXERCISES",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>A Python primer</span>"
+    ]
+  },
+  {
+    "objectID": "ex/02_python_primer.html#variables-and-types",
+    "href": "ex/02_python_primer.html#variables-and-types",
+    "title": "19  A Python primer",
+    "section": "",
+    "text": "Tip\n\n\n\nNote that \"Fabian\" is enclosed by double-quotes. Why is this the case? Why could we not just type name = Fabian?",
+    "crumbs": [
+      "EXERCISES",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>A Python primer</span>"
+    ]
+  },
+  {
+    "objectID": "ex/02_python_primer.html#on-repeat",
+    "href": "ex/02_python_primer.html#on-repeat",
+    "title": "19  A Python primer",
+    "section": "19.2 On repeat",
+    "text": "19.2 On repeat\nCoding something is only useful if you can’t do the job as fast or as efficient by yourself. Especially when it comes to repeating the same little thing many, many times, knowing how to code comes in handy.\nAs a simple example, imagine you want to write down all numbers from 1 to 10, or from 1 to 100, or… you get the idea. In Python, you would do it as follows:\n\nfor i in range(10):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\nYou see that this is not exactly what we wanted. We’re seeing numbers from 0 to 9, each one being printed on a new line. But what we wanted was all numbers from 1 to 10. Before we fix the code to produce the desired result, let’s explain the bits and pieces of the code above.\nWhat we just did was to use a so-called for-loop, probably the most common way to repeat things in Python. First we create an iterator variable i (we could have named any other variable name as well), which takes its value from the list of numbers specified by range(10). If only one number n is provided to range(n), it will enumerate all numbers from 0 to n-1. If instead two arguments are provided, the first one determines the starting number, and the second one stands for the terminating number minus one—confusing, right?\nSo, in order to enumerate all numbers from 1 to 10, we have to write range(1,11). Additionally, we can use the end keyword of the print function that allows us to print all numbers in one line, separated only by a single white space instead of each one on a new line.\n\nfor i in range(1,11):\n    print(i, end=\" \")\n\n1 2 3 4 5 6 7 8 9 10 \n\n\nVoilà!",
+    "crumbs": [
+      "EXERCISES",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>A Python primer</span>"
+    ]
+  },
+  {
+    "objectID": "ex/02_python_primer.html#just-in-case",
+    "href": "ex/02_python_primer.html#just-in-case",
+    "title": "19  A Python primer",
+    "section": "19.3 Just in case",
+    "text": "19.3 Just in case\nOften we encounter a situation where we would execute some code only if certain conditions are met. In python, this is done with the if statement. For example, if we want to only print the even numbers in the range from 1 to 10, we could adapt the code from above as follows:\n\nfor i in range(1,11):\n    if i % 2 == 0:\n        print(i, \"is even\")\n\n2 is even\n4 is even\n6 is even\n8 is even\n10 is even\n\n\nYou can read this as “if the remainder of dividing i by 2 is zero, then print ‘i is even’”.\nNow, we could also want to print a similar statement in the case that i is odd:\n\nfor i in range(1,11):\n    if i % 2 == 0:\n        print(i, \"is even\")\n    else:\n        print(i, \"is odd\")\n\n1 is odd\n2 is even\n3 is odd\n4 is even\n5 is odd\n6 is even\n7 is odd\n8 is even\n9 is odd\n10 is even\n\n\nAnd, finally, we could also have more than just one condition. An if-statement allows for arbitrary many if-else clauses, with which we can formulate several different conditions by writing elif (shorthand for ‘or else if’):\n\nfor i in range(1,11):\n    if i % 2 == 0:\n        print(i, \"is even\")\n    elif i % 3 == 0:\n        print(i, \"is divisible by 3\")\n    else:\n        print(i, \"is odd\")\n\n1 is odd\n2 is even\n3 is divisible by 3\n4 is even\n5 is odd\n6 is even\n7 is odd\n8 is even\n9 is divisible by 3\n10 is even\n\n\nWe now know when a number is even and when it is divisible by 3. But what about numbers that are both even and divisible by 3? We just add another condition to the elif statement and enclose each condition in parentheses, so that Python knows how things group together:\n\nfor i in range(1,11):\n    if i % 2 == 0:\n        print(i, \"is even\")\n    elif (i % 2 == 0) and (i % 3 == 0):\n        print(i, \"is even and divisible by 3\")\n    else:\n        print(i, \"is odd\")\n\n1 is odd\n2 is even\n3 is odd\n4 is even\n5 is odd\n6 is even\n7 is odd\n8 is even\n9 is odd\n10 is even\n\n\nWhy did this not work? The number 6 is even and divisible by 3! The reason is that the three statements (if, elif, and else) are being executed in the order that we wrote them down. That means, that Python will first check for each number whether it is even (and nothing more), and if it is, it will follow the instruction to print it and go on to the next number. So, once we arrived at 6, the programm will only check if the number is even. That is not the desired result and we have to make a little change to it. We will switch the conditions in the if and elif statements:\n\nfor i in range(1,11):\n    if (i % 2 == 0) and (i % 3 == 0):\n        print(i, \"is even and divisible by 3\")\n    elif i % 2 == 0:\n        print(i, \"is even\")\n    else:\n        print(i, \"is odd\")\n\n1 is odd\n2 is even\n3 is odd\n4 is even\n5 is odd\n6 is even and divisible by 3\n7 is odd\n8 is even\n9 is odd\n10 is even\n\n\nNow it works! Note that new never specified any conditions for the else statement. This is because whatever follows it will be executed in case none of the conditions in if or elif are met.",
+    "crumbs": [
+      "EXERCISES",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>A Python primer</span>"
+    ]
+  },
+  {
+    "objectID": "ex/02_python_primer.html#functions",
+    "href": "ex/02_python_primer.html#functions",
+    "title": "19  A Python primer",
+    "section": "19.4 Functions",
+    "text": "19.4 Functions\nWith more and more experience in programming, it is likely that your code will become more and more complex. That means that it will become harder to keep track of what every piece of it is supposed to do. A good strategy to deal with this is to aim for writing code that is modular: it can be broken down into smaller units (modules) that are easier to understand. Moreover, it is sometimes necessary to reuse the same code several times. It would, however, be inefficient to write the same lines over and over again. With your code being modular you can wrap the pieces that you need in several places into a function.\nLet’s look at an example! Assume, your (fairly) complex code involves calculating the sum of the squares of two numbers. In Python, we use the + operator to calculate sums and the ** operator to raise a number to a certain power (**2 for the square of a number).\n\nx = 3\ny = 5\n\nsum_of_squares = x**2 + y**2\n\nThe variable sum_of_squares now contains the sum of squares of x=3 and y=5. We can inspect the result by calling the variable:\n\nsum_of_squares \n\n34\n\n\nNow, imagine that you would have to do the same calculation several times for different combinations of values for x and y (and always keeping in mind that this stands in for much more complex examples with several lines of code). We can code this in a function:\n\ndef func_sum_of_squares(x, y):\n    return x**2 + y**2\n\nNow, each time we want to calculate a sum of squares, we can do so by simply invoking\n\nfunc_sum_of_squares(5,4)\n\n41\n\n\nAnd, of course, we could chose a shorter name for the function as well, although I would recommend to always use function names that make clear what the function does:\n\nf = func_sum_of_squares\n\nf(5,4)\n\n41",
+    "crumbs": [
+      "EXERCISES",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>A Python primer</span>"
+    ]
+  },
+  {
+    "objectID": "ex/02_python_primer.html#libraries-youll-love",
+    "href": "ex/02_python_primer.html#libraries-youll-love",
+    "title": "19  A Python primer",
+    "section": "19.5 Libraries you’ll love",
+    "text": "19.5 Libraries you’ll love\nLuckily, you don’t have to programm all functions by yourself. There is a huge community of Python programmers out there that works and collaborates on several libraries. A library is (more or less) simply a collection of certain functions (and some more, but we don’t get into this here). This means, instead of writing a function yourself, you can rely on functions that someone else has programmed.\n\n\n\n\n\n\nCaution\n\n\n\nWhether a Python library or function does actually do what it promises is another story. Popular libraries with tens of thousands of users are very trust-worthy because you can be almost sure that someone would have noticed erroneous behavior. But it is certainly possible that badly-maintained libraries contain errors. So be prudent when using the code of others.\n\n\n\n19.5.1 NumPy\nOne of the most popular Python libaries is NumPy for numerical computations. We will rely a lot on the functions in this library, especially in order to draw random samples—more on this later! To use the functions or variables from this library, they have to be imported so that you can use them. There are several ways to do this. For example, you can import the libary entirely:\n\nimport numpy\n\nNow, you can use the (approximated) value of \\(\\pi\\) stored in this library by typing\n\nnumpy.pi\n\n3.141592653589793\n\n\nA different way is to just import everything from the library by writing\n\nfrom numpy import * \n\nHere, the * stands for ‘everything’. Now, to use the value of \\(\\pi\\) we could simply type\n\npi\n\n3.141592653589793\n\n\nThis is, however discouraged for the following reason: imagine we had another library, numpy2 that also stores the value of \\(\\pi\\), but less precisely (e.g. only as 3.14). If we write\n\nfrom numpy import * \nfrom numpy2 import * \n\nWe would have imported the variables holding the value of \\(\\pi\\) from both libraries. But, because they have the same name pi. In this case, pi would equal 3.14 because we imported numpy2 last. This is confusing and shouldn’t be so! To avoid this, it is better to keep references to imported libraries explicit. In order not to have to type too much (we’re all lazy, after all), we can define an alias for the library.\n\nimport numpy as np\nnp.pi\n\n3.141592653589793\n\n\nAll functions of NumPy are now accessible with the prefix np..\n\n\n19.5.2 Pandas\n[TODO]\n\n\n19.5.3 Matplotlib\n[TODO]\n\n\n19.5.4 Summary\nYou can choose any alias when importing a library (it can even by longer than the library name) but certain conventions have emerged that you’re encouraged to follow. Importing the most commonly used Python libraries for data-science tasks (“The data science triad”), use the following:\n\nimport numpy as np # for numerical computations\nimport pandas as pd # for tabular data \nimport matplotlib.pyplot as plt # for data visualization\n\nWe will use all three of them in the following chapters and you’ll learn to love them.\n\n\n\n\n\n\nConcepts covered\n\n\n\n\nvariables\ntypes (integers, strings, lists, dictionaries)\nfunctions\nlibraries, importing and aliases",
+    "crumbs": [
+      "EXERCISES",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>A Python primer</span>"
     ]
   },
   {
@@ -520,7 +641,7 @@
     "href": "references.html",
     "title": "REFERENCES",
     "section": "",
-    "text": "Budge, H. (1943). A Study of Chord Frequencies\nBased on Music of Representative\nComposers of the Eighteenth and\nNineteenth centuries [PhD thesis]. Columbia\nUniversity.\n\n\nBurgoyne, J. A., Fujinaga, I., & Downie, J. S. (2015). Music\nInformation Retrieval. In A New Companion\nto Digital Humanities (pp. 213–228). John Wiley &\nSons, Ltd. https://doi.org/10.1002/9781118680605.ch15\n\n\nEerola, T. (2025). Music and science: A guide to empirical music\nresearch. Routledge.\n\n\nInskip, C., & Wiering, F. (2015, October). In their own words: Using\ntext analysis to identify musicologists’ attitudes towards technology.\nProceedings of the 16th International Society for\nMusic Information Retrieval Conference,\nMalaga, Spain. (2015).\n\n\nJeppesen, K. (1927). The Style of\nPalestrina and the Dissonance (1st ed.).\nOxford University Press.\n\n\nMüller, M. (2015). Fundamentals of Music Processing:\nAudio, Analysis, Algorithms,\nApplications. Springer International Publishing. https://doi.org/10.1007/978-3-319-21945-5\n\n\nNorman, P. B. (1945). A Quantitative Study of\nHarmonic Similarities in Certain Specified\nWorks of Bach, Beethoven, and\nWagner. C. Fischer, Incorporated.\n\n\nSchaffer, K. (2016). What is computational musicology?\nhttps://medium.com/@krisshaffer/what-is-computational-musicology-f25ee0a65102.\n\n\nSethares, W. A. (2005). Tuning, Timbre,\nSpectrum, Scale (2nd ed.). Springer.\n\n\nShanahan, D., Burgoyne, J. A., & Quinn, I. (Eds.). (2022).\nOxford Handbook of Music and Corpus\nStudies. Oxford University Press.\n\n\nWing, J. M. (2006). Computational thinking. Commun. ACM,\n49(3), 33–35. https://doi.org/10.1145/1118178.1118215",
+    "text": "Budge, Helen. 1943. “A Study of Chord\nFrequencies Based on Music of Representative\nComposers of the Eighteenth and\nNineteenth Centuries.” PhD thesis, Columbia\nUniversity.\n\n\nBurgoyne, John Ashley, Ichiro Fujinaga, and J. Stephen Downie. 2015.\n“Music Information Retrieval.” In A\nNew Companion to Digital Humanities,\n213–28. John Wiley & Sons, Ltd. https://doi.org/10.1002/9781118680605.ch15.\n\n\nEerola, T. 2025. Music and Science: A Guide to Empirical Music\nResearch. SEMPRE Studies in the Psychology of Music.\nLondon, UK: Routledge.\n\n\nInskip, C., and F. Wiering. 2015. “In Their Own Words: Using Text\nAnalysis to Identify Musicologists’ Attitudes Towards\nTechnology.” In Proceedings of the 16th International\nSociety for Music Information Retrieval Conference,\nMalaga, Spain. (2015). Malaga, Spain:\n16th International Society for Music Information Retrieval Conference.\n\n\nJeppesen, Knud. 1927. The Style of\nPalestrina and the Dissonance. 1st ed.\nNew York: Oxford University Press.\n\n\nMüller, Meinard. 2015. Fundamentals of Music\nProcessing: Audio, Analysis,\nAlgorithms, Applications. Springer\nInternational Publishing. https://doi.org/10.1007/978-3-319-21945-5.\n\n\nNorman, Philip B. 1945. A Quantitative Study of\nHarmonic Similarities in Certain Specified\nWorks of Bach, Beethoven, and\nWagner. C. Fischer, Incorporated.\n\n\nSchaffer, Kris. 2016. “What Is Computational Musicology?”\nhttps://medium.com/@krisshaffer/what-is-computational-musicology-f25ee0a65102.\n\n\nSethares, William A. 2005. Tuning, Timbre,\nSpectrum, Scale. 2nd ed. London:\nSpringer.\n\n\nShanahan, Daniel, John Ashley Burgoyne, and Ian Quinn, eds. 2022.\nOxford Handbook of Music and Corpus\nStudies. Oxford: Oxford University Press.\n\n\nWing, Jeannette M. 2006. “Computational Thinking.”\nCommun. ACM 49 (3): 33–35. https://doi.org/10.1145/1118178.1118215.",
     "crumbs": [
       "REFERENCES"
     ]

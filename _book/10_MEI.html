@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; MEI - the body – INTRODUCTION TO DIGITAL MUSICOLOGY</title>
+<title>11&nbsp; MEI – INTRODUCTION TO DIGITAL MUSICOLOGY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_audio.html">MUSIC AS DATA</a></li><li class="breadcrumb-item"><a href="./10_MEI.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI - the body</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_audio.html">MUSIC AS DATA</a></li><li class="breadcrumb-item"><a href="./10_MEI.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -206,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_MEI.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI - the body</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,6 +292,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ex/02_python_primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">A Python primer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ex/03_melody_I.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise for Week X</span></a>
   </div>
@@ -309,15 +315,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#xml" id="toc-xml" class="nav-link active" data-scroll-target="#xml"><span class="header-section-number">11.1</span> XML</a></li>
+  <li><a href="#header-and-body" id="toc-header-and-body" class="nav-link" data-scroll-target="#header-and-body"><span class="header-section-number">11.2</span> Header and body</a></li>
+  <li><a href="#a-minimal-example" id="toc-a-minimal-example" class="nav-link" data-scroll-target="#a-minimal-example"><span class="header-section-number">11.3</span> A minimal example</a></li>
+  <li><a href="#mei-for-digital-scholarly-editions" id="toc-mei-for-digital-scholarly-editions" class="nav-link" data-scroll-target="#mei-for-digital-scholarly-editions"><span class="header-section-number">11.4</span> MEI for digital scholarly editions</a></li>
+  <li><a href="#community" id="toc-community" class="nav-link" data-scroll-target="#community"><span class="header-section-number">11.5</span> Community</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_audio.html">MUSIC AS DATA</a></li><li class="breadcrumb-item"><a href="./10_MEI.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI - the body</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_audio.html">MUSIC AS DATA</a></li><li class="breadcrumb-item"><a href="./10_MEI.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI - the body</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI</span></h1>
 </div>
 
 
@@ -344,31 +360,65 @@ Goal
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Understand basic XML encoding and the skeleton structure of MEI.</p>
+<p>Understand basic XML encoding and the skeleton structure of MEI. Understand the relation between CWMN and the MEI music element.</p>
 </div>
 </div>
-<ul>
-<li>mei friend</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Goal
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Understand the relation between CWMN and the MEI music element.</p>
-</div>
-</div>
+<section id="xml" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="xml"><span class="header-section-number">11.1</span> XML</h2>
+<p>For a computer, text is merely a string of characters, including ‘invisible’ characters such as spaces between words and line breaks. But texts are usually more structured than that. For instance, they can contain headings, sections, subsections or paragraphs; they can be printed onto different pages, and they can change their appearance by including <strong>boldfaced</strong> or <em>italicized</em> text, for example. If we want to encode these structural aspects of texts in machine-readable formats, they need to be explicitly marked up.</p>
+<p>The most popular mark-up language for all sorts of texts is the <em>eXtensible Markup Language</em> (XML). XML documents consist of a so-called XML declaration that tells the computer which structuring elements are available and how to interpret them, as well as several tags and their attributes. This is easily explained with an example:</p>
+<pre class="{xml}"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;message&gt;
+  &lt;greeting&gt;
+    Hello world!
+  &lt;/greeting&gt;
+&lt;/message&gt;</code></pre>
+<p>This example contains two types of elements: <code>message</code> and <code>greeting</code>. Elements work a little bit like parentheses (<code>(</code>, <code>)</code>) or brackets (<code>[</code>, <code>]</code>) because there is (almost) always an opening tag and a closing tag. Closing tags contain a slash (<code>/</code>).</p>
+<p>The example also shows that tags can be hierarchically nested. If the message consisted of several parts, it could be encoded as follows:</p>
+<pre class="{xml}"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;message&gt;
+  &lt;greeting emotion="joyful"&gt;
+    Hello world!
+  &lt;/greeting&gt;
+  &lt;politeness&gt;
+    Sincerely,
+  &lt;/politeness&gt;
+  &lt;!-- This is a comment that the computer will ignore --&gt;
+&lt;/message&gt;</code></pre>
+<p>We say that <code>greeting</code> and <code>politeness</code> are <em>children</em> of <code>message</code> (they are <em>siblings</em>), and <code>greeting</code> is the parent element.</p>
+<p>Elements can contain so-called <em>attributes</em> that modify the element. Attributes are listed only in the opening tag of the element. In the example above, the <code>greeting</code> element contained the attribute <code>@emotion</code> with the <em>value</em> <code>"joyful"</code>. It is customary to add an <code>@</code> when talking about an attribute. Attribute values need to be enclosed in quotation marks (<code>"</code>), see also attributes <code>@version</code> and <code>@encoding</code> of the XML declaration in the first code line.</p>
+</section>
+<section id="header-and-body" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="header-and-body"><span class="header-section-number">11.2</span> Header and body</h2>
+<p>The basic structure of an MEI document conists of two major parts, the <code>head</code> and the <code>music</code>, roughly corresponding to metadata describing the source and the music ‘itself’, respectively.</p>
+<pre class="{xml}"><code>&lt;mei meiversion="5.0"&gt;
+  &lt;meiHead&gt;
+  &lt;!-- metadata goes here --&gt;
+  &lt;/meiHead&gt;
+  &lt;music&gt;
+  &lt;!-- description of musical text goes here --&gt;
+  &lt;/music&gt;
+&lt;/mei&gt;</code></pre>
+</section>
+<section id="a-minimal-example" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="a-minimal-example"><span class="header-section-number">11.3</span> A minimal example</h2>
+</section>
+<section id="mei-for-digital-scholarly-editions" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="mei-for-digital-scholarly-editions"><span class="header-section-number">11.4</span> MEI for digital scholarly editions</h2>
+<p>One of the main reasons for the development of MEI was that existing music encoding standards did not accomodate all needs of music scholars engaged in editing music. Apart from merely representing what is written or printed in a musical score, musicologists understand that musical texts always stand in certain contexts, and that musical sources need commentaries, corrections, and critical treatment more generally. In short, while CWMN is easily represented by other encoding formats such as MusicXML and LilyPond, MEI is the prime candidate for musicological applications due to this critical layer.</p>
+</section>
+<section id="community" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="community"><span class="header-section-number">11.5</span> Community</h2>
+<p>Besides being a digital format for music encoding, MEI is at the same time a community of scholars and practicioners. In fact, the community aspect is very strong, and people very regularly exchange ideas and issues on their Slack communication channel as well in the annual Music Encoding Conference (MEC).</p>
 <ul>
 <li>MuseScore export</li>
 <li>mei friend</li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

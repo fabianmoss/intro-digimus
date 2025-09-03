@@ -7,4 +7,4 @@ Understand how melodic pattern matching works in principle.
 
 - Pattern finding in melodies (Non-Western)
 
-[**Go to the Exercise for Week X**](ex/03_melody_I.ipynb)
+[**Go to the Exercise for Week X**](ex/03_melody_I.qmd)

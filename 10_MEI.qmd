@@ -1,16 +1,106 @@
-# MEI - the body
+# MEI 
 
 ::: {.callout-note}
 # Goal
 Understand basic XML encoding and the skeleton structure of MEI.
-:::
-
-- mei friend
-
-::: {.callout-note}
-# Goal
 Understand the relation between CWMN and the MEI music element.
 :::
+
+## XML 
+
+For a computer, text is merely a string of characters, including 'invisible'
+characters such as spaces between words and line breaks. 
+But texts are usually more structured than that. For instance, they can 
+contain headings, sections, subsections or paragraphs; they can be printed onto 
+different pages, and they can change their appearance by including **boldfaced** 
+or _italicized_ text, for example. If we want to encode these structural aspects of texts 
+in machine-readable formats, they need to be explicitly marked up. 
+
+The most popular mark-up language for all sorts of texts is the _eXtensible Markup Language_ (XML).
+XML documents consist of a so-called XML declaration that tells the computer 
+which structuring elements are available and how to interpret them,
+as well as several tags and their attributes. This is easily explained with an example:
+
+```{xml}
+<?xml version="1.0" encoding="UTF-8"?>
+
+<message>
+  <greeting>
+    Hello world!
+  </greeting>
+</message>
+```
+
+This example contains two types of elements: `message` and `greeting`. 
+Elements work a little bit like parentheses (`(`, `)`) or brackets (`[`, `]`)
+because there is (almost) always an opening tag and a closing tag. 
+Closing tags contain a slash (`/`). 
+
+The example also shows that tags can be hierarchically nested. 
+If the message consisted of several parts, it could be encoded as follows:
+
+```{xml}
+<?xml version="1.0" encoding="UTF-8"?>
+
+<message>
+  <greeting emotion="joyful">
+    Hello world!
+  </greeting>
+  <politeness>
+    Sincerely,
+  </politeness>
+  <!-- This is a comment that the computer will ignore -->
+</message>
+```
+
+We say that `greeting` and `politeness` are _children_ of `message` (they are _siblings_),
+and `greeting` is the parent element. 
+
+Elements can contain so-called _attributes_ that modify the element. 
+Attributes are listed only in the opening tag of the element. In the example 
+above, the `greeting` element contained the attribute `@emotion` with the _value_ `"joyful"`.
+It is customary to add an `@` when talking about an attribute. Attribute values 
+need to be enclosed in quotation marks (`"`), see also attributes `@version` 
+and `@encoding` of the XML declaration in the first code line. 
+
+
+## Header and body 
+
+The basic structure of an MEI document conists of two major parts, the `head` 
+and the `music`, roughly corresponding to metadata describing the source and 
+the music 'itself', respectively. 
+
+```{xml}
+<mei meiversion="5.0">
+  <meiHead>
+  <!-- metadata goes here -->
+  </meiHead>
+  <music>
+  <!-- description of musical text goes here -->
+  </music>
+</mei>
+```
+
+## A minimal example 
+
+## MEI for digital scholarly editions 
+
+One of the main reasons for the development of MEI was that existing music encoding 
+standards did not accomodate all needs of music scholars engaged in editing music. 
+Apart from merely representing what is written or printed in a musical score, 
+musicologists understand that musical texts always stand in certain contexts, and that 
+musical sources need commentaries, corrections, and critical treatment more generally. 
+In short, while CWMN is easily represented by other encoding formats such as MusicXML and LilyPond,
+MEI is the prime candidate for musicological applications due to this critical layer. 
+
+## Community
+
+Besides being a digital format for music encoding, 
+MEI is at the same time a community of scholars and practicioners. 
+In fact, the community aspect is very strong, and 
+people very regularly exchange ideas and issues on their Slack communication channel 
+as well in the annual Music Encoding Conference (MEC). 
+
 
 - MuseScore export
 - mei friend

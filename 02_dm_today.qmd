@@ -69,3 +69,6 @@ the familiarity of the author with those institutions and the people there.
 - Verovio 
 
 ## Study programs and summer schools
+
+
+[**Go to the exercises for Week 2.](ex/02_python_primer.qmd)
