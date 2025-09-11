@@ -4,9 +4,12 @@ In the remainder of the course, we will engage with data and computer code.
 While this is probably new for most of you, there are luckily many tools 
 that can help us to do so more easily. 
 
+The instructions below are fairly general. Learning how to find answers 
+online is an important skill for anyone engaging with digital methods.
+
 1. Create a directory/folder named `intro-digimus` for this course (**note:** no spaces!). 
    You can use any location on your personal computer 
-   or on your J:\ drive provided by the university.
+   or on your `J:` drive provided by the university.
 1. As code editor we will use [Microsoft Visual Studio Code](https://code.visualstudio.com/).
    Install the program on your machine. 
 1. Open the directory you just created and install the Jupyter Extension.
@@ -15,9 +18,10 @@ that can help us to do so more easily.
 
 ::: {.callout-tip}
 # Homework
-1. Read @Schaffer2016. 
-2. Discuss with your peers unclear terms and find answers.
+1. Read @Schaffer2016 and @Pugin2015. 
+2. Discuss with your peers unclear terms and find answers online.
 3. Find aspects of Computational Musicology that you think are 
-   underrepresented in Schaffer's list. 
+   underrepresented in Schaffer's list.
+4. Collaboratively write up a definition for Digital Musicology.
 :::
 
