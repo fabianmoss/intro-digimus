@@ -115,6 +115,15 @@ plt.show()
 ```
 
 ```{python}
+# TODO: Add case study on Mariah Carey's "Fantasy", 
+# 1st female to start on 1 in charts (first ever: Michael Jackson, 
+# You Are Not Alone)
+# Fantasy remained 8 weeks on no. 1, while YANA only one
+# see: https://www.forbes.com/sites/hughmcintyre/2025/09/30/how-mariah-carey-followed-michael-jackson-and-made-chart-history/
+```
+
+
+```{python}
 # TODO: remove lines for missing weeks (gaps in curves)
 # add two cases:
 #  - short duration but high peak
@@ -226,7 +235,7 @@ We assume that once a song has left the Top 100, it is impossible to re-enter (e
 3. 
 
 ```{python}
-# Observation: Genres tend to leave the Top 100 higher than they entered them
+# O
 ```
 
 ```{python}
