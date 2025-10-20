@@ -289,7 +289,7 @@
     "href": "07_audio.html",
     "title": "8  Audio",
     "section": "",
-    "text": "8.1 pure tones\n\\[x(t) = A \\sin(2\\pi ft + phi)\\]",
+    "text": "8.1 pure tones\n\\[x(t) = A \\sin(2\\pi ft + \\phi)\\]",
     "crumbs": [
       "MUSIC AS DATA",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Audio</span>"
@@ -333,7 +333,7 @@
     "href": "08_MIDI.html",
     "title": "9  MIDI",
     "section": "",
-    "text": "Goal\n\n\n\nBe able to name use cases for MIDI. Translate MIDI numbers to pitches.\n\n\nWe have seen last week that the fundamental frequency of complex tones roughly corresponds to what we perceive as pitch. For many musical styles, pitch is one of the most fundamental components, as it is used to construct melodies and harmonies.\nWith the invention of electronic instruments in the 20th century, and the possibility of representing continuous sounds as digital signals, it became important for those instruments to interact and communicate. This led to the development of the Musical Instruments Digital Interface (MIDI) format that is still a cornerstone for music information exchange.\nMIDI is relatively simple: it consists of so-called messages that have five components: - Time (in ticks) - Message (either NOTE ON or NOTE OFF) - Channel (up to 16 for classical MIDI) - Note number (integers between 0 and 127) - Velocity (simulating the speed of pressing down a key, proxy for volume)\nIn that way, MIDI resembles the much older ‘piano roll’ representation for musical notes.\nADD PIANO ROLL IMAGE HERE\nExercise:\n\nTranscribe simple melody to MIDI and plot using pypianoroll.\nDownload multitrack MIDI from the internet and visualize.\nDescribe what can be read from a pianoroll visualization, and what is missing.",
+    "text": "Goal\n\n\n\nBe able to name use cases for MIDI. Translate MIDI numbers to pitches.\n\n\nWe have seen last week that the fundamental frequency of complex tones roughly corresponds to what we perceive as pitch. For many musical styles, pitch is one of the most fundamental components, as it is used to construct melodies and harmonies.\nWith the invention of electronic instruments in the 20th century, and the possibility of representing continuous sounds as digital signals, it became important for those instruments to interact and communicate. This led to the development of the Musical Instruments Digital Interface (MIDI) format that is still a cornerstone for music information exchange.\nMIDI is relatively simple: it consists of so-called messages that have five components:\n\nTime (in ticks)\nMessage (either NOTE ON or NOTE OFF)\nChannel (up to 16 for classical MIDI)\nNote number (integers between 0 and 127)\nVelocity (simulating the speed of pressing down a key, proxy for volume)\n\nIn that way, MIDI resembles the much older ‘piano roll’ representation for musical notes.\nADD PIANO ROLL IMAGE HERE\nExercise:\n\nTranscribe simple melody to MIDI and plot using pypianoroll.\nDownload multitrack MIDI from the internet and visualize.\nDescribe what can be read from a pianoroll visualization, and what is missing.",
     "crumbs": [
       "MUSIC AS DATA",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>MIDI</span>"
