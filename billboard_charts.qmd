@@ -1,0 +1,285 @@
+---
+title: Analyzing song survival
+jupyter: python3
+---
+
+
+In this session, we will analyze songs from the Billboard 100 charts and trace their 'course of life' in the charts.
+
+The data was obtained from [Kaggle](https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs), a large community website for data analysis challenges. 
+
+
+As before, we first import the `pandas` library for data analysis and load the data using the `read_csv` fundtion that takes as its main argument the path to the data file, in our case `charts.csv`. 
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("data/charts.csv")
+```
+
+Inspecting the first 5 lines with the `.head()` method of pandas DataFrames, we obtain an understanding of the structure of the data. 
+
+```{python}
+df.head()
+```
+
+**Think:** What do the columns represent? Provide verbal descriptions of their meaning and write it down.
+
+After this general overview, we might want to achieve a slightly deeper understanding. For instance, it is not difficult to interpret the `date` column, but from only the first few entries, we cannot know the temporal extend of our data. 
+
+Let's find out what the earliest and latest dates are using the `.min()` and `.max()` methods, respectively.
+
+```{python}
+df["date"].min(), df["date"].max()
+```
+
+This tells us that the data stored in `charts.csv` runs from August 1958 to November 2021 and thus allows us to trace the movement of songs in the Billboard charts across more than 60 years.
+
+```{python}
+# Top artists
+df.artist.value_counts()
+```
+
+```{python}
+# Longest in charts
+df.sort_values(by="weeks-on-board", ascending=True).iloc[50_000:]
+```
+
+```{python}
+df["date"] = pd.to_datetime(df["date"])
+```
+
+```{python}
+df[df.artist=="Drake"].song.value_counts()
+```
+
+```{python}
+df[df.artist=="Elton John"].song.value_counts()
+```
+
+```{python}
+def chart_performance(artist, song):
+    data = df[(df["artist"] == artist) & (df["song"] == song)]
+    data = data.sort_values(by="date").reset_index(drop=True)
+    data["date_rel"] = pd.to_timedelta(data["date"] - data["date"][0]).dt.days
+    return data
+```
+
+```{python}
+test_cases = {
+    "Taylor Swift": "You Belong With Me",
+    "Drake": "God's Plan",
+    "Elton John": "Candle In The Wind 1997/Something About The Way You Look Tonight",
+    "The Weeknd": "Blinding Lights",
+    "Elvis Presley": "Please Don't Stop Loving Me"
+}
+```
+
+```{python}
+taylor = chart_performance("Taylor Swift", "You Belong With Me")
+drake = chart_performance("Drake", "God's Plan")
+elton = chart_performance("Elton John", "Candle In The Wind 1997/Something About The Way You Look Tonight")
+weeknd = chart_performance("The Weeknd", "Blinding Lights")
+elvis = chart_performance("Elvis Presley", "Please Don't Stop Loving Me")
+```
+
+```{python}
+_, ax = plt.subplots(figsize=(15,4))
+
+for artist, song in test_cases.items():
+    data = chart_performance(artist, song)
+    x = data["date"].values
+    y = data["rank"].values
+
+    ax.plot(x, y, marker=".", label=f"{song} ({artist})")
+
+plt.gca().invert_yaxis()
+plt.legend()
+plt.show()
+```
+
+```{python}
+_, ax = plt.subplots(figsize=(15,4))
+
+for artist, song in test_cases.items():
+    data = chart_performance(artist, song)
+    x = data["date_rel"].values
+    y = data["rank"].values
+
+    ax.plot(x, y, marker=".", label=f"{song} ({artist})")
+
+plt.gca().invert_yaxis()
+plt.legend()
+plt.show()
+```
+
+```{python}
+# TODO: Add case study on Mariah Carey's "Fantasy", 
+# 1st female to start on 1 in charts (first ever: Michael Jackson, 
+# You Are Not Alone)
+# Fantasy remained 8 weeks on no. 1, while YANA only one
+# see: https://www.forbes.com/sites/hughmcintyre/2025/09/30/how-mariah-carey-followed-michael-jackson-and-made-chart-history/
+```
+
+
+```{python}
+# TODO: remove lines for missing weeks (gaps in curves)
+# add two cases:
+#  - short duration but high peak
+#  - long duration but low peak
+```
+
+```{python}
+# Q: can we predict a song's survival using the features given in the data?
+# --> at least introduce notion of training/test data and discuss the epistemological problem of using 'all' historical 
+# sources for explanation
+```
+
+
+
+
+```{python}
+# Try other data: https://www.kaggle.com/datasets/thedevastator/billboard-hot-100-audio-features
+```
+
+```{python}
+df_charts = pd.read_csv("data/Hot Stuff.csv", index_col=0)
+df_charts["WeekID"] = pd.to_datetime(df_charts["WeekID"])
+```
+
+```{python}
+df_charts.head()
+```
+
+```{python}
+df_audio = pd.read_csv("data/Hot 100 Audio Features.csv", index_col=0)
+```
+
+```{python}
+df_audio.head()
+```
+
+```{python}
+d = df_charts.merge(df_audio)
+```
+
+```{python}
+d.shape
+```
+
+```{python}
+d["WeekID"] = pd.to_datetime(d["WeekID"])
+```
+
+```{python}
+d.sample(10)
+```
+
+```{python}
+## BOOTSTRAP!
+
+# d = d.sample(500_000, replace=True)
+```
+
+```{python}
+d.info()
+```
+
+```{python}
+from IPython.display import Audio, HTML
+```
+
+```{python}
+Audio(url=d.loc[1000,"spotify_track_preview_url"])
+```
+
+```{python}
+def curves(performer, song):
+    data = d[(d.Performer == performer) & (d.Song == song)].sort_values(by="WeekID").reset_index(drop=True)
+    data["date_rel"] = pd.to_timedelta(data["WeekID"] - data["WeekID"][0]).dt.days
+    x = data["date_rel"].values # or date_rel or WeekID
+    y = data["Week Position"].values
+    return x,y
+```
+
+```{python}
+test_cases2 = {
+    "Patty Duke": "Don't Just Stand There",
+    "Ace Of Base": "Don't Turn Around",
+    "Dan + Shay": "Speechless",
+    "YoungBloodZ Featuring Lil Jon": "Damn!",
+    "K-Ci & JoJo": "All My Life",
+    "Trevor Daniel": "Falling"
+}
+```
+
+```{python}
+_, ax = plt.subplots(figsize=(15,4))
+
+for performer, song in test_cases2.items():
+    x,y = curves(performer, song)
+    ax.plot(x, y, marker=".", label=f"{song} ({performer})")
+
+plt.gca().invert_yaxis()
+plt.legend()
+plt.show()
+```
+
+Modeling the life of a song in the Top 100:
+
+We assume that once a song has left the Top 100, it is impossible to re-enter (even though that does happen, of course)
+
+1. Each song has a starting rank $r_0$.
+2. For each following week, there is a bernoulli dropout probability $\theta$ that determines whether a song remains in the charts.
+3. 
+
+```{python}
+# O
+```
+
+```{python}
+entrances = []
+peaks = []
+exits = []
+
+for _, group in d.groupby("SongID"):
+    weeks = group.sort_values(by="WeekID")["Week Position"].values
+    entrances.append(weeks[0])
+    peaks.append(weeks.min())
+    exits.append(weeks[-1])
+```
+
+```{python}
+import numpy as np
+```
+
+```{python}
+# from matplotlib.collections import LineCollection
+```
+
+```{python}
+_, ax = plt.subplots(figsize=(10,4))
+
+K = len(entrances) + 1
+
+for a, b, c in zip(entrances[:K], peaks[:K], exits[:K]):
+    if a != b != c: # remove constants
+        ax.plot([0, 1, 2], [a, b, c], c="k", lw=.5, alpha=.01)
+
+plt.xlim(0,2)
+plt.ylim(0,100)
+plt.gca().invert_yaxis() # smaller is better
+plt.savefig("img/rise-decline.png", dpi=600)
+plt.show()
+```
+
+**OBSERVATION**: At least 3 types:
+
+- constants
+- low in, peak, low out
+- low in, peak, mid out
+
+Try to disentangle what causes the difference
+
+

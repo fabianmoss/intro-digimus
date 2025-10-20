@@ -1,6 +1,7 @@
 project:
   type: book
-
+execute:
+  kernel: python3
 book:
   title: "INTRODUCTION TO DIGITAL MUSICOLOGY"
   author: "Fabian C. Moss"
@@ -17,7 +18,7 @@ book:
     - 04_RISM.qmd
     - 05_spotify_musicbrainz.qmd
     - 06_streaming_industry.qmd
-    - billboard_charts.ipynb
+    - billboard_charts.qmd
   - part: MUSIC AS DATA
     chapters:
     - 07_audio.qmd
@@ -28,8 +29,8 @@ book:
     chapters:
     - 11_dma_harmony.qmd
     - 12_dma_melody.qmd
-    - 04_jazz_solos.ipynb
-    - 05_data-driven_music_history.ipynb
+    - 04_jazz_solos.qmd
+    - 05_data-driven_music_history.qmd
   - part: CRITICAL DIGITAL MUSICOLOGY
     chapters:
     - 13_copyright.qmd
@@ -42,7 +43,8 @@ book:
     - ex/03_melody_I.qmd
   - references.qmd
 
-bibliography: references.bib
+bibliography: static/references.bib
+csl: static/apa.csl
 
 format:
   html:

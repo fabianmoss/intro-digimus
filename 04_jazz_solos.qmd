@@ -1,0 +1,346 @@
+---
+title: Solos in the *Weimar Jazz Database*
+jupyter: python3
+---
+
+
+
+**Disclaimer: I am not the expert here!**
+
+In this session, we will have a look at is the [*Jazzomat Research Project*](https://jazzomat.hfm-weimar.de/) that contains the *Weimar Jazz Database* (WJazzD).
+Let us first browse the site.
+
+One of the outcomes of this research project is the freely-available book:
+
+* Pfleiderer, M., Frieler, K., Abeßer, J., Zaddach, W.-G., & Burkhard, B. (Eds.) (2017). Inside the Jazzomat. New Perspectives for Jazz Research. Mainz: Schott Campus ([Open Access](https://schott-campus.com/jazzomat/)).
+
+```{python}
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+import sqlite3
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style("white")
+sns.set_context("talk")
+```
+
+The WJazzD can be downloaded at https://jazzomat.hfm-weimar.de/download/download.html 
+A local copy of the database is stored at `data/wjazz.db`. We use the `sqlite3` library to connect to this database.
+
+```{python}
+conn = sqlite3.connect("data/wjazzd.db")
+```
+
+```{python}
+conn
+```
+
+We can now use `pandas` to read the data out of the database.
+
+```{python}
+solos = pd.read_sql("SELECT * FROM melody", con=conn)
+```
+
+The `"SELECT * FROM melody"` means "Select everything from the table 'melody' in the database". Let's look at the first ten entries. 
+
+Likewise, we can select the `composition_info` table that contains a lot of metadata for the solos:
+
+```{python}
+solos_meta = pd.read_sql("SELECT * from solo_info", con=conn)
+```
+
+The `.shape` attribute shows us how many solos are in the database.
+
+```{python}
+solos_meta.shape
+```
+
+The `.sample()` method draws a number of rows at random from a DataFrame.
+
+```{python}
+solos_meta.sample(5)
+```
+
+The first rows of a DataFrame can be accessed with the `.head()` method...
+
+```{python}
+solos.head()
+```
+
+... and the last rows with the `.tail()` method.
+
+```{python}
+solos.tail()
+```
+
+As we already know, the `.shape` attribute shows the overall size of the table.
+
+```{python}
+solos.shape
+```
+
+The `solos` table contains 26 columns that cannot be displayed at once. We can have a look at the column names by using the `.columns` attribute.
+
+```{python}
+solos.columns
+```
+
+A description of what these columns contain is stated on the website: https://jazzomat.hfm-weimar.de/dbformat/dbformat.html
+
+For our analyses it will be usefull to have also the name of the performer in the `solos` DataFrame. We create a **dictionary** that maps the `melid` (unique identification number for each solo) to the name of the performer.
+
+```{python}
+mapper = dict( solos_meta[["melid", "performer"]].values )
+mapper
+```
+
+We can now use this dictionary to create a new column `performer` in the `solos` DataFrame.
+
+```{python}
+solos["performer"] = solos["melid"].map(mapper)
+```
+
+```{python}
+solos.head()
+```
+
+```{python}
+solos.tail()
+```
+
+## Melodic arc?
+
+Does the melodic arc also appear in the Jazz solos?
+
+```{python}
+def notelist(melid):
+    
+    solo = solos[solos["melid"] == melid]
+    
+    solo = solo[["pitch", "duration"]]
+    solo["onset"] = solo["duration"].cumsum()
+    return solo
+```
+
+```{python}
+notelist(1)
+```
+
+```{python}
+def plot_melodic_profile(notelist, ax=None, c=None, mean=False, Z=False, sections=False, standardized=False):
+    
+    if ax == None:
+        ax = plt.gca()
+    
+    if standardized:
+        x = notelist["Rel. Onset"]
+        y = notelist["Rel. MIDI Pitch"]
+    else:
+        x = notelist["onset"]
+        y = notelist["pitch"]
+    
+    ax.step(x,y, color=c)
+    
+    if mean:
+        ax.axhline(y.mean(), color="gray", linestyle="--")
+        
+    if sections:
+        for l in [ x.max() * i for i in [ 1/4, 1/2, 3/4] ]:
+            ax.axvline(l, color="gray", linewidth=1, linestyle="--")
+```
+
+```{python}
+fig, axes = plt.subplots(2,2, figsize=(20,9))
+axes = axes.flatten()
+
+plot_melodic_profile(notelist(1), ax=axes[0], mean=True)
+plot_melodic_profile(notelist(77), ax=axes[1], mean=True)
+plot_melodic_profile(notelist(50), ax=axes[2], mean=True)
+plot_melodic_profile(notelist(233), ax=axes[3], mean=True)
+```
+
+```{python}
+def standardize(notelist):
+    """
+    Takes a notelist as input and returns a standardized version.
+    """
+    
+    notelist["Rel. MIDI Pitch"] = (notelist["pitch"] - notelist["pitch"].mean()) / notelist["pitch"].std()
+    notelist["Rel. Duration"] = notelist["duration"] / notelist["duration"].sum()
+    notelist["Rel. Onset"] = notelist["onset"] / notelist["onset"].max()
+    
+    return notelist
+```
+
+```{python}
+standardize(notelist(1))
+```
+
+```{python}
+fig, ax = plt.subplots(figsize=(20,5))
+
+for i in range(4):
+    plot_melodic_profile(standardize(notelist(i)), 
+                         mean=True, 
+                         standardized=True)
+plt.xlim(0,1)
+plt.show()
+```
+
+```{python}
+big_df = pd.concat([standardize(notelist(i)) for i in range(solos_meta.shape[0])])
+```
+
+```{python}
+solos
+```
+
+```{python}
+big_df
+```
+
+```{python}
+solos_meta["performer"].unique()
+```
+
+```{python}
+%%time
+
+fig, ax = plt.subplots(figsize=(12,8))
+
+artists = ["Louis Armstrong"]
+
+# for i, (artist, group) in enumerate(solos.groupby("performer")):
+#     if artist in artists:
+#         for j, group in group.groupby("melid"):
+#             solo = standardize(notelist(j))
+#             x = solo["Rel. Onset"]
+#             y = solo["Rel. MIDI Pitch"]
+#             ax. plot(x,y, lw=.5, c="tab:red", alpha=.5)
+
+for ID in range(solos_meta.shape[0]):
+    solo = standardize(notelist(ID))
+    x = solo["Rel. Onset"]
+    y = solo["Rel. MIDI Pitch"]
+    ax. plot(x,y, lw=.5, c="tab:red", alpha=.05)
+        
+ax.axvline(.25, lw=2, ls="--", c="gray")
+ax.axvline(.5, lw=2, ls="--", c="gray")
+ax.axvline(.75, lw=2, ls="--", c="gray")
+ax.axhline(0, lw=2, ls="--", c="gray")
+
+lowess = sm.nonparametric.lowess
+big_x = big_df["Rel. Onset"]
+big_y = big_df["Rel. MIDI Pitch"]
+big_z = lowess(big_y, big_x, frac=1/10, delta=1/20)
+ax.plot(big_z[:,0], big_z[:,1], c="black", lw=3)
+
+plt.title("Solo wave")
+plt.xlabel("Relative onset")
+plt.ylabel("Pitch deviation")
+plt.xticks(np.linspace(0,1,5))
+plt.yticks(np.linspace(-5,5,11))
+plt.xlim(0,1)
+
+plt.tight_layout()
+plt.savefig("img/jazz_melodic_arc.png")
+plt.show()
+```
+
+## Pitch vs loudness
+
+Above we have already analyzed some melodic profiles and seen that, on average, the Jazz solos tend not to follow the melodic arch on a global scale. Now, we ask whether the pitch of the notes in the solos are related to another important feature of performance: loudness. The WJazzD contains several measures for loudness (compare the columns in the `solos` DataFrame). Here, we focus on the "Median loudness" which is stored in the `loud_med` column.
+
+Let us look at an example. 
+
+```{python}
+example_solo = solos[ solos["melid"] == 233 ][["pitch", "loud_med"]]
+```
+
+```{python}
+example_solo
+```
+
+We can get a visual impression of whether there might be a direct relation between the two features by plotting it and drawing a regression line. For this, the `regplot()` function of the `seaborn` library is well-suited.
+
+```{python}
+sns.regplot(data=example_solo, x="pitch", y="loud_med", line_kws={"color":"black"});
+```
+
+There seems to be no clear relation; no matter how high the pitch, the loudness stays more or less the same. Let's look at another example!
+
+```{python}
+example_solo2 = solos[ solos["melid"] == 333 ][["pitch", "loud_med"]]
+
+sns.regplot(data=example_solo2, x="pitch", y="loud_med", line_kws={"color":"black"});
+```
+
+In this case, there is a positive trend. The higher the pitch, the louder the performer plays. Since we have now two different examples - in one case no relation, in the other case a positive correlation - we should now look at whether there is a trend emerging from all solos taken together.
+
+## The "rain cloud" of Jazz solos
+
+We now take all 200'809 notes from all solos and look at the relation between their pitch and their median loudness.
+
+```{python}
+X = solos[["pitch", "loud_med"]].values
+x = X[:,0]
+y = X[:,1]
+
+fig, ax = plt.subplots(figsize=(16,9))
+ax.scatter(x,y, alpha=0.05)
+
+plt.xlabel("Pitch")
+plt.ylabel("Median loudness [dB]")
+plt.show()
+```
+
+The visual impression is that of a cloud from which rain drops down and forms a puddle. Which trends can we observe?
+
+## Comparing performers
+
+Taking all pieces together was not really informative. Maybe a somewhat closer look brings more to the front. Let us some specific performers whose solos we want to compare.
+
+```{python}
+selected_performers = ["Charlie Parker", "Miles Davis", "Louis Armstrong", "Herbie Hancock", "Von Freeman", "Red Garland"]
+```
+
+```{python}
+grouped_df = solos.groupby("performer")
+```
+
+```{python}
+fig, ax = plt.subplots(figsize=(10,10))
+
+for performer, df in grouped_df:
+    if performer in selected_performers:
+        sns.regplot(
+            data=df, 
+            x="pitch", 
+            y="loud_med", 
+            x_jitter=.1, 
+            y_jitter=.1, 
+            scatter_kws={"alpha":.01, "color":"grey"}, 
+            line_kws={"lw":2},
+            label=performer,
+            scatter=False,
+            ax=ax
+        )
+        
+plt.xlabel("MIDI Pitch")
+plt.ylabel("Median loudness [dB]")
+plt.legend()
+plt.show()
+```
+
+**Observations:**
+
+1. Most performers increase loudness with increasing pitch.
+1. Charlie Parker (sax) and Louis Armstrong (t) show very similar patterns but Armstrong is generally higher.
+1. Miles Davis (t) is similar to the two but plays generally softer than both.
+1. Von Freeman (sax) strongly and Herbie Hancock (p) weakly decrease loudness with increasing pitch (almost all other performers show positive correlations).
+1. Red Garland (p) plays generally lower than Herbie Hancock (p) but does show a positive correlation between pitch and loudness (NB: there is only one solo in the database).
+
+Does this tell us something about performer styles or about instruments?
+

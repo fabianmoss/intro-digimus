@@ -4,3 +4,61 @@
 # Goal
 Understanding monophonic symbolic notation.
 :::
+
+
+A lot of music consists of simple melodies, for example folk songs. 
+Therefore, there are vast repertoires where notating the melodies and some metadata 
+like the title and possibly the composer is sufficient. 
+A popular format is the so-called ABC notation.^[[https://abcnotation.com](https://abcnotation.com/)]
+
+The basics of this notation format are easily 
+understood.^[The following is a summary of the [tutorial by Steve Mansfield](http://www.lesession.co.uk/abc/abc_notation.htm).]
+
+## Pitches
+
+- Pitches in the middle octave (C4 -- B4) are notated by uppercase letters: C D E F G A B.
+- The octave above is notated by lowercase letters. Together the two octaves from C4 to B5 are:
+  C D E F G A B c d e f g a b.
+- The next upper octave gets an apostrophe:
+  C D E F G A B c d e f g a b c' d' e' f' g' a' b' 
+- And the lower octaves are indicated by commas (a bit like inverted apostrophes).
+  C, D, E, F, G, A, B, C D E F G A B c d e f g a b c' d' e' f' g' a' b'.
+- Extending further up or down works by adding commas and apostrophes.
+
+## Durations 
+
+ABC notation consists of two parts: a header with metadata and the body with the melody. 
+We can set the default note duration in the header like so:
+
+```
+L:1/8
+```
+
+This means that the default duration is an eighth note. 
+Other default note duration values can be set analogously.
+Changing note durations during the course of a melody can be done by 
+multiplying or dividing the default value: 
+
+```
+C/2 C2
+```
+
+Let's look at an example. To encode the following melody in the Figure below, 
+we would write:
+
+```
+X:1
+T:Speed The Plough
+M:4/4
+L:1/8
+N:Simple version
+Z:Steve Mansfield 1/2/2000
+K:G
+GABc dedB | dedB dedB | c2ec B2dB | A2A2 A2 BA|
+GABc dedB | dedB dedB | c2ec B2dB | A2A2 G4 ::
+g2g2 g4 | g2fe dBGB | c2ec B2dB | A2A2 A4 |
+g2g2 g4 | g2fe dBGB | c2ec B2dB | A2A2 G4 :|
+```
+
+Melodies encoded in ABC notation can be easily rendered visually 
+using the [abcjs website](https://abcjs.net).
