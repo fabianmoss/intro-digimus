@@ -5,9 +5,9 @@
 Acquiring and overview of current activities in Digital Musicology.
 :::
 
-**TODO:** Summarize findings of  @inskipTheirOwnWords2015.
+**TODO:** Summarize findings of  @inskipTheirOwnWords2015 and @Wiering2025_ImpactPandemicMusicologists
 
-## Istitutions and people
+## Institutions
 
 ::: {.callout-warning}
 Obviously, the following institutional lists 
@@ -23,6 +23,7 @@ the familiarity of the author with those institutions and the people there.
 - Würzburg
 - Erlangen
 - Mainz
+- Halle 
 
 ### Europe 
 
@@ -34,8 +35,16 @@ the familiarity of the author with those institutions and the people there.
 
 ### USA
 
-- Stanford 
+- Stanford
+- MIT
 - Georgia Tech
+
+## Organizations 
+
+- ISMIR
+- IMS Digital Musicology Study group
+- Fachgruppe Digitale Musikwissenschaft 
+- Music Encoding Initiative
 
 ## Current research topics
 
@@ -65,10 +74,11 @@ the familiarity of the author with those institutions and the people there.
 
 ## Important tools
 
+- RISM Online
 - music21 
 - Verovio 
 
-## Study programs and summer schools
+<!-- ## Study programs and summer schools -->
 
 
 [**Go to the exercises for Week 2.](ex/02_python_primer.qmd)
