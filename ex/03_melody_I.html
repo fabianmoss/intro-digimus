@@ -205,12 +205,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Music and the streaming industry</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../billboard_charts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Analyzing song survival</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -225,25 +219,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../07_audio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Audio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Audio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../08_MIDI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">MIDI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">MIDI</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../09_ABC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ABC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ABC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../10_MEI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">MEI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">MEI</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,6 +251,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../billboard_charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Analyzing song survival</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../11_dma_harmony.html" class="sidebar-item-text sidebar-link">
@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This way, each piece can be represented as a list of pitch classes that can then be counted.</p>
 <p>Because it is not straight-forward to work with **kern scores in Python, the data was already transformed into DataFrame format and exported to <code>data.csv</code>.</p>
 <p>First, we need to import sum libraries that contain the functions that we will use for the data analysis. If you do not have one or more of the packages installed, run <code>conda install packages-names</code> in a command-line tool (as adminstrator).</p>
-<div id="7a2918e8" class="cell" data-execution_count="1">
+<div id="5fe78e12" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for numerical computation (we need it to transpose melodies)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># to organize our data in tabular format</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -418,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="step-1-preprocessing">Step 1: Preprocessing</h3>
 <section id="read-the-data-and-create-new-column-that-contains-a-list-of-the-pitches-of-the-melody" class="level4">
 <h4 class="anchored" data-anchor-id="read-the-data-and-create-new-column-that-contains-a-list-of-the-pitches-of-the-melody">Read the data and create new column that contains a list of the pitches of the melody</h4>
-<div id="c48d7119" class="cell" data-execution_count="2">
+<div id="4d6fd917" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"../data/essen_data.csv"</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -487,11 +487,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Wee see that the (preprocessed) data comes with the features <code>region</code>, <code>title</code>, and <code>key</code>, and is represended as <strong>directed generic intervals</strong> (<code>DGIs</code>) and <code>spelled_pitches</code>.</p>
 <p>For this excercise we will only work with the data in the <code>key</code> and <code>spelled_pitches</code> columns. The <code>spelled_pitches</code> entries look like a list of pitches but they are actually strings (<code>'['</code>, <code>','</code> and whitespaces are characters). Therefore we need to first transform it into a representation that we can work with. We will not go into details here but basically we just remove everything that we don’t need from the string until only the spelled pitches are left.</p>
-<div id="2e2da8dc" class="cell" data-execution_count="3">
+<div id="08552366" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'spelled_pitches'</span>] <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">'spelled_pitches'</span>].<span class="bu">str</span>.replace(<span class="st">"', '"</span>, <span class="st">" "</span>).<span class="bu">str</span>.replace(<span class="st">"['"</span>, <span class="st">""</span>).<span class="bu">str</span>.replace(<span class="st">"']"</span>, <span class="st">""</span>).<span class="bu">str</span>.strip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c10ef1c9" class="cell" data-execution_count="4">
+<div id="171521a8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -558,11 +558,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Let’s also drop the columns that we don’t need for this excercise.</p>
-<div id="af479809" class="cell" data-execution_count="5">
+<div id="816aa8e2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> data[<span class="st">'region'</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> data[<span class="st">'DGIs'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="da7aaeab" class="cell" data-execution_count="6">
+<div id="ff7edbca" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -617,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Let us inspect the data bit further with the <code>describe</code> method.</p>
-<div id="e20ad334" class="cell" data-execution_count="7">
+<div id="569b8c34" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -666,7 +666,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>It seems that we have some duplicates with different titles in the dataset. Normally, we should deal with this issue. For now we will treat them as separate songs. Also we can see that apparently there is missing key information for one song. Let’s see where this happens.</p>
-<div id="c52f1167" class="cell" data-execution_count="8">
+<div id="b277c8a2" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data[ data[<span class="st">'key'</span>].isnull() ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -697,13 +697,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Since we have only the title for this song, it doesn’t make much sense to include it into our analysis. We will exclude it and drop this row from the DataFrame.</p>
-<div id="b047803f" class="cell" data-execution_count="9">
+<div id="363475af" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data.drop(<span class="dv">1028</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ed994a68" class="cell" data-execution_count="10">
+<div id="6b6307dd" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c34608e6" class="cell" data-execution_count="11">
+<div id="9f7ea60f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>(9372, 3)</code></pre>
@@ -715,10 +715,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-2-extract-the-root-and-mode-of-the-pieces-and-write-them-in-new-columns" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-extract-the-root-and-mode-of-the-pieces-and-write-them-in-new-columns">Step 2: Extract the root and mode of the pieces and write them in new columns</h2>
 <p>Translate the keys into modes and pitch classes of roots. The easiest way might be to write a dictionary by hand that does the job.</p>
-<div id="91898d6c" class="cell" data-execution_count="12">
+<div id="7d0dfcb8" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">'root'</span>, <span class="st">'mode'</span>]] <span class="op">=</span> data[<span class="st">'key'</span>].<span class="bu">str</span>.split(<span class="st">" "</span>, expand<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d4fbc134" class="cell" data-execution_count="13">
+<div id="a9974803" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -785,7 +785,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>It is always a good idea to inspect the data to understand it better. What are the proportions of major and minor pieces in this dataset?</p>
-<div id="758807d9" class="cell" data-execution_count="14">
+<div id="5001a00e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'mode'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>mode
@@ -794,7 +794,7 @@ minor     984
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="2cd4d519" class="cell" data-execution_count="15">
+<div id="896fca68" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'mode'</span>].value_counts() <span class="op">/</span> <span class="bu">len</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>mode
@@ -803,7 +803,7 @@ minor    0.104994
 Name: count, dtype: float64</code></pre>
 </div>
 </div>
-<div id="9a95a83a" class="cell" data-execution_count="16">
+<div id="c9277033" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'root'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>root
@@ -833,10 +833,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We don’t want to distinguish between the roots of major and minor keys, so we just write all the roots as uppercase letters.</p>
-<div id="dae81277" class="cell" data-execution_count="17">
+<div id="935ca62a" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'root'</span>] <span class="op">=</span> data[<span class="st">'root'</span>].<span class="bu">str</span>.upper()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0359b398" class="cell" data-execution_count="18">
+<div id="312fccac" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'root'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>root
@@ -856,7 +856,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>In order to transpose all the melodies to the same key, we need to know the pitch-class of each root. We will use a pragmatic approach and just explicitly state the information in a dictionary. It is common to define <code>'C'</code> as pitch class <code>0</code>.</p>
-<div id="b0dc8e33" class="cell" data-execution_count="19">
+<div id="76aeccb4" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>roots_dict <span class="op">=</span> { </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'G'</span>:<span class="dv">7</span>,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'F'</span>:<span class="dv">5</span>,</span>
@@ -873,10 +873,10 @@ Name: count, dtype: int64</code></pre>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>No we can translate the roots to pitch classes.</p>
-<div id="eec4a5b9" class="cell" data-execution_count="20">
+<div id="5b728a3a" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'root'</span>] <span class="op">=</span> data[<span class="st">'root'</span>].<span class="bu">map</span>(roots_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="72742333" class="cell" data-execution_count="21">
+<div id="0e5d0238" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>data.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
@@ -946,10 +946,10 @@ Name: count, dtype: int64</code></pre>
 <section id="step-3-create-one-new-column-for-each-pitch-class-in-order-to-extract-pitch-class-counts" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-create-one-new-column-for-each-pitch-class-in-order-to-extract-pitch-class-counts">Step 3: Create one new column for each pitch class in order to extract pitch-class counts</h2>
 <p>First, we transform the melody into a list of spelled pitches.</p>
-<div id="5204a25a" class="cell" data-execution_count="22">
+<div id="a2509fe6" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'spelled_pitches'</span>] <span class="op">=</span> data[<span class="st">'spelled_pitches'</span>].<span class="bu">str</span>.split()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="aa74c6e1" class="cell" data-execution_count="23">
+<div id="f12a500f" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
@@ -1016,7 +1016,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Next, we need a way to transform each pitch to a pitch class. To that end we define a function that takes a spelled pitch (a symbol such as <code>B-5</code>) and returns it’s pitch class as a number between <code>0</code> and <code>12</code>.</p>
-<div id="da11481e" class="cell" data-execution_count="24">
+<div id="937a273b" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spelled_pitch_to_pitch_class(spelled_pitch):</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This function transforms a spelled pitch, such as, `B-5` </span></span>
@@ -1062,7 +1062,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (step <span class="op">+</span> sharps <span class="op">-</span> flats) <span class="op">%</span> <span class="dv">12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the previous step we set up a function that converts spelled pitches into pitch classes. Now we can use it to count all the notes in a piece.</p>
-<div id="f25e8ddb" class="cell" data-execution_count="25">
+<div id="eaca5f84" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First we set up an empty list that will later contain dictionaries of pitch-class counts for each song. </span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>countdicts <span class="op">=</span> []</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1088,7 +1088,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    countdicts.append(intcounts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is what the first 10 entries in the list of pitch-class count dictionaries looks like:</p>
-<div id="4ac86a8c" class="cell" data-execution_count="26">
+<div id="5611074d" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>countdicts[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>[{2: 17, 7: 32, 9: 29, 10: 23, 0: 11, 6: 12, 3: 8, 5: 2, 4: 1},
@@ -1104,10 +1104,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>This is not really convenient. To handle it easier, we transform it to a DataFrame object and set all pitch classes to <code>0</code> if they do not occur in a piece.</p>
-<div id="f137e84a" class="cell" data-execution_count="27">
+<div id="a0a97c29" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> pd.DataFrame(countdicts).fillna(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="57fcfc7d" class="cell" data-execution_count="28">
+<div id="c7ba157c" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>counts.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <div>
@@ -1291,14 +1291,14 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>The DataFrame <code>counts</code> contains now the pitch-class counts for all pieces. We can see if the dimensions of <code>counts</code> and <code>data</code> fit.</p>
-<div id="53910b2e" class="cell" data-execution_count="29">
+<div id="4efd0b90" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>counts.shape, data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>((9372, 12), (9372, 5))</code></pre>
 </div>
 </div>
 <p>But now, longer pieces weight more just because they contain more notes. To avoid that we have to normalize the DataFrame to get relative frequencies.</p>
-<div id="b94eb766" class="cell" data-execution_count="30">
+<div id="938d692f" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>normalized <span class="op">=</span> counts.div(counts.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>normalized.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -1484,7 +1484,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Now we are almoste done with transforming the data in order to answer our question. We still need to transpose all songs into the same key so that we can compare their pitch-class distributions. Let’s think a moment about how this can be done. We have the pitch-class distribution of each song in <code>counts</code>, and we have <code>key</code>, <code>root</code>, and <code>mode</code> in <code>data</code>.</p>
 <p>Let’s say that we want to transpose all songs to the root C. C major and C minor pieces do not have to change. A piece in G major, for instance, has the root <code>7</code> and needs to be transposed to the root <code>0</code>. A piece in Bb minor has the root <code>10</code> and needs do be transposed to the root <code>0</code>. The easiest way to do this is to ‘rotate’ the pitch-class distributions by the negative amount of the root. Luckily, numpy provides the <code>roll</code> function to do exactly that. It takes an array (a vector) and rolls it by the specified amount. We do this for all songs in data and save the result in a new DataFrame <code>transposed</code>.</p>
-<div id="f82bfda9" class="cell" data-execution_count="31">
+<div id="1c926c0f" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>transposed <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    [ np.roll( normalized.iloc[i,:], <span class="op">-</span>data[<span class="st">'root'</span>][i] ) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)) ]</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    )</span>
@@ -1673,16 +1673,16 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>We can already observe that none of the first 10 songs in the dataset has the tritone (pitch class 6), and only one has a minor third (pitch class 3) or a minor seventh (pitch class 10).</p>
 <p>It would be nice not having to work with to DataFrames, <code>data</code> and <code>transposed</code>, so we combine (concatenate) them in a new one, just called <code>df</code>.</p>
-<div id="633415f1" class="cell" data-execution_count="32">
+<div id="d8e7c41f" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([data, transposed], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="071d4ddb" class="cell" data-execution_count="33">
+<div id="83a74047" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>(9372, 17)</code></pre>
 </div>
 </div>
-<div id="427f082f" class="cell" data-execution_count="34">
+<div id="81e2bb81" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <div>
@@ -1828,7 +1828,7 @@ Name: count, dtype: int64</code></pre>
 <li>What do you expect to see?</li>
 <li>Plot a pitch class histogram in chromatic order.</li>
 </ol>
-<div id="6c5199d0" class="cell" data-execution_count="35">
+<div id="cf408749" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>piece <span class="op">=</span> df.iloc[<span class="dv">0</span>,<span class="op">-</span><span class="dv">11</span>:]</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>piece.plot.bar(rot<span class="op">=</span><span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1847,14 +1847,14 @@ Name: count, dtype: int64</code></pre>
 <li>Can you show everything in one figure?</li>
 <li>Would it also make sense to plot averaged pitch class histograms?</li>
 </ol>
-<div id="178534dd" class="cell" data-execution_count="36">
+<div id="ca79b9ba" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>melted <span class="op">=</span> df.melt(id_vars<span class="op">=</span><span class="st">'mode'</span>,</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                 value_vars<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>],</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>                 var_name<span class="op">=</span><span class="st">'pitch_classes'</span>,</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>                 value_name<span class="op">=</span><span class="st">'relative_frequencies'</span></span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="66aaa7a0" class="cell" data-execution_count="37">
+<div id="6d1fc1d3" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>melted.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <div>
@@ -1908,13 +1908,13 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="5f20f6b8" class="cell" data-execution_count="38">
+<div id="5cacbb15" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>melted.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>(112464, 3)</code></pre>
 </div>
 </div>
-<div id="e039cb07" class="cell" data-execution_count="39">
+<div id="4c7cd2c9" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>melted, </span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>               x<span class="op">=</span><span class="st">'pitch_classes'</span>, </span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>               y<span class="op">=</span><span class="st">'relative_frequencies'</span>, </span>
@@ -1939,10 +1939,10 @@ Name: count, dtype: int64</code></pre>
 <li>Create the plot.</li>
 <li>What do you see?</li>
 </ol>
-<div id="21df0bdc" class="cell" data-execution_count="40">
+<div id="162a10bf" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>melted[<span class="st">'fifths'</span>] <span class="op">=</span> melted[<span class="st">'pitch_classes'</span>] <span class="op">*</span> <span class="dv">7</span> <span class="op">%</span> <span class="dv">12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="72e79946" class="cell" data-execution_count="41">
+<div id="9997eca2" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>melted, </span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>               x<span class="op">=</span><span class="st">'fifths'</span>, </span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>               y<span class="op">=</span><span class="st">'relative_frequencies'</span>, </span>
@@ -1965,7 +1965,7 @@ Name: count, dtype: int64</code></pre>
 <li>Decide to either use error bars, boxplots, or violin plots. What is the difference between them? Violin plots are of cause the most fancy figures…</li>
 <li>Describe what you see.</li>
 </ol>
-<div id="22e41d57" class="cell" data-execution_count="42">
+<div id="709dc43b" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">10</span>))</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>melted,</span>
@@ -1983,7 +1983,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>These boxplots show already much more! For example, they reveal that there are many outliers which we can’t see in the bar plot. https://www.autodeskresearch.com/publications/samestats</p>
-<div id="e7c8224e" class="cell" data-execution_count="43">
+<div id="a38e0637" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">10</span>))</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>melted,</span>
