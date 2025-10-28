@@ -299,13 +299,13 @@ np.pi
 
 All functions of NumPy are now accessible with the prefix `np.`. 
 
-### Pandas
-
-[TODO]
-
-### Matplotlib
-
-[TODO]
+<!-- ### Pandas -->
+<!---->
+<!-- [TODO] -->
+<!---->
+<!-- ### Matplotlib -->
+<!---->
+<!-- [TODO] -->
 
 ### Summary
 
@@ -319,10 +319,14 @@ import matplotlib.pyplot as plt # for data visualization
 
 We will use all three of them in the following chapters and you'll learn to love them.
 
-:::{.callout-tip title="Concepts covered"}
-
+::: {.callout-note title="Concepts covered"}
 * variables
 * types (integers, strings, lists, dictionaries)
 * functions
 * libraries, importing and aliases
 :::
+
+::: {.callout-tip title="Homework"}
+Read @inskipTheirOwnWords2015 and @Wiering2025_ImpactPandemicMusicologists and summarize their findings.
+:::
+

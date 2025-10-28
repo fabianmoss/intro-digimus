@@ -5,7 +5,6 @@
 Acquiring and overview of current activities in Digital Musicology.
 :::
 
-**TODO:** Summarize findings of  @inskipTheirOwnWords2015 and @Wiering2025_ImpactPandemicMusicologists
 
 ## Institutions
 
@@ -23,36 +22,37 @@ the familiarity of the author with those institutions and the people there.
 - Würzburg
 - Erlangen
 - Mainz
-- Halle 
+- Halle
 
 ### Europe 
 
-- Queen Mary 
+- London
 - Linz
 - Barcelona
-- DCML 
+- Lausanne 
 - Amsterdam
 
-### USA
+### International
 
 - Stanford
 - MIT
 - Georgia Tech
+- McGill
 
 ## Organizations 
 
-- ISMIR
-- IMS Digital Musicology Study group
-- Fachgruppe Digitale Musikwissenschaft 
-- Music Encoding Initiative
+- International Society for Music Information Retrieval (ISMIR)
+- International Musicological Society (IMS): Digital Musicology Study Group
+- Fachgruppe Digitale Musikwissenschaft der Gesellschaft für Musikforschung (GfM)
+- Music Encoding Initiative (MEI)
 
-## Current research topics
+<!-- ## Current research topics -->
 
 ## Central journals and conferences
 
 ### Journals 
 
-- EMR 
+- Empirical Musicology Review
 - Music Perception 
 - Musicae Scientiae 
 - Music & Science 
@@ -61,16 +61,15 @@ the familiarity of the author with those institutions and the people there.
 
 ### Conferences 
 
-- IMS Digital Musicology 
-- ISMIR 
-- DLfM 
-- ICMPC 
-- ICCCM
-- CMMR 
-- CHR 
-- SMC 
-- MEC 
-- DH Conference
+- ISMIR Conference
+- Digital Libraries for Musicology (DLfM) 
+- International Conference on Music Perception and Cognition (ICMPC)
+- International Conference on Computational and Cognitive Musicology (ICCCM)
+- Computer Music Multidisciplinary Research (CMMR)
+- Computational Humanities Research (CHR) 
+- Sound and Music Computing Conference (SMC)
+- Music Encoding Conference (MEC) 
+<!-- - DH Conference -->
 
 ## Important tools
 
@@ -81,4 +80,4 @@ the familiarity of the author with those institutions and the people there.
 <!-- ## Study programs and summer schools -->
 
 
-[**Go to the exercises for Week 2.](ex/02_python_primer.qmd)
+[**Go to the exercises for Week 2.**](ex/02_python_primer.qmd)
