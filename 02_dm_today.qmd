@@ -20,9 +20,10 @@ the familiarity of the author with those institutions and the people there.
 
 - Paderborn/Detmold
 - Würzburg
-- Erlangen
-- Mainz
-- Halle
+  - [Juniorprofessur für Digitale Musikphilologie und Musiktheorie](https://www.musikwissenschaft.uni-wuerzburg.de/team/moss)
+  - [Professur für Computational Humanities](https://www.caidas.uni-wuerzburg.de/ch/)
+- [Erlangen AudioLabs](https://www.audiolabs-erlangen.de/)
+- [Halle: Juniorprofessur für Musikwissenschaft, Edition und Digital Humanties](https://www.musikwiss.uni-halle.de/team/dennis_ried/)
 
 ### Europe 
 
@@ -41,10 +42,10 @@ the familiarity of the author with those institutions and the people there.
 
 ## Organizations 
 
-- International Society for Music Information Retrieval (ISMIR)
-- International Musicological Society (IMS): Digital Musicology Study Group
-- Fachgruppe Digitale Musikwissenschaft der Gesellschaft für Musikforschung (GfM)
-- Music Encoding Initiative (MEI)
+- [International Society for Music Information Retrieval (ISMIR)](https://ismir.net/)
+- [International Musicological Society (IMS): Digital Musicology Study Group](https://digital.musicology.org/)
+- [Fachgruppe Digitale Musikwissenschaft der Gesellschaft für Musikforschung (GfM)](https://www.musikforschung.de/digitale-musikwissenschaft/)
+- [Music Encoding Initiative (MEI)](https://music-encoding.org/)
 
 <!-- ## Current research topics -->
 
@@ -52,23 +53,23 @@ the familiarity of the author with those institutions and the people there.
 
 ### Journals 
 
-- Empirical Musicology Review
-- Music Perception 
-- Musicae Scientiae 
-- Music & Science 
-- Music Theory Online 
-- Music Theory Spectrum 
+- [Empirical Musicology Review](https://emusicology.org/)
+- [Music Perception](https://online.ucpress.edu/mp)
+- [Musicae Scientiae](https://journals.sagepub.com/home/MSX)
+- [Music & Science](https://journals.sagepub.com/home/mns)
+- [Music Theory Online](https://www.mtosmt.org/)
+- [Music Theory Spectrum](https://academic.oup.com/mts/) 
 
 ### Conferences 
 
-- ISMIR Conference
-- Digital Libraries for Musicology (DLfM) 
-- International Conference on Music Perception and Cognition (ICMPC)
-- International Conference on Computational and Cognitive Musicology (ICCCM)
-- Computer Music Multidisciplinary Research (CMMR)
-- Computational Humanities Research (CHR) 
-- Sound and Music Computing Conference (SMC)
-- Music Encoding Conference (MEC) 
+- [ISMIR Conference](https://ismir.net/conferences/)
+- [Digital Libraries for Musicology (DLfM)](https://dlfm.web.ox.ac.uk/)
+- [International Conference on Music Perception and Cognition (ICMPC)](https://icmpc.org/icmpc_upcoming_conference.html)
+- [International Conference on Computational and Cognitive Musicology (ICCCM)](https://digital.musicology.org/conferences/)
+- [Computer Music Multidisciplinary Research (CMMR)](https://cmmr2025.prism.cnrs.fr/)
+- [Computational Humanities Research (CHR)](https://computational-humanities-research.org/)
+- [Sound and Music Computing Conference (SMC)](https://smc25.iem.at/)
+- [Music Encoding Conference (MEC)](https://music-encoding.org/conference/past.html)
 <!-- - DH Conference -->
 
 ## Important tools
