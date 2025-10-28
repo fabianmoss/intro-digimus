@@ -19,11 +19,15 @@ the familiarity of the author with those institutions and the people there.
 ### Germany
 
 - Paderborn/Detmold
+  - [Professur für Musikwissenschaft / Digitale Edition / Digital Humanities](https://www.uni-paderborn.de/person/61139)
+  - [Professur für Digitale Methoden der Musik- und Medienedition](https://www.muwi-detmold-paderborn.de/personen/professuren/prof-dr-anna-plaksin)
 - Würzburg
   - [Juniorprofessur für Digitale Musikphilologie und Musiktheorie](https://www.musikwissenschaft.uni-wuerzburg.de/team/moss)
   - [Professur für Computational Humanities](https://www.caidas.uni-wuerzburg.de/ch/)
-- [Erlangen AudioLabs](https://www.audiolabs-erlangen.de/)
-- [Halle: Juniorprofessur für Musikwissenschaft, Edition und Digital Humanties](https://www.musikwiss.uni-halle.de/team/dennis_ried/)
+- Erlangen
+  - [AudioLabs](https://www.audiolabs-erlangen.de/)
+- Halle
+  - [Juniorprofessur für Musikwissenschaft, Edition und Digital Humanties](https://www.musikwiss.uni-halle.de/team/dennis_ried/)
 
 ### Europe 
 
