@@ -455,18 +455,18 @@ Note
 <section id="variables-and-types" class="level2">
 <h2 class="anchored" data-anchor-id="variables-and-types">Variables and types</h2>
 <p>Variable assignment in Python is straight-forward. You choose a name for the variable, and assign a value to it using the <code>=</code> operator, for example:</p>
-<div id="a593844e" class="cell" data-execution_count="1">
+<div id="e2b27100" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>assigns the value <code>100</code> to the variable <code>x</code>. If we call the variable now, we can see that it has the value we assigned to it:</p>
-<div id="8d883cf3" class="cell" data-execution_count="2">
+<div id="dd856a46" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>100</code></pre>
 </div>
 </div>
 <p>Of course, we can also assign things other than numbers, for example:</p>
-<div id="d69016d5" class="cell" data-execution_count="3">
+<div id="a0ba59d7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Fabian"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What we assigned to the variable <code>name</code> is called a <em>string</em>, it has the value <code>"Fabian"</code>. Strings are sequences of characters.</p>
@@ -484,19 +484,19 @@ Tip
 </div>
 </div>
 <p>We can also assign a list of things to a variable:</p>
-<div id="1705ea3d" class="cell" data-execution_count="4">
+<div id="f3ddd783" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mylist <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lists are enclosed by square brackets. As you can see, Python allows you to store any kind of data in lists (here: integer numbers and character strings). However, it is good practice to include only items of the same type in lists—you’ll understand later why.</p>
 <p>Another structured data type in python are dictionaries. Dictionaries are collections of key-value pairs. For example, a dictionary <code>addresses</code> could store the email addresses of certain people:</p>
-<div id="c2f93ecc" class="cell" data-execution_count="5">
+<div id="cbeb8dde" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>addresses <span class="op">=</span> {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Andrew"</span> : <span class="st">"andrew@example.com"</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Zoe"</span> : <span class="st">"zoe@example.com"</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, if we wanted to look up Zoe’s email address, we could to so with:</p>
-<div id="4fb8fb26" class="cell" data-execution_count="6">
+<div id="5ed01e6c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>addresses[<span class="st">"Zoe"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'zoe@example.com'</code></pre>
@@ -507,7 +507,7 @@ Tip
 <h2 class="anchored" data-anchor-id="on-repeat">On repeat</h2>
 <p>Coding something is only useful if you can’t do the job as fast or as efficient by yourself. Especially when it comes to repeating the same little thing many, many times, knowing how to code comes in handy.</p>
 <p>As a simple example, imagine you want to write down all numbers from 1 to 10, or from 1 to 100, or… you get the idea. In Python, you would do it as follows:</p>
-<div id="0b021b70" class="cell" data-execution_count="7">
+<div id="8ea4fe18" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -526,7 +526,7 @@ Tip
 <p>You see that this is not exactly what we wanted. We’re seeing numbers from 0 to 9, each one being printed on a new line. But what we wanted was all numbers from 1 to 10. Before we fix the code to produce the desired result, let’s explain the bits and pieces of the code above.</p>
 <p>What we just did was to use a so-called <em>for-loop</em>, probably the most common way to repeat things in Python. First we create an <em>iterator variable</em> <code>i</code> (we could have named any other variable name as well), which takes its value from the list of numbers specified by <code>range(10)</code>. If only one number <code>n</code> is provided to <code>range(n)</code>, it will enumerate all numbers from 0 to <code>n-1</code>. If instead two arguments are provided, the first one determines the starting number, and the second one stands for the terminating number minus one—confusing, right?</p>
 <p>So, in order to enumerate all numbers from 1 to 10, we have to write <code>range(1,11)</code>. Additionally, we can use the <code>end</code> keyword of the <code>print</code> function that allows us to print all numbers in one line, separated only by a single white space instead of each one on a new line.</p>
-<div id="e66db457" class="cell" data-execution_count="8">
+<div id="5d7e0eeb" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -538,7 +538,7 @@ Tip
 <section id="just-in-case" class="level2">
 <h2 class="anchored" data-anchor-id="just-in-case">Just in case</h2>
 <p>Often we encounter a situation where we would execute some code <strong>only if</strong> certain conditions are met. In python, this is done with the <code>if</code> statement. For example, if we want to only print the even numbers in the range from 1 to 10, we could adapt the code from above as follows:</p>
-<div id="23574d83" class="cell" data-execution_count="9">
+<div id="2ef134ee" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">"is even"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -552,7 +552,7 @@ Tip
 </div>
 <p>You can read this as “if the remainder of dividing i by 2 is zero, then print ‘i is even’”.</p>
 <p>Now, we could also want to print a similar statement in the case that <code>i</code> is odd:</p>
-<div id="ede873ac" class="cell" data-execution_count="10">
+<div id="df4f6a82" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">"is even"</span>)</span>
@@ -572,7 +572,7 @@ Tip
 </div>
 </div>
 <p>And, finally, we could also have more than just one condition. An if-statement allows for arbitrary many if-else clauses, with which we can formulate several different conditions by writing <code>elif</code> (shorthand for ‘or else if’):</p>
-<div id="7268435b" class="cell" data-execution_count="11">
+<div id="7b8c244f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">"is even"</span>)</span>
@@ -594,7 +594,7 @@ Tip
 </div>
 </div>
 <p>We now know when a number is even and when it is divisible by 3. But what about numbers that are <em>both</em> even <em>and</em> divisible by 3? We just add another condition to the <code>elif</code> statement and enclose each condition in parentheses, so that Python knows how things group together:</p>
-<div id="34915ebf" class="cell" data-execution_count="12">
+<div id="d75a2f1b" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">"is even"</span>)</span>
@@ -616,7 +616,7 @@ Tip
 </div>
 </div>
 <p>Why did this not work? The number 6 is even <em>and</em> divisible by 3! The reason is that the three statements (<code>if</code>, <code>elif</code>, and <code>else</code>) are being executed in the order that we wrote them down. That means, that Python will first check for each number whether it is even (and nothing more), and if it is, it will follow the instruction to print it and go on to the next number. So, once we arrived at 6, the programm will only check if the number is even. That is not the desired result and we have to make a little change to it. We will switch the conditions in the <code>if</code> and <code>elif</code> statements:</p>
-<div id="7d7410a2" class="cell" data-execution_count="13">
+<div id="0e461b08" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>) <span class="kw">and</span> (i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>):</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">"is even and divisible by 3"</span>)</span>
@@ -643,33 +643,33 @@ Tip
 <h2 class="anchored" data-anchor-id="functions">Functions</h2>
 <p>With more and more experience in programming, it is likely that your code will become more and more complex. That means that it will become harder to keep track of what every piece of it is supposed to do. A good strategy to deal with this is to aim for writing code that is <em>modular</em>: it can be broken down into smaller units (modules) that are easier to understand. Moreover, it is sometimes necessary to reuse the same code several times. It would, however, be inefficient to write the same lines over and over again. With your code being modular you can wrap the pieces that you need in several places into a <em>function</em>.</p>
 <p>Let’s look at an example! Assume, your (fairly) complex code involves calculating the sum of the squares of two numbers. In Python, we use the <code>+</code> operator to calculate sums and the <code>**</code> operator to raise a number to a certain power (<code>**2</code> for the square of a number).</p>
-<div id="2a1e6152" class="cell" data-execution_count="14">
+<div id="e695a96e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>sum_of_squares <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The variable <code>sum_of_squares</code> now contains the sum of squares of <code>x=3</code> and <code>y=5</code>. We can inspect the result by calling the variable:</p>
-<div id="a8885be0" class="cell" data-execution_count="15">
+<div id="1be86fbc" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sum_of_squares </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>34</code></pre>
 </div>
 </div>
 <p>Now, imagine that you would have to do the same calculation several times for different combinations of values for <code>x</code> and <code>y</code> (and always keeping in mind that this stands in for much more complex examples with several lines of code). We can code this in a function:</p>
-<div id="1516ef2a" class="cell" data-execution_count="16">
+<div id="4d65c113" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func_sum_of_squares(x, y):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, each time we want to calculate a sum of squares, we can do so by simply invoking</p>
-<div id="6ab90435" class="cell" data-execution_count="17">
+<div id="7df61ab8" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>func_sum_of_squares(<span class="dv">5</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>41</code></pre>
 </div>
 </div>
 <p>And, of course, we could chose a shorter name for the function as well, although I would recommend to always use function names that make clear what the function does:</p>
-<div id="26ae477b" class="cell" data-execution_count="18">
+<div id="6f3e1561" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> func_sum_of_squares</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">5</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -697,34 +697,34 @@ Caution
 <section id="numpy" class="level3">
 <h3 class="anchored" data-anchor-id="numpy">NumPy</h3>
 <p>One of the most popular Python libaries is <a href="https://numpy.org/">NumPy</a> for numerical computations. We will rely a lot on the functions in this library, especially in order to draw random samples—more on this later! To use the functions or variables from this library, they have to be <em>imported</em> so that you can use them. There are several ways to do this. For example, you can import the libary entirely:</p>
-<div id="528dfa97" class="cell" data-execution_count="19">
+<div id="1e7c5e9c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, you can use the (approximated) value of <span class="math inline">\(\pi\)</span> stored in this library by typing</p>
-<div id="bb275e70" class="cell" data-execution_count="20">
+<div id="26832e6c" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>numpy.pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>3.141592653589793</code></pre>
 </div>
 </div>
 <p>A different way is to just import everything from the library by writing</p>
-<div id="ae99ed98" class="cell" data-execution_count="21">
+<div id="0e302b62" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here, the <code>*</code> stands for ‘everything’. Now, to use the value of <span class="math inline">\(\pi\)</span> we could simply type</p>
-<div id="9ecb668d" class="cell" data-execution_count="22">
+<div id="d5315d16" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>3.141592653589793</code></pre>
 </div>
 </div>
 <p>This is, however discouraged for the following reason: imagine we had another library, <code>numpy2</code> that also stores the value of <span class="math inline">\(\pi\)</span>, but less precisely (e.g.&nbsp;only as <code>3.14</code>). If we write</p>
-<div id="38c9b0d8" class="cell" data-execution_count="23">
+<div id="e893bf3f" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span> </span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy2 <span class="im">import</span> <span class="op">*</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We would have imported the variables holding the value of <span class="math inline">\(\pi\)</span> from both libraries. But, because they have the same name <code>pi</code>. In this case, <code>pi</code> would equal <code>3.14</code> because we imported <code>numpy2</code> last. This is confusing and shouldn’t be so! To avoid this, it is better to keep references to imported libraries explicit. In order not to have to type too much (we’re all lazy, after all), we can define an alias for the library.</p>
-<div id="4f209c36" class="cell" data-execution_count="24">
+<div id="a09c2450" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>np.pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
@@ -743,7 +743,7 @@ Caution
 <section id="summary" class="level3">
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
 <p>You can choose any alias when importing a library (it can even by longer than the library name) but certain conventions have emerged that you’re encouraged to follow. Importing the most commonly used Python libraries for data-science tasks (“The data science triad”), use the following:</p>
-<div id="0423c548" class="cell" data-execution_count="25">
+<div id="291087d5" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for numerical computations</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for tabular data </span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for data visualization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
