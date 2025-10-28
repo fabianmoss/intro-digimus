@@ -409,14 +409,14 @@ window.Quarto = {
 <p>In this session, we will analyze songs from the Billboard 100 charts and trace their ‘course of life’ in the charts.</p>
 <p>The data was obtained from <a href="https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs">Kaggle</a>, a large community website for data analysis challenges.</p>
 <p>As before, we first import the <code>pandas</code> library for data analysis and load the data using the <code>read_csv</code> fundtion that takes as its main argument the path to the data file, in our case <code>charts.csv</code>.</p>
-<div id="8efed934" class="cell" data-execution_count="1">
+<div id="d822b33f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/charts.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Inspecting the first 5 lines with the <code>.head()</code> method of pandas DataFrames, we obtain an understanding of the structure of the data.</p>
-<div id="7c621b51" class="cell" data-execution_count="2">
+<div id="83fab4e4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -495,14 +495,14 @@ window.Quarto = {
 <p><strong>Think:</strong> What do the columns represent? Provide verbal descriptions of their meaning and write it down.</p>
 <p>After this general overview, we might want to achieve a slightly deeper understanding. For instance, it is not difficult to interpret the <code>date</code> column, but from only the first few entries, we cannot know the temporal extend of our data.</p>
 <p>Let’s find out what the earliest and latest dates are using the <code>.min()</code> and <code>.max()</code> methods, respectively.</p>
-<div id="2c7006f5" class="cell" data-execution_count="3">
+<div id="3a4c58c7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"date"</span>].<span class="bu">min</span>(), df[<span class="st">"date"</span>].<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>('1958-08-04', '2021-11-06')</code></pre>
 </div>
 </div>
 <p>This tells us that the data stored in <code>charts.csv</code> runs from August 1958 to November 2021 and thus allows us to trace the movement of songs in the Billboard charts across more than 60 years.</p>
-<div id="8604f233" class="cell" data-execution_count="4">
+<div id="38111a4a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top artists</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.artist.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -521,7 +521,7 @@ The Shins                                                          1
 Name: count, Length: 10205, dtype: int64</code></pre>
 </div>
 </div>
-<div id="cffc44a8" class="cell" data-execution_count="5">
+<div id="03b32aea" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Longest in charts</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.sort_values(by<span class="op">=</span><span class="st">"weeks-on-board"</span>, ascending<span class="op">=</span><span class="va">True</span>).iloc[<span class="dv">50_000</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -659,10 +659,10 @@ Name: count, Length: 10205, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="5a263365" class="cell" data-execution_count="6">
+<div id="beae3c25" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"date"</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">"date"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="01b65043" class="cell" data-execution_count="7">
+<div id="de6e6a27" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[df.artist<span class="op">==</span><span class="st">"Drake"</span>].song.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>song
@@ -680,7 +680,7 @@ Shot For Me             1
 Name: count, Length: 108, dtype: int64</code></pre>
 </div>
 </div>
-<div id="f151b23a" class="cell" data-execution_count="8">
+<div id="f130ad03" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[df.artist<span class="op">==</span><span class="st">"Elton John"</span>].song.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>song
@@ -745,14 +745,14 @@ Border Song                                                                     
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="3bf07ea6" class="cell" data-execution_count="9">
+<div id="bcfaac4c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chart_performance(artist, song):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> df[(df[<span class="st">"artist"</span>] <span class="op">==</span> artist) <span class="op">&amp;</span> (df[<span class="st">"song"</span>] <span class="op">==</span> song)]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> data.sort_values(by<span class="op">=</span><span class="st">"date"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">"date_rel"</span>] <span class="op">=</span> pd.to_timedelta(data[<span class="st">"date"</span>] <span class="op">-</span> data[<span class="st">"date"</span>][<span class="dv">0</span>]).dt.days</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="66d80af4" class="cell" data-execution_count="10">
+<div id="4314378f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>test_cases <span class="op">=</span> {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Taylor Swift"</span>: <span class="st">"You Belong With Me"</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Drake"</span>: <span class="st">"God's Plan"</span>,</span>
@@ -761,14 +761,14 @@ Name: count, dtype: int64</code></pre>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Elvis Presley"</span>: <span class="st">"Please Don't Stop Loving Me"</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="128742db" class="cell" data-execution_count="11">
+<div id="026f5db1" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>taylor <span class="op">=</span> chart_performance(<span class="st">"Taylor Swift"</span>, <span class="st">"You Belong With Me"</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>drake <span class="op">=</span> chart_performance(<span class="st">"Drake"</span>, <span class="st">"God's Plan"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>elton <span class="op">=</span> chart_performance(<span class="st">"Elton John"</span>, <span class="st">"Candle In The Wind 1997/Something About The Way You Look Tonight"</span>)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>weeknd <span class="op">=</span> chart_performance(<span class="st">"The Weeknd"</span>, <span class="st">"Blinding Lights"</span>)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>elvis <span class="op">=</span> chart_performance(<span class="st">"Elvis Presley"</span>, <span class="st">"Please Don't Stop Loving Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8600ffbb" class="cell" data-execution_count="12">
+<div id="fb969d1d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> artist, song <span class="kw">in</span> test_cases.items():</span>
@@ -789,7 +789,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="976fad0b" class="cell" data-execution_count="13">
+<div id="cdbf4f43" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> artist, song <span class="kw">in</span> test_cases.items():</span>
@@ -810,32 +810,32 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="56b416fc" class="cell" data-execution_count="14">
+<div id="b1e2919e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add case study on Mariah Carey's "Fantasy", </span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st female to start on 1 in charts (first ever: Michael Jackson, </span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># You Are Not Alone)</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fantasy remained 8 weeks on no. 1, while YANA only one</span></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># see: https://www.forbes.com/sites/hughmcintyre/2025/09/30/how-mariah-carey-followed-michael-jackson-and-made-chart-history/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6f2d1080" class="cell" data-execution_count="15">
+<div id="00c56511" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: remove lines for missing weeks (gaps in curves)</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add two cases:</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  - short duration but high peak</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  - long duration but low peak</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="84d4bf13" class="cell" data-execution_count="16">
+<div id="fbc4f221" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q: can we predict a song's survival using the features given in the data?</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># --&gt; at least introduce notion of training/test data and discuss the epistemological problem of using 'all' historical </span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sources for explanation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ecdb5a72" class="cell" data-execution_count="17">
+<div id="ac4ca7ed" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try other data: https://www.kaggle.com/datasets/thedevastator/billboard-hot-100-audio-features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c6372995" class="cell" data-execution_count="18">
+<div id="1a4716f4" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_charts <span class="op">=</span> pd.read_csv(<span class="st">"data/Hot Stuff.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df_charts[<span class="st">"WeekID"</span>] <span class="op">=</span> pd.to_datetime(df_charts[<span class="st">"WeekID"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c1f65fb0" class="cell" data-execution_count="19">
+<div id="76ba9c27" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_charts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
@@ -942,10 +942,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="489d8a92" class="cell" data-execution_count="20">
+<div id="65275ed4" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_audio <span class="op">=</span> pd.read_csv(<span class="st">"data/Hot 100 Audio Features.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e29af984" class="cell" data-execution_count="21">
+<div id="48d54089" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df_audio.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
@@ -1130,19 +1130,19 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="30bee76e" class="cell" data-execution_count="22">
+<div id="da86f61d" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> df_charts.merge(df_audio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6049aa86" class="cell" data-execution_count="23">
+<div id="dd72ee88" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>d.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>(330208, 29)</code></pre>
 </div>
 </div>
-<div id="bd6f0d1a" class="cell" data-execution_count="24">
+<div id="36ded30f" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"WeekID"</span>] <span class="op">=</span> pd.to_datetime(d[<span class="st">"WeekID"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1e5363e8" class="cell" data-execution_count="25">
+<div id="637aa46a" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>d.sample(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <div>
@@ -1177,233 +1177,233 @@ Name: count, dtype: int64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">301506</td>
-<td>http://www.billboard.com/charts/hot-100/2007-0...</td>
-<td>2007-05-05</td>
-<td>59</td>
-<td>Doe Boy Fresh</td>
-<td>Three 6 Mafia Featuring Chamillionaire</td>
-<td>Doe Boy FreshThree 6 Mafia Featuring Chamillio...</td>
-<td>2</td>
-<td>56.0</td>
-<td>54</td>
-<td>7</td>
-<td>...</td>
-<td>-5.728</td>
-<td>1.0</td>
-<td>0.1310</td>
-<td>0.263000</td>
-<td>0.000000</td>
-<td>0.0624</td>
-<td>0.750</td>
-<td>152.329</td>
-<td>4.0</td>
-<td>47.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">179741</td>
-<td>http://www.billboard.com/charts/hot-100/1973-0...</td>
-<td>1973-08-18</td>
-<td>87</td>
-<td>Jimmy Loves Mary-Anne</td>
-<td>Looking Glass</td>
-<td>Jimmy Loves Mary-AnneLooking Glass</td>
+<td data-quarto-table-cell-role="th">234517</td>
+<td>http://www.billboard.com/charts/hot-100/1981-0...</td>
+<td>1981-09-26</td>
+<td>55</td>
+<td>Love On A Two Way Street</td>
+<td>Stacy Lattisaw</td>
+<td>Love On A Two Way StreetStacy Lattisaw</td>
 <td>1</td>
-<td>88.0</td>
-<td>87</td>
-<td>5</td>
+<td>46.0</td>
+<td>26</td>
+<td>15</td>
 <td>...</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">65673</td>
-<td>http://www.billboard.com/charts/hot-100/1973-1...</td>
-<td>1973-10-06</td>
-<td>81</td>
-<td>Slippin' Away</td>
-<td>Jean Shepard</td>
-<td>Slippin' AwayJean Shepard</td>
-<td>1</td>
-<td>85.0</td>
-<td>81</td>
-<td>4</td>
-<td>...</td>
-<td>-8.389</td>
+<td>-13.638</td>
 <td>1.0</td>
-<td>0.0281</td>
-<td>0.811000</td>
-<td>0.000002</td>
-<td>0.1960</td>
-<td>0.802</td>
-<td>113.365</td>
-<td>4.0</td>
-<td>28.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">323461</td>
-<td>https://www.billboard.com/charts/hot-100/2018-...</td>
-<td>2018-04-14</td>
-<td>76</td>
-<td>Five More Minutes</td>
-<td>Scotty McCreery</td>
-<td>Five More MinutesScotty McCreery</td>
-<td>1</td>
-<td>72.0</td>
-<td>44</td>
-<td>17</td>
-<td>...</td>
-<td>-4.933</td>
-<td>1.0</td>
-<td>0.0282</td>
-<td>0.257000</td>
-<td>0.000001</td>
-<td>0.1090</td>
-<td>0.278</td>
-<td>156.034</td>
-<td>4.0</td>
-<td>67.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">105987</td>
-<td>http://www.billboard.com/charts/hot-100/1991-0...</td>
-<td>1991-06-22</td>
-<td>39</td>
-<td>Every Heartbeat</td>
-<td>Amy Grant</td>
-<td>Every HeartbeatAmy Grant</td>
-<td>1</td>
-<td>53.0</td>
-<td>39</td>
-<td>2</td>
-<td>...</td>
-<td>-3.834</td>
-<td>1.0</td>
-<td>0.0429</td>
-<td>0.288000</td>
-<td>0.000000</td>
-<td>0.1190</td>
-<td>0.808</td>
-<td>126.956</td>
+<td>0.0274</td>
+<td>0.372</td>
+<td>0.002750</td>
+<td>0.1140</td>
+<td>0.501</td>
+<td>140.213</td>
 <td>4.0</td>
 <td>41.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">49512</td>
-<td>http://www.billboard.com/charts/hot-100/1966-0...</td>
-<td>1966-01-08</td>
-<td>89</td>
-<td>Spanish Harlem</td>
-<td>King Curtis</td>
-<td>Spanish HarlemKing Curtis</td>
+<td data-quarto-table-cell-role="th">257470</td>
+<td>http://www.billboard.com/charts/hot-100/1987-0...</td>
+<td>1987-01-03</td>
+<td>64</td>
+<td>I'll Be Over You</td>
+<td>Toto</td>
+<td>I'll Be Over YouToto</td>
 <td>1</td>
-<td>98.0</td>
-<td>89</td>
-<td>3</td>
+<td>64.0</td>
+<td>11</td>
+<td>19</td>
 <td>...</td>
-<td>-13.296</td>
+<td>-17.850</td>
 <td>1.0</td>
-<td>0.0428</td>
-<td>0.565000</td>
-<td>0.015600</td>
-<td>0.1070</td>
-<td>0.519</td>
-<td>124.880</td>
+<td>0.0256</td>
+<td>0.062</td>
+<td>0.000000</td>
+<td>0.2580</td>
+<td>0.412</td>
+<td>82.168</td>
 <td>4.0</td>
-<td>11.0</td>
+<td>69.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">82542</td>
-<td>http://www.billboard.com/charts/hot-100/1962-0...</td>
-<td>1962-01-27</td>
-<td>80</td>
-<td>There'll Be No Next Time</td>
-<td>Jackie Wilson</td>
-<td>There'll Be No Next TimeJackie Wilson</td>
-<td>1</td>
-<td>87.0</td>
-<td>80</td>
+<td data-quarto-table-cell-role="th">280313</td>
+<td>http://www.billboard.com/charts/hot-100/1999-0...</td>
+<td>1999-02-13</td>
+<td>91</td>
+<td>Kiss Me</td>
+<td>Sixpence None The Richer</td>
+<td>Kiss MeSixpence None The Richer</td>
+<td>2</td>
+<td>NaN</td>
+<td>91</td>
 <td>2</td>
 <td>...</td>
-<td>-8.702</td>
+<td>-6.964</td>
 <td>1.0</td>
-<td>0.0291</td>
-<td>0.785000</td>
-<td>0.000007</td>
-<td>0.1330</td>
-<td>0.524</td>
-<td>82.745</td>
-<td>3.0</td>
-<td>1.0</td>
+<td>0.0283</td>
+<td>0.023</td>
+<td>0.000002</td>
+<td>0.0692</td>
+<td>0.421</td>
+<td>99.982</td>
+<td>4.0</td>
+<td>78.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">192108</td>
-<td>http://www.billboard.com/charts/hot-100/1988-1...</td>
-<td>1988-10-15</td>
-<td>8</td>
-<td>Don't Be Cruel</td>
-<td>Bobby Brown</td>
-<td>Don't Be CruelBobby Brown</td>
+<td data-quarto-table-cell-role="th">229020</td>
+<td>http://www.billboard.com/charts/hot-100/1993-0...</td>
+<td>1993-03-27</td>
+<td>12</td>
+<td>Hip Hop Hooray</td>
+<td>Naughty By Nature</td>
+<td>Hip Hop HoorayNaughty By Nature</td>
 <td>1</td>
-<td>11.0</td>
+<td>12.0</td>
 <td>8</td>
-<td>13</td>
+<td>9</td>
 <td>...</td>
-<td>-12.277</td>
-<td>1.0</td>
-<td>0.0565</td>
-<td>0.000127</td>
-<td>0.000031</td>
-<td>0.2350</td>
-<td>0.717</td>
-<td>102.398</td>
+<td>-13.652</td>
+<td>0.0</td>
+<td>0.1010</td>
+<td>0.102</td>
+<td>0.000000</td>
+<td>0.2720</td>
+<td>0.765</td>
+<td>99.201</td>
 <td>4.0</td>
-<td>51.0</td>
+<td>66.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">295108</td>
-<td>http://www.billboard.com/charts/hot-100/1960-0...</td>
-<td>1960-08-27</td>
-<td>15</td>
-<td>Yogi</td>
-<td>The Ivy Three</td>
-<td>YogiThe Ivy Three</td>
+<td data-quarto-table-cell-role="th">316072</td>
+<td>http://www.billboard.com/charts/hot-100/1993-0...</td>
+<td>1993-09-25</td>
+<td>47</td>
+<td>Dre Day</td>
+<td>Dr. Dre</td>
+<td>Dre DayDr. Dre</td>
 <td>1</td>
-<td>47.0</td>
-<td>15</td>
-<td>4</td>
+<td>44.0</td>
+<td>8</td>
+<td>20</td>
 <td>...</td>
-<td>-7.116</td>
-<td>1.0</td>
-<td>0.0352</td>
-<td>0.699000</td>
-<td>0.000000</td>
-<td>0.1870</td>
-<td>0.845</td>
-<td>120.966</td>
-<td>4.0</td>
-<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">275136</td>
-<td>http://www.billboard.com/charts/hot-100/1982-0...</td>
-<td>1982-07-10</td>
-<td>87</td>
-<td>867-5309/jenny</td>
-<td>Tommy Tutone</td>
-<td>867-5309/jennyTommy Tutone</td>
+<td data-quarto-table-cell-role="th">197580</td>
+<td>http://www.billboard.com/charts/hot-100/1959-0...</td>
+<td>1959-03-07</td>
+<td>31</td>
+<td>With The Wind And The Rain In Your Hair</td>
+<td>Pat Boone</td>
+<td>With The Wind And The Rain In Your HairPat Boone</td>
 <td>1</td>
-<td>69.0</td>
-<td>4</td>
-<td>25</td>
+<td>26.0</td>
+<td>21</td>
+<td>9</td>
+<td>...</td>
+<td>-17.590</td>
+<td>1.0</td>
+<td>0.0395</td>
+<td>0.973</td>
+<td>0.904000</td>
+<td>0.8130</td>
+<td>0.551</td>
+<td>88.358</td>
+<td>4.0</td>
+<td>15.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">148702</td>
+<td>http://www.billboard.com/charts/hot-100/1994-0...</td>
+<td>1994-07-02</td>
+<td>36</td>
+<td>Whatta Man</td>
+<td>Salt-N-Pepa Featuring En Vogue</td>
+<td>Whatta ManSalt-N-Pepa Featuring En Vogue</td>
+<td>1</td>
+<td>33.0</td>
+<td>3</td>
+<td>24</td>
+<td>...</td>
+<td>-10.722</td>
+<td>1.0</td>
+<td>0.2190</td>
+<td>0.154</td>
+<td>0.000061</td>
+<td>0.2260</td>
+<td>0.921</td>
+<td>173.208</td>
+<td>4.0</td>
+<td>61.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">38975</td>
+<td>http://www.billboard.com/charts/hot-100/1963-1...</td>
+<td>1963-11-30</td>
+<td>54</td>
+<td>Rags To Riches</td>
+<td>Sunny &amp; The Sunliners</td>
+<td>Rags To RichesSunny &amp; The Sunliners</td>
+<td>1</td>
+<td>66.0</td>
+<td>54</td>
+<td>3</td>
+<td>...</td>
+<td>-9.694</td>
+<td>1.0</td>
+<td>0.0368</td>
+<td>0.294</td>
+<td>0.000854</td>
+<td>0.3790</td>
+<td>0.650</td>
+<td>129.909</td>
+<td>3.0</td>
+<td>13.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">155998</td>
+<td>http://www.billboard.com/charts/hot-100/1975-1...</td>
+<td>1975-11-01</td>
+<td>13</td>
+<td>Something Better To Do</td>
+<td>Olivia Newton-John</td>
+<td>Something Better To DoOlivia Newton-John</td>
+<td>1</td>
+<td>15.0</td>
+<td>13</td>
+<td>7</td>
+<td>...</td>
+<td>-8.834</td>
+<td>1.0</td>
+<td>0.0317</td>
+<td>0.582</td>
+<td>0.000083</td>
+<td>0.1070</td>
+<td>0.421</td>
+<td>107.355</td>
+<td>4.0</td>
+<td>15.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">116282</td>
+<td>http://www.billboard.com/charts/hot-100/2007-1...</td>
+<td>2007-11-17</td>
+<td>37</td>
+<td>Soulja Girl</td>
+<td>Soulja Boy Tell'em Featuring I-15</td>
+<td>Soulja GirlSoulja Boy Tell'em Featuring I-15</td>
+<td>1</td>
+<td>36.0</td>
+<td>36</td>
+<td>5</td>
 <td>...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -1423,12 +1423,12 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="871a0350" class="cell" data-execution_count="26">
+<div id="60dd9f61" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">## BOOTSTRAP!</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># d = d.sample(500_000, replace=True)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="04ec8f6d" class="cell" data-execution_count="27">
+<div id="e012711b" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>d.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1469,10 +1469,10 @@ dtypes: datetime64[ns](1), float64(15), int64(4), object(9)
 memory usage: 73.1+ MB</code></pre>
 </div>
 </div>
-<div id="8a07c2e6" class="cell" data-execution_count="28">
+<div id="9bf85dce" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Audio, HTML</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="90386e99" class="cell" data-execution_count="29">
+<div id="c35cca7e" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Audio(url<span class="op">=</span>d.loc[<span class="dv">1000</span>,<span class="st">"spotify_track_preview_url"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 
@@ -1483,7 +1483,7 @@ memory usage: 73.1+ MB</code></pre>
               
 </div>
 </div>
-<div id="4bb46a59" class="cell" data-execution_count="30">
+<div id="bb63625b" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> curves(performer, song):</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> d[(d.Performer <span class="op">==</span> performer) <span class="op">&amp;</span> (d.Song <span class="op">==</span> song)].sort_values(by<span class="op">=</span><span class="st">"WeekID"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">"date_rel"</span>] <span class="op">=</span> pd.to_timedelta(data[<span class="st">"WeekID"</span>] <span class="op">-</span> data[<span class="st">"WeekID"</span>][<span class="dv">0</span>]).dt.days</span>
@@ -1491,7 +1491,7 @@ memory usage: 73.1+ MB</code></pre>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> data[<span class="st">"Week Position"</span>].values</span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x,y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ed2eaf34" class="cell" data-execution_count="31">
+<div id="6f2f30a4" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>test_cases2 <span class="op">=</span> {</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Patty Duke"</span>: <span class="st">"Don't Just Stand There"</span>,</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ace Of Base"</span>: <span class="st">"Don't Turn Around"</span>,</span>
@@ -1501,7 +1501,7 @@ memory usage: 73.1+ MB</code></pre>
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Trevor Daniel"</span>: <span class="st">"Falling"</span></span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0403f973" class="cell" data-execution_count="32">
+<div id="a7a5785f" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> performer, song <span class="kw">in</span> test_cases2.items():</span>
@@ -1526,10 +1526,10 @@ memory usage: 73.1+ MB</code></pre>
 <li>For each following week, there is a bernoulli dropout probability <span class="math inline">\(\theta\)</span> that determines whether a song remains in the charts.</li>
 <li></li>
 </ol>
-<div id="5a98c0b9" class="cell" data-execution_count="33">
+<div id="fabc0248" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="654a5c85" class="cell" data-execution_count="34">
+<div id="33d5b28a" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>entrances <span class="op">=</span> []</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>peaks <span class="op">=</span> []</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>exits <span class="op">=</span> []</span>
@@ -1540,13 +1540,13 @@ memory usage: 73.1+ MB</code></pre>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    peaks.append(weeks.<span class="bu">min</span>())</span>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    exits.append(weeks[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f99bd26e" class="cell" data-execution_count="35">
+<div id="6004a3be" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="81b2b4f6" class="cell" data-execution_count="36">
+<div id="bfbe2385" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from matplotlib.collections import LineCollection</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="12fc65ad" class="cell" data-execution_count="37">
+<div id="2647b2ca" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="bu">len</span>(entrances) <span class="op">+</span> <span class="dv">1</span></span>
