@@ -38,10 +38,11 @@ Note that `"Fabian"` is enclosed by double-quotes.
 Why is this the case? Why could we not just type `name = Fabian`?
 :::
 
-We can also assign a list of things to a variable:
+We can also assign a list of things to a variable, including other variables:
 
 ```{python}
-mylist = [1, 2, 3, "A", "B", "C"]
+mylist = [1, 2, 3, "A", "B", "C", name]
+print(mylist)
 ```
 
 Lists are enclosed by square brackets. As you can see, Python allows you 
