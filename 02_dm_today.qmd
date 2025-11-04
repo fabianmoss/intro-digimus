@@ -28,14 +28,19 @@ the familiarity of the author with those institutions and the people there.
   - [AudioLabs](https://www.audiolabs-erlangen.de/)
 - Halle
   - [Juniorprofessur für Musikwissenschaft, Edition und Digital Humanties](https://www.musikwiss.uni-halle.de/team/dennis_ried/)
+- Weimar
+- Karlsruhe
+- Hamburg
 
 ### Europe 
 
 - London
 - Linz
 - Barcelona
-- Lausanne 
+- Lausanne
 - Amsterdam
+- Porto
+- Prague
 
 ### International
 
@@ -43,6 +48,8 @@ the familiarity of the author with those institutions and the people there.
 - MIT
 - Georgia Tech
 - McGill
+- Kyushu
+- Syney
 
 ## Organizations 
 
