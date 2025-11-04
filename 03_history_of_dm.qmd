@@ -5,3 +5,9 @@
 Knowing the beginnings and the major stages of DM.
 :::
 
+::: {.callout-tip title="Homework"}
+Read @hankinsonNavigatingRISMData2024 and summarize their findings as 
+perparation for next week.
+:::
+
+
