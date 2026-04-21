@@ -427,7 +427,7 @@ window.Quarto = {
 </header>
 
 
-<div id="421b5af1" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="1">
+<div id="490296dd" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for working with tabular data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="dv">500</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for plotting</span></span>
@@ -444,28 +444,28 @@ window.Quarto = {
 </section>
 <section id="a-bit-of-theory" class="level2" data-number="15.2">
 <h2 data-number="15.2" class="anchored" data-anchor-id="a-bit-of-theory"><span class="header-section-number">15.2</span> A bit of theory</h2>
-<div id="54d8d5a5" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="2">
+<div id="3ada9b4b" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>note_names <span class="op">=</span> <span class="bu">list</span>(<span class="st">"FCGDAEB"</span>) <span class="co"># diatonic note names in fifths ordering</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>note_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>['F', 'C', 'G', 'D', 'A', 'E', 'B']</code></pre>
 </div>
 </div>
-<div id="d081bef6" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="3">
+<div id="8262e300" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>accidentals <span class="op">=</span> [<span class="st">"bb"</span>, <span class="st">"b"</span>, <span class="st">""</span>, <span class="st">"#"</span>, <span class="st">"##"</span>] <span class="co"># up to two accidentals is suffient here</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>accidentals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>['bb', 'b', '', '#', '##']</code></pre>
 </div>
 </div>
-<div id="423b7af8" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="4">
+<div id="783dd90f" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> [ n <span class="op">+</span> a <span class="cf">for</span> a <span class="kw">in</span> accidentals <span class="cf">for</span> n <span class="kw">in</span> note_names ] <span class="co"># lof = "Line of Fifths"</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lof)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['Fbb', 'Cbb', 'Gbb', 'Dbb', 'Abb', 'Ebb', 'Bbb', 'Fb', 'Cb', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F', 'C', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#', 'B#', 'F##', 'C##', 'G##', 'D##', 'A##', 'E##', 'B##']</code></pre>
 </div>
 </div>
-<div id="09621a9e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="5">
+<div id="a9a62002" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(lof) <span class="co"># how long is this line-of-fifths segment?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>35</code></pre>
@@ -484,7 +484,7 @@ window.Quarto = {
 <li>approx. spans 600 years of music history</li>
 <li>does not contain complete pieces but only counts of tonal pitch-classes</li>
 </ul>
-<div id="02e790b7" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="6">
+<div id="dbac50a3" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># to work with tabular data</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/DCMLab/TP3C/master/tp3c.tsv"</span></span>
@@ -550,64 +550,14 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">970</td>
-<td>Ockeghem</td>
-<td>JeanDe</td>
-<td>Missa Ecce Ancilla Domini</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Gloria</td>
-<td>1497.0</td>
-<td>NaN</td>
-<td>ELVIS</td>
-<td>1497.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>7</td>
-<td>167</td>
-<td>271</td>
-<td>333</td>
-<td>248</td>
-<td>206</td>
-<td>197</td>
-<td>172</td>
-<td>7</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1759</td>
+<td data-quarto-table-cell-role="th">1733</td>
 <td>Corelli</td>
 <td>Arcangelo</td>
 <td>12 Trio Sonatas</td>
 <td>Op.</td>
 <td>3</td>
-<td>7</td>
-<td>2.0</td>
+<td>12</td>
+<td>3.0</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>1689.0</td>
@@ -627,19 +577,19 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>2</td>
-<td>35</td>
-<td>66</td>
-<td>43</td>
-<td>64</td>
-<td>88</td>
-<td>84</td>
-<td>51</td>
-<td>12</td>
-<td>8</td>
-<td>20</td>
-<td>3</td>
 <td>0</td>
+<td>0</td>
+<td>3</td>
+<td>78</td>
+<td>174</td>
+<td>141</td>
+<td>91</td>
+<td>87</td>
+<td>97</td>
+<td>71</td>
+<td>8</td>
+<td>0</td>
+<td>8</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -649,20 +599,20 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">402</td>
-<td>Alkan</td>
-<td>Charles Valentin</td>
-<td>Préludes</td>
-<td>Op.</td>
-<td>31</td>
-<td>24</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">878</td>
+<td>Rue</td>
+<td>Pierre de la</td>
+<td>Missa Sub tuum presidium</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>1846.0</td>
 <td>NaN</td>
-<td>MS</td>
-<td>1846.0</td>
+<td>NaN</td>
+<td>Benedictus</td>
+<td>1485.0</td>
+<td>NaN</td>
+<td>ELVIS</td>
+<td>1485.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -671,74 +621,24 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
-<td>2</td>
-<td>2</td>
-<td>9</td>
-<td>13</td>
-<td>100</td>
-<td>214</td>
-<td>103</td>
-<td>179</td>
-<td>347</td>
-<td>337</td>
-<td>250</td>
-<td>153</td>
-<td>83</td>
-<td>150</td>
-<td>87</td>
-<td>36</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
 <td>18</td>
 <td>11</td>
-<td>6</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">287</td>
-<td>Alkan</td>
-<td>Charles Valentin</td>
-<td>Esquisses</td>
-<td>Op.</td>
-<td>63</td>
-<td>40</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1861.0</td>
-<td>NaN</td>
-<td>MS</td>
-<td>1861.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>3</td>
-<td>1</td>
-<td>9</td>
-<td>23</td>
-<td>31</td>
-<td>53</td>
-<td>44</td>
-<td>37</td>
-<td>29</td>
-<td>30</td>
 <td>11</td>
-<td>8</td>
-<td>3</td>
+<td>18</td>
+<td>21</td>
+<td>29</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -750,19 +650,19 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">136</td>
-<td>Chopin</td>
-<td>Frédéric</td>
-<td>Nocturnes</td>
+<td data-quarto-table-cell-role="th">62</td>
+<td>Beethoven</td>
+<td>Ludwig van</td>
+<td>Piano Sonatas</td>
 <td>Op.</td>
-<td>62</td>
-<td>1</td>
+<td>22</td>
 <td>NaN</td>
-<td>2 Nocturnes</td>
-<td>1846.0</td>
+<td>2.0</td>
+<td>Piano Sonata No. 11</td>
+<td>1800.0</td>
 <td>NaN</td>
 <td>MS</td>
-<td>1846.0</td>
+<td>1800.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -770,29 +670,29 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>12</td>
-<td>13</td>
-<td>8</td>
-<td>40</td>
-<td>48</td>
-<td>95</td>
-<td>48</td>
-<td>58</td>
-<td>69</td>
-<td>54</td>
-<td>46</td>
-<td>55</td>
-<td>174</td>
-<td>258</td>
-<td>307</td>
-<td>193</td>
-<td>241</td>
-<td>286</td>
-<td>152</td>
-<td>29</td>
-<td>20</td>
+<td>7</td>
+<td>35</td>
+<td>51</td>
+<td>35</td>
+<td>213</td>
+<td>402</td>
+<td>453</td>
+<td>237</td>
+<td>148</td>
+<td>308</td>
+<td>188</td>
+<td>67</td>
+<td>33</td>
+<td>38</td>
 <td>16</td>
-<td>9</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -800,14 +700,14 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1947</td>
+<td data-quarto-table-cell-role="th">1942</td>
 <td>Mozart</td>
 <td>Wolfgang Amadeus</td>
 <td>Sonaten</td>
 <td>KV</td>
-<td>283</td>
-<td>5</td>
-<td>3.0</td>
+<td>282</td>
+<td>4</td>
+<td>1.0</td>
 <td>NaN</td>
 <td>1774.0</td>
 <td>NaN</td>
@@ -821,229 +721,329 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>3</td>
+<td>14</td>
+<td>18</td>
+<td>77</td>
+<td>158</td>
+<td>188</td>
+<td>150</td>
+<td>94</td>
+<td>111</td>
+<td>105</td>
+<td>43</td>
+<td>23</td>
+<td>10</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1333</td>
+<td>Schumann</td>
+<td>Robert</td>
+<td>Liederkreis</td>
+<td>Op.</td>
+<td>39</td>
+<td>5</td>
+<td>NaN</td>
+<td>Mondnacht</td>
+<td>1840.0</td>
+<td>1842.0</td>
+<td>OSLC</td>
+<td>1840.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>35</td>
+<td>128</td>
+<td>191</td>
+<td>380</td>
+<td>108</td>
+<td>168</td>
+<td>164</td>
+<td>49</td>
+<td>6</td>
+<td>19</td>
+<td>13</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">430</td>
+<td>Victoria</td>
+<td>TomasLuisde</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Aestimatus sunt</td>
+<td>NaN</td>
+<td>1585.0</td>
+<td>ELVIS</td>
+<td>1585.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>15</td>
+<td>0</td>
+<td>0</td>
+<td>16</td>
+<td>48</td>
+<td>35</td>
+<td>35</td>
+<td>71</td>
+<td>84</td>
+<td>48</td>
+<td>10</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">239</td>
+<td>Alkan</td>
+<td>Charles Valentin</td>
+<td>Préludes</td>
+<td>Op.</td>
+<td>31</td>
+<td>7</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1846.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1846.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>6</td>
+<td>0</td>
+<td>11</td>
+<td>232</td>
+<td>365</td>
+<td>316</td>
+<td>169</td>
+<td>159</td>
+<td>240</td>
+<td>111</td>
+<td>4</td>
+<td>6</td>
+<td>13</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">364</td>
+<td>Beethoven</td>
+<td>Ludwig van</td>
+<td>Piano Sonatas</td>
+<td>Op.</td>
+<td>53</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>Piano Sonata No. 21</td>
+<td>1803.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1803.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>8</td>
-<td>9</td>
-<td>29</td>
-<td>183</td>
-<td>367</td>
-<td>317</td>
-<td>245</td>
-<td>184</td>
-<td>269</td>
-<td>199</td>
-<td>70</td>
-<td>33</td>
-<td>32</td>
-<td>38</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">135</td>
-<td>Bach</td>
-<td>Johann Sebastian</td>
-<td>Wohltemperiertes Klavier II</td>
-<td>BWV</td>
-<td>888</td>
-<td>1</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1740.0</td>
-<td>NaN</td>
-<td>MS</td>
-<td>1740.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>2</td>
-<td>32</td>
-<td>92</td>
-<td>132</td>
-<td>117</td>
-<td>91</td>
-<td>103</td>
-<td>106</td>
-<td>68</td>
-<td>12</td>
-<td>10</td>
-<td>9</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">733</td>
-<td>Dufay</td>
-<td>Guillaume</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Gloria ad modum tube</td>
-<td>1474.0</td>
-<td>NaN</td>
-<td>ELVIS</td>
-<td>1474.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>22</td>
-<td>256</td>
-<td>214</td>
-<td>75</td>
-<td>56</td>
-<td>88</td>
-<td>62</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1367</td>
-<td>Scriabin</td>
-<td>Alexander</td>
-<td>Préludes</td>
-<td>Op.</td>
-<td>15</td>
-<td>2</td>
-<td>NaN</td>
-<td>5 Preludes</td>
-<td>1896.0</td>
-<td>NaN</td>
-<td>DCML</td>
-<td>1896.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>9</td>
-<td>44</td>
-<td>70</td>
-<td>38</td>
-<td>71</td>
-<td>103</td>
-<td>121</td>
-<td>52</td>
-<td>14</td>
-<td>3</td>
-<td>31</td>
-<td>15</td>
-<td>3</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1513</td>
-<td>Mussorgsky</td>
-<td>Modest</td>
-<td>Pictures at an Exhibition</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Tuileries</td>
-<td>NaN</td>
-<td>1874.0</td>
-<td>MS</td>
-<td>1874.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>24</td>
-<td>23</td>
-<td>31</td>
-<td>28</td>
+<td>47</td>
+<td>160</td>
+<td>290</td>
+<td>292</td>
+<td>130</td>
+<td>683</td>
+<td>1233</td>
+<td>1760</td>
+<td>831</td>
+<td>827</td>
+<td>736</td>
+<td>609</td>
 <td>105</td>
-<td>109</td>
-<td>63</td>
-<td>71</td>
-<td>119</td>
 <td>21</td>
-<td>56</td>
+<td>33</td>
+<td>26</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1995</td>
+<td>Mozart</td>
+<td>Wolfgang Amadeus</td>
+<td>Sonaten</td>
+<td>KV</td>
+<td>533</td>
 <td>15</td>
-<td>3</td>
-<td>12</td>
-<td>2</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>1788.0</td>
+<td>NaN</td>
+<td>CCARH</td>
+<td>1788.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>5</td>
+<td>83</td>
+<td>137</td>
+<td>114</td>
+<td>110</td>
+<td>94</td>
+<td>177</td>
+<td>96</td>
+<td>10</td>
+<td>13</td>
+<td>23</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">208</td>
+<td>Liszt</td>
+<td>Franz</td>
+<td>12 Transcendental Etudes</td>
+<td>S.</td>
+<td>139</td>
+<td>7</td>
+<td>NaN</td>
+<td>Eroica</td>
+<td>1851.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1851.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>15</td>
+<td>129</td>
+<td>148</td>
+<td>225</td>
+<td>297</td>
+<td>376</td>
+<td>393</td>
+<td>296</td>
+<td>225</td>
+<td>163</td>
+<td>156</td>
+<td>130</td>
+<td>137</td>
+<td>113</td>
+<td>88</td>
+<td>56</td>
+<td>42</td>
+<td>45</td>
+<td>15</td>
+<td>32</td>
+<td>6</td>
+<td>5</td>
+<td>7</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1055,7 +1055,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="a5f6dfff" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="7">
+<div id="07924020" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"display_year"</span>].plot(kind<span class="op">=</span><span class="st">"hist"</span>, bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">6</span>))<span class="op">;</span> <span class="co"># historical overview</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1076,7 +1076,7 @@ window.Quarto = {
 </ul>
 <p>–&gt; There is no unique objective answer to these questions. It is important to be aware of these limitations and take them into account when interpreting the results</p>
 <p>For this workshop we ignore all the metadata about the pieces (titles, composer names etc.) but only focus on their tonal material. Therefore, we don’t need all the columns of the table.</p>
-<div id="7a6a6086" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="8">
+<div id="d2ffdd0a" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tpc_counts <span class="op">=</span> data.loc[:, lof] <span class="co"># select all rows (":") and the lof columns</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tpc_counts.sample(<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -1126,7 +1126,7 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">698</td>
+<td data-quarto-table-cell-role="th">768</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1141,19 +1141,19 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>64</td>
-<td>142</td>
-<td>75</td>
+<td>10</td>
 <td>110</td>
-<td>163</td>
-<td>197</td>
-<td>135</td>
-<td>24</td>
-<td>8</td>
-<td>32</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
+<td>195</td>
+<td>215</td>
+<td>112</td>
+<td>109</td>
+<td>230</td>
+<td>154</td>
+<td>27</td>
+<td>23</td>
+<td>72</td>
+<td>17</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1164,7 +1164,7 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1749</td>
+<td data-quarto-table-cell-role="th">1630</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1174,24 +1174,24 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5</td>
-<td>46</td>
-<td>86</td>
-<td>87</td>
-<td>94</td>
-<td>120</td>
-<td>155</td>
-<td>97</td>
-<td>29</td>
-<td>12</td>
-<td>23</td>
 <td>24</td>
+<td>16</td>
+<td>15</td>
+<td>17</td>
+<td>44</td>
+<td>48</td>
+<td>32</td>
+<td>117</td>
+<td>397</td>
+<td>388</td>
+<td>251</td>
+<td>123</td>
+<td>153</td>
+<td>155</td>
+<td>54</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1202,34 +1202,34 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">320</td>
+<td data-quarto-table-cell-role="th">150</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>14</td>
-<td>42</td>
-<td>55</td>
-<td>34</td>
-<td>189</td>
-<td>368</td>
-<td>348</td>
-<td>274</td>
-<td>182</td>
-<td>265</td>
+<td>24</td>
+<td>118</td>
+<td>152</td>
+<td>117</td>
 <td>173</td>
-<td>77</td>
-<td>53</td>
-<td>13</td>
-<td>1</td>
-<td>1</td>
+<td>190</td>
+<td>191</td>
+<td>147</td>
+<td>40</td>
+<td>30</td>
+<td>36</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1240,7 +1240,7 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1901</td>
+<td data-quarto-table-cell-role="th">195</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1254,16 +1254,19 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>173</td>
-<td>393</td>
-<td>390</td>
-<td>266</td>
-<td>253</td>
-<td>327</td>
-<td>229</td>
-<td>66</td>
-<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>25</td>
+<td>32</td>
 <td>23</td>
+<td>39</td>
+<td>51</td>
+<td>52</td>
+<td>33</td>
+<td>2</td>
+<td>0</td>
 <td>15</td>
 <td>0</td>
 <td>0</td>
@@ -1273,316 +1276,9 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1077</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>4</td>
-<td>9</td>
-<td>31</td>
-<td>49</td>
-<td>38</td>
-<td>32</td>
-<td>75</td>
-<td>115</td>
-<td>50</td>
-<td>28</td>
-<td>8</td>
-<td>7</td>
-<td>11</td>
-<td>6</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">697</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>18</td>
-<td>87</td>
-<td>76</td>
-<td>73</td>
-<td>134</td>
-<td>144</td>
-<td>118</td>
-<td>70</td>
-<td>12</td>
-<td>26</td>
-<td>20</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1560</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>18</td>
-<td>77</td>
-<td>92</td>
-<td>54</td>
-<td>142</td>
-<td>267</td>
-<td>216</td>
-<td>173</td>
-<td>97</td>
-<td>192</td>
-<td>123</td>
-<td>61</td>
-<td>9</td>
-<td>35</td>
-<td>16</td>
-<td>7</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1570</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>3</td>
-<td>63</td>
-<td>71</td>
-<td>28</td>
-<td>109</td>
-<td>58</td>
-<td>38</td>
-<td>50</td>
-<td>49</td>
-<td>137</td>
-<td>27</td>
-<td>13</td>
-<td>8</td>
-<td>16</td>
-<td>8</td>
-<td>6</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1243</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>21</td>
-<td>41</td>
-<td>13</td>
-<td>32</td>
-<td>47</td>
-<td>58</td>
-<td>115</td>
-<td>53</td>
-<td>97</td>
-<td>203</td>
-<td>204</td>
-<td>119</td>
-<td>29</td>
-<td>57</td>
-<td>41</td>
-<td>22</td>
-<td>3</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">740</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>9</td>
-<td>40</td>
-<td>96</td>
-<td>205</td>
-<td>180</td>
-<td>123</td>
-<td>286</td>
-<td>275</td>
-<td>299</td>
-<td>114</td>
-<td>62</td>
-<td>79</td>
-<td>109</td>
-<td>21</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">879</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>31</td>
-<td>32</td>
-<td>31</td>
-<td>38</td>
-<td>39</td>
-<td>31</td>
-<td>27</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1525</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5</td>
-<td>3</td>
-<td>22</td>
-<td>66</td>
-<td>210</td>
-<td>221</td>
-<td>76</td>
-<td>81</td>
-<td>226</td>
-<td>144</td>
-<td>20</td>
-<td>21</td>
-<td>46</td>
-<td>18</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1798</td>
+<td data-quarto-table-cell-role="th">1753</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1597,94 +1293,18 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>42</td>
-<td>79</td>
-<td>81</td>
-<td>62</td>
-<td>52</td>
-<td>65</td>
-<td>41</td>
-<td>9</td>
-<td>0</td>
-<td>5</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">404</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
+<td>115</td>
+<td>50</td>
+<td>86</td>
+<td>108</td>
+<td>150</td>
+<td>94</td>
+<td>26</td>
 <td>2</td>
-<td>12</td>
-<td>43</td>
-<td>137</td>
-<td>212</td>
-<td>198</td>
-<td>219</td>
-<td>306</td>
-<td>301</td>
-<td>223</td>
-<td>118</td>
-<td>60</td>
-<td>77</td>
-<td>52</td>
-<td>12</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">786</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>57</td>
-<td>33</td>
-<td>0</td>
-<td>84</td>
-<td>128</td>
-<td>7</td>
-<td>24</td>
-<td>65</td>
-<td>39</td>
-<td>63</td>
-<td>66</td>
-<td>41</td>
-<td>95</td>
-<td>60</td>
-<td>21</td>
+<td>29</td>
 <td>9</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1696,7 +1316,7 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">11</td>
+<td data-quarto-table-cell-role="th">187</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1707,22 +1327,22 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>15</td>
+<td>69</td>
+<td>121</td>
+<td>92</td>
+<td>171</td>
+<td>313</td>
+<td>467</td>
+<td>271</td>
+<td>120</td>
+<td>182</td>
+<td>213</td>
+<td>39</td>
+<td>11</td>
+<td>8</td>
+<td>2</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>52</td>
-<td>193</td>
-<td>249</td>
-<td>123</td>
-<td>54</td>
-<td>124</td>
-<td>103</td>
-<td>10</td>
-<td>0</td>
-<td>28</td>
-<td>4</td>
-<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1734,7 +1354,7 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">381</td>
+<td data-quarto-table-cell-role="th">1868</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1744,19 +1364,20 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
-<td>56</td>
-<td>31</td>
-<td>79</td>
-<td>74</td>
-<td>31</td>
-<td>101</td>
-<td>119</td>
-<td>55</td>
-<td>74</td>
-<td>7</td>
-<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>6</td>
+<td>16</td>
+<td>13</td>
+<td>11</td>
+<td>28</td>
 <td>35</td>
+<td>25</td>
+<td>8</td>
+<td>4</td>
+<td>6</td>
 <td>8</td>
 <td>0</td>
 <td>0</td>
@@ -1769,10 +1390,9 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1431</td>
+<td data-quarto-table-cell-role="th">1091</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1785,18 +1405,18 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>1</td>
-<td>71</td>
-<td>136</td>
-<td>163</td>
-<td>120</td>
-<td>162</td>
-<td>188</td>
-<td>138</td>
-<td>20</td>
-<td>17</td>
+<td>2</td>
+<td>55</td>
+<td>33</td>
+<td>30</td>
+<td>89</td>
+<td>52</td>
+<td>51</td>
 <td>12</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1810,7 +1430,45 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">81</td>
+<td data-quarto-table-cell-role="th">532</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>0</td>
+<td>60</td>
+<td>130</td>
+<td>158</td>
+<td>63</td>
+<td>73</td>
+<td>120</td>
+<td>81</td>
+<td>44</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">649</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1820,19 +1478,285 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>14</td>
-<td>46</td>
-<td>87</td>
-<td>143</td>
-<td>90</td>
-<td>61</td>
-<td>205</td>
-<td>164</td>
-<td>80</td>
-<td>38</td>
-<td>25</td>
-<td>34</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>43</td>
+<td>35</td>
+<td>22</td>
+<td>60</td>
+<td>48</td>
+<td>36</td>
+<td>18</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1858</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>12</td>
+<td>52</td>
+<td>68</td>
+<td>236</td>
+<td>256</td>
+<td>104</td>
+<td>112</td>
+<td>243</td>
+<td>415</td>
+<td>582</td>
+<td>555</td>
+<td>254</td>
+<td>346</td>
+<td>315</td>
+<td>110</td>
+<td>33</td>
+<td>13</td>
+<td>7</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">51</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>18</td>
+<td>78</td>
+<td>120</td>
+<td>96</td>
+<td>122</td>
+<td>132</td>
+<td>156</td>
+<td>119</td>
+<td>47</td>
+<td>24</td>
+<td>40</td>
+<td>26</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1441</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>29</td>
+<td>63</td>
+<td>190</td>
+<td>261</td>
+<td>313</td>
+<td>627</td>
+<td>714</td>
+<td>610</td>
+<td>777</td>
+<td>1412</td>
+<td>1147</td>
+<td>1111</td>
+<td>1251</td>
+<td>1543</td>
+<td>1436</td>
+<td>1088</td>
+<td>818</td>
+<td>733</td>
+<td>705</td>
+<td>436</td>
+<td>127</td>
+<td>79</td>
+<td>65</td>
+<td>17</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1517</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>6</td>
+<td>38</td>
+<td>103</td>
+<td>14</td>
+<td>13</td>
+<td>103</td>
+<td>110</td>
+<td>110</td>
+<td>18</td>
+<td>13</td>
+<td>32</td>
+<td>23</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1964</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>146</td>
+<td>241</td>
+<td>293</td>
+<td>177</td>
+<td>112</td>
+<td>223</td>
+<td>153</td>
+<td>61</td>
+<td>18</td>
+<td>5</td>
+<td>8</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">738</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>16</td>
+<td>23</td>
+<td>135</td>
+<td>289</td>
+<td>273</td>
+<td>344</td>
+<td>414</td>
+<td>636</td>
+<td>490</td>
+<td>334</td>
+<td>254</td>
+<td>330</td>
+<td>234</td>
+<td>146</td>
+<td>108</td>
+<td>118</td>
+<td>80</td>
+<td>41</td>
+<td>18</td>
+<td>22</td>
+<td>8</td>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">424</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>24</td>
+<td>63</td>
+<td>49</td>
+<td>38</td>
+<td>24</td>
+<td>45</td>
+<td>23</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1848,33 +1772,109 @@ window.Quarto = {
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">95</td>
+<td data-quarto-table-cell-role="th">928</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>60</td>
-<td>199</td>
-<td>164</td>
-<td>121</td>
-<td>223</td>
-<td>283</td>
-<td>193</td>
-<td>57</td>
-<td>0</td>
-<td>63</td>
-<td>23</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
+<td>0</td>
+<td>4</td>
+<td>22</td>
+<td>2</td>
+<td>4</td>
+<td>0</td>
+<td>97</td>
+<td>179</td>
+<td>30</td>
+<td>34</td>
+<td>159</td>
+<td>86</td>
+<td>67</td>
+<td>34</td>
+<td>31</td>
+<td>35</td>
+<td>39</td>
+<td>17</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1745</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>36</td>
+<td>65</td>
+<td>48</td>
+<td>57</td>
+<td>106</td>
+<td>114</td>
+<td>51</td>
+<td>23</td>
+<td>3</td>
+<td>16</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1878</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>194</td>
+<td>415</td>
+<td>469</td>
+<td>341</td>
+<td>224</td>
+<td>370</td>
+<td>309</td>
+<td>76</td>
+<td>14</td>
+<td>13</td>
+<td>36</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1891,7 +1891,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="f87b2c7f" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="9">
+<div id="b9ca6d7d" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>piece <span class="op">=</span> tpc_counts.iloc[<span class="dv">10</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">10</span>))</span>
@@ -1918,7 +1918,7 @@ window.Quarto = {
 <p>Let us have an overview of the note counts in these pieces!</p>
 <p>If we would just look at the raw counts of the tonal pitch-classe, we could not learn much from it. Using a theoretical model (the line of fifths) shows that the notes in pieces are usually come from few adjacent keys (you don’t say!).</p>
 <p>We probably have very long pieces (sonatas) and very short pieces (songs) in the dataset. Since we don’t want length (or the absolute number of notes in a piece) to have an effect, we rather consider tonal pitch-class distributions instead counts, by normalizing all pieces to sum to one.</p>
-<div id="59fb9a48" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="10">
+<div id="d0ac84be" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tpc_dists <span class="op">=</span> tpc_counts.div(tpc_counts.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tpc_dists.sample(<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -1968,46 +1968,7 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">361</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.001294</td>
-<td>0.004743</td>
-<td>0.012649</td>
-<td>0.022855</td>
-<td>0.026879</td>
-<td>0.033348</td>
-<td>0.087825</td>
-<td>0.133391</td>
-<td>0.125916</td>
-<td>0.091706</td>
-<td>0.093287</td>
-<td>0.117579</td>
-<td>0.116861</td>
-<td>0.039385</td>
-<td>0.020699</td>
-<td>0.034354</td>
-<td>0.026017</td>
-<td>0.006468</td>
-<td>0.000431</td>
-<td>0.003162</td>
-<td>0.000862</td>
-<td>0.000287</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">294</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">1785</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2025,53 +1986,16 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.000000</td>
-<td>0.012592</td>
-<td>0.098636</td>
-<td>0.163694</td>
-<td>0.146905</td>
-<td>0.158447</td>
-<td>0.132214</td>
-<td>0.146905</td>
-<td>0.098636</td>
-<td>0.027282</td>
-<td>0.002099</td>
-<td>0.010493</td>
-<td>0.002099</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1093</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.003185</td>
-<td>0.015924</td>
-<td>0.149682</td>
-<td>0.136943</td>
-<td>0.117834</td>
-<td>0.194268</td>
-<td>0.210191</td>
-<td>0.101911</td>
-<td>0.057325</td>
-<td>0.000000</td>
-<td>0.006369</td>
-<td>0.006369</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
+<td>0.068792</td>
+<td>0.171141</td>
+<td>0.172819</td>
+<td>0.161074</td>
+<td>0.137584</td>
+<td>0.122483</td>
+<td>0.120805</td>
+<td>0.035235</td>
+<td>0.006711</td>
+<td>0.003356</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2082,37 +2006,37 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">758</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">1491</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.000000</td>
-<td>0.001640</td>
-<td>0.014762</td>
-<td>0.036632</td>
-<td>0.021323</td>
-<td>0.057408</td>
-<td>0.068343</td>
-<td>0.196829</td>
-<td>0.101695</td>
-<td>0.084746</td>
-<td>0.059049</td>
-<td>0.079825</td>
-<td>0.036632</td>
-<td>0.043193</td>
-<td>0.063423</td>
-<td>0.045927</td>
-<td>0.014762</td>
-<td>0.014762</td>
-<td>0.033352</td>
-<td>0.018043</td>
-<td>0.006561</td>
-<td>0.000547</td>
 <td>0.000000</td>
-<td>0.000547</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000779</td>
+<td>0.037008</td>
+<td>0.051811</td>
+<td>0.034671</td>
+<td>0.122711</td>
+<td>0.148422</td>
+<td>0.205688</td>
+<td>0.134009</td>
+<td>0.085314</td>
+<td>0.083366</td>
+<td>0.079860</td>
+<td>0.010908</td>
+<td>0.004285</td>
+<td>0.000779</td>
+<td>0.000390</td>
+<td>0.000000</td>
+<td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.0</td>
@@ -2120,46 +2044,7 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1121</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.084211</td>
-<td>0.142105</td>
-<td>0.000000</td>
-<td>0.105263</td>
-<td>0.231579</td>
-<td>0.178947</td>
-<td>0.142105</td>
-<td>0.015789</td>
-<td>0.000000</td>
-<td>0.094737</td>
-<td>0.005263</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">53</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">51</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2176,71 +2061,33 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.000898</td>
-<td>0.007181</td>
-<td>0.026032</td>
-<td>0.073609</td>
-<td>0.101436</td>
-<td>0.095153</td>
-<td>0.147217</td>
-<td>0.164273</td>
-<td>0.151706</td>
-<td>0.114004</td>
-<td>0.033214</td>
-<td>0.033214</td>
-<td>0.038600</td>
-<td>0.012567</td>
-<td>0.000898</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1934</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.001604</td>
-<td>0.002406</td>
-<td>0.010425</td>
-<td>0.086608</td>
-<td>0.148356</td>
-<td>0.157979</td>
-<td>0.152366</td>
-<td>0.105854</td>
-<td>0.118685</td>
-<td>0.094627</td>
-<td>0.056937</td>
-<td>0.029671</td>
-<td>0.020048</td>
-<td>0.010425</td>
-<td>0.004010</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
+<td>0.001019</td>
+<td>0.018349</td>
+<td>0.079511</td>
+<td>0.122324</td>
+<td>0.097859</td>
+<td>0.124363</td>
+<td>0.134557</td>
+<td>0.159021</td>
+<td>0.121305</td>
+<td>0.047910</td>
+<td>0.024465</td>
+<td>0.040775</td>
+<td>0.026504</td>
+<td>0.002039</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">796</td>
+<td data-quarto-table-cell-role="th">463</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>0.0</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2249,18 +2096,19 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.018293</td>
-<td>0.073848</td>
-<td>0.157182</td>
-<td>0.260163</td>
-<td>0.123306</td>
-<td>0.082656</td>
-<td>0.140921</td>
-<td>0.097561</td>
-<td>0.018970</td>
 <td>0.000000</td>
-<td>0.010840</td>
-<td>0.016260</td>
+<td>0.000000</td>
+<td>0.001953</td>
+<td>0.083984</td>
+<td>0.175781</td>
+<td>0.142578</td>
+<td>0.156250</td>
+<td>0.125000</td>
+<td>0.146484</td>
+<td>0.123047</td>
+<td>0.027344</td>
+<td>0.003906</td>
+<td>0.013672</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2272,36 +2120,36 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1811</td>
+<td data-quarto-table-cell-role="th">660</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.094595</td>
-<td>0.175676</td>
-<td>0.162162</td>
-<td>0.085586</td>
-<td>0.148649</td>
-<td>0.157658</td>
-<td>0.126126</td>
-<td>0.027027</td>
-<td>0.000000</td>
-<td>0.018018</td>
-<td>0.004505</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
+<td>0.005051</td>
+<td>0.009680</td>
+<td>0.019150</td>
+<td>0.033880</td>
+<td>0.066709</td>
+<td>0.084806</td>
+<td>0.082912</td>
+<td>0.070707</td>
+<td>0.069024</td>
+<td>0.064815</td>
+<td>0.042088</td>
+<td>0.036827</td>
+<td>0.089646</td>
+<td>0.096380</td>
+<td>0.055976</td>
+<td>0.041877</td>
+<td>0.047769</td>
+<td>0.042508</td>
+<td>0.023359</td>
+<td>0.004840</td>
+<td>0.000842</td>
+<td>0.009259</td>
+<td>0.001684</td>
+<td>0.000210</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2310,8 +2158,7 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1617</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">1311</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2320,22 +2167,23 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.009744</td>
-<td>0.002436</td>
-<td>0.074300</td>
-<td>0.084044</td>
-<td>0.215591</td>
-<td>0.161998</td>
-<td>0.118149</td>
-<td>0.119367</td>
-<td>0.096224</td>
-<td>0.038977</td>
-<td>0.052375</td>
-<td>0.014616</td>
-<td>0.006090</td>
-<td>0.006090</td>
 <td>0.000000</td>
 <td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.013298</td>
+<td>0.138298</td>
+<td>0.183511</td>
+<td>0.162234</td>
+<td>0.106383</td>
+<td>0.119681</td>
+<td>0.138298</td>
+<td>0.127660</td>
+<td>0.007979</td>
+<td>0.002660</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2348,12 +2196,49 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">448</td>
+<td data-quarto-table-cell-role="th">1945</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.001197</td>
+<td>0.001197</td>
+<td>0.001197</td>
+<td>0.010772</td>
+<td>0.086774</td>
+<td>0.145422</td>
+<td>0.208857</td>
+<td>0.156194</td>
+<td>0.107121</td>
+<td>0.116098</td>
+<td>0.103531</td>
+<td>0.045482</td>
+<td>0.011370</td>
+<td>0.002992</td>
+<td>0.001197</td>
+<td>0.000598</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1993</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
 <td>0.0</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2362,18 +2247,19 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.000000</td>
-<td>0.101818</td>
-<td>0.174545</td>
-<td>0.145455</td>
-<td>0.207273</td>
-<td>0.147273</td>
-<td>0.090909</td>
-<td>0.109091</td>
-<td>0.012727</td>
-<td>0.010909</td>
-<td>0.000000</td>
-<td>0.000000</td>
+<td>0.005477</td>
+<td>0.024257</td>
+<td>0.099374</td>
+<td>0.154147</td>
+<td>0.183099</td>
+<td>0.147887</td>
+<td>0.107981</td>
+<td>0.129108</td>
+<td>0.100156</td>
+<td>0.027387</td>
+<td>0.013302</td>
+<td>0.007042</td>
+<td>0.000782</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2385,32 +2271,146 @@ window.Quarto = {
 <td>0.0</td>
 <td>0.0</td>
 </tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">347</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.010626</td>
+<td>0.022931</td>
+<td>0.077740</td>
+<td>0.021812</td>
+<td>0.059843</td>
+<td>0.154922</td>
+<td>0.222036</td>
+<td>0.074385</td>
+<td>0.020134</td>
+<td>0.030761</td>
+<td>0.049776</td>
+<td>0.059284</td>
+<td>0.015660</td>
+<td>0.024609</td>
+<td>0.040268</td>
+<td>0.085011</td>
+<td>0.019016</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.011186</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">902</td>
+<td data-quarto-table-cell-role="th">804</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000903</td>
+<td>0.009025</td>
+<td>0.017148</td>
+<td>0.100181</td>
+<td>0.144404</td>
+<td>0.204874</td>
+<td>0.157942</td>
+<td>0.114621</td>
+<td>0.166065</td>
+<td>0.069495</td>
+<td>0.009025</td>
+<td>0.006318</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1668</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
 <td>0.0</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.054286</td>
-<td>0.190000</td>
-<td>0.250000</td>
-<td>0.092857</td>
-<td>0.101429</td>
-<td>0.174286</td>
-<td>0.081429</td>
-<td>0.020000</td>
-<td>0.007143</td>
-<td>0.022857</td>
-<td>0.005714</td>
 <td>0.000000</td>
 <td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.041413</td>
+<td>0.159562</td>
+<td>0.081608</td>
+<td>0.102314</td>
+<td>0.179050</td>
+<td>0.168088</td>
+<td>0.170524</td>
+<td>0.042631</td>
+<td>0.003654</td>
+<td>0.040195</td>
+<td>0.010962</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1881</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.002566</td>
+<td>0.088109</td>
+<td>0.160821</td>
+<td>0.191617</td>
+<td>0.124038</td>
+<td>0.112917</td>
+<td>0.153122</td>
+<td>0.127459</td>
+<td>0.017964</td>
+<td>0.004277</td>
+<td>0.007699</td>
+<td>0.009410</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2424,46 +2424,7 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">788</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.002493</td>
-<td>0.000499</td>
-<td>0.017448</td>
-<td>0.026919</td>
-<td>0.042871</td>
-<td>0.055334</td>
-<td>0.033400</td>
-<td>0.022433</td>
-<td>0.035394</td>
-<td>0.029412</td>
-<td>0.013460</td>
-<td>0.026919</td>
-<td>0.053340</td>
-<td>0.069292</td>
-<td>0.069292</td>
-<td>0.105683</td>
-<td>0.133101</td>
-<td>0.100698</td>
-<td>0.068794</td>
-<td>0.036889</td>
-<td>0.022433</td>
-<td>0.025424</td>
-<td>0.006979</td>
-<td>0.000997</td>
-<td>0.000000</td>
-<td>0.000499</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1683</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">65</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2471,59 +2432,22 @@ window.Quarto = {
 <td>0.0</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.061093</td>
-<td>0.152733</td>
-<td>0.102894</td>
-<td>0.072347</td>
-<td>0.172026</td>
-<td>0.167203</td>
-<td>0.154341</td>
-<td>0.045016</td>
-<td>0.003215</td>
-<td>0.043408</td>
-<td>0.025723</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1943</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.008086</td>
-<td>0.005391</td>
-<td>0.009434</td>
-<td>0.053908</td>
-<td>0.140162</td>
-<td>0.223720</td>
-<td>0.157682</td>
-<td>0.102426</td>
-<td>0.103774</td>
-<td>0.110512</td>
-<td>0.061995</td>
-<td>0.017520</td>
-<td>0.004043</td>
-<td>0.001348</td>
-<td>0.000000</td>
+<td>0.002161</td>
+<td>0.020893</td>
+<td>0.020893</td>
+<td>0.015850</td>
+<td>0.082493</td>
+<td>0.139769</td>
+<td>0.209654</td>
+<td>0.137248</td>
+<td>0.116354</td>
+<td>0.108429</td>
+<td>0.080331</td>
+<td>0.037104</td>
+<td>0.010807</td>
+<td>0.011888</td>
+<td>0.005403</td>
+<td>0.000720</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2538,46 +2462,7 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">374</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.008347</td>
-<td>0.010851</td>
-<td>0.009182</td>
-<td>0.095993</td>
-<td>0.120200</td>
-<td>0.055092</td>
-<td>0.141903</td>
-<td>0.115192</td>
-<td>0.155259</td>
-<td>0.105175</td>
-<td>0.020033</td>
-<td>0.026711</td>
-<td>0.060100</td>
-<td>0.044240</td>
-<td>0.012521</td>
-<td>0.007513</td>
-<td>0.004174</td>
-<td>0.002504</td>
-<td>0.002504</td>
-<td>0.001669</td>
-<td>0.000835</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1695</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">66</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2587,57 +2472,20 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.108974</td>
-<td>0.102564</td>
-<td>0.089744</td>
-<td>0.128205</td>
-<td>0.230769</td>
-<td>0.192308</td>
-<td>0.083333</td>
-<td>0.000000</td>
-<td>0.025641</td>
-<td>0.038462</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">443</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.008257</td>
-<td>0.126606</td>
-<td>0.189908</td>
-<td>0.186239</td>
-<td>0.144954</td>
-<td>0.113761</td>
-<td>0.140367</td>
-<td>0.089908</td>
-<td>0.000000</td>
+<td>0.005562</td>
+<td>0.035595</td>
+<td>0.062291</td>
+<td>0.048943</td>
+<td>0.074527</td>
+<td>0.102336</td>
+<td>0.150167</td>
+<td>0.151279</td>
+<td>0.109010</td>
+<td>0.095662</td>
+<td>0.062291</td>
+<td>0.044494</td>
+<td>0.050056</td>
+<td>0.007786</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2652,28 +2500,142 @@ window.Quarto = {
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1607</td>
-<td>0.0</td>
+<td data-quarto-table-cell-role="th">338</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.000000</td>
-<td>0.027164</td>
-<td>0.015161</td>
-<td>0.018320</td>
-<td>0.066961</td>
-<td>0.247631</td>
-<td>0.205938</td>
-<td>0.089703</td>
-<td>0.099810</td>
-<td>0.123816</td>
-<td>0.043588</td>
-<td>0.029690</td>
-<td>0.017056</td>
-<td>0.001263</td>
-<td>0.013898</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.001637</td>
+<td>0.014730</td>
+<td>0.101473</td>
+<td>0.117840</td>
+<td>0.106383</td>
+<td>0.147300</td>
+<td>0.145663</td>
+<td>0.132570</td>
+<td>0.121113</td>
+<td>0.047463</td>
+<td>0.019640</td>
+<td>0.031097</td>
+<td>0.013093</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">277</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.001741</td>
+<td>0.008705</td>
+<td>0.010664</td>
+<td>0.022851</td>
+<td>0.041132</td>
+<td>0.107726</td>
+<td>0.120348</td>
+<td>0.091186</td>
+<td>0.110120</td>
+<td>0.124701</td>
+<td>0.137106</td>
+<td>0.100979</td>
+<td>0.027421</td>
+<td>0.020239</td>
+<td>0.049402</td>
+<td>0.020457</td>
+<td>0.004788</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000435</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">371</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.028169</td>
+<td>0.089924</td>
+<td>0.195016</td>
+<td>0.173348</td>
+<td>0.136511</td>
+<td>0.109426</td>
+<td>0.140845</td>
+<td>0.081257</td>
+<td>0.023835</td>
+<td>0.014085</td>
+<td>0.005417</td>
+<td>0.002167</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">128</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.009950</td>
+<td>0.019190</td>
+<td>0.012793</td>
+<td>0.046198</td>
+<td>0.110163</td>
+<td>0.141436</td>
+<td>0.144989</td>
+<td>0.131485</td>
+<td>0.115849</td>
+<td>0.122246</td>
+<td>0.089552</td>
+<td>0.035537</td>
+<td>0.009950</td>
+<td>0.007818</td>
+<td>0.002843</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2689,31 +2651,69 @@ window.Quarto = {
 <td>0.0</td>
 <td>0.0</td>
 </tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1647</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.010417</td>
+<td>0.088542</td>
+<td>0.123264</td>
+<td>0.105903</td>
+<td>0.092014</td>
+<td>0.121528</td>
+<td>0.171875</td>
+<td>0.121528</td>
+<td>0.050347</td>
+<td>0.027778</td>
+<td>0.055556</td>
+<td>0.024306</td>
+<td>0.006944</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">839</td>
+<td data-quarto-table-cell-role="th">1283</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>0.0</td>
 <td>0.000000</td>
 <td>0.000000</td>
+<td>0.001777</td>
 <td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.135135</td>
-<td>0.126126</td>
-<td>0.189189</td>
-<td>0.144144</td>
-<td>0.135135</td>
-<td>0.162162</td>
-<td>0.108108</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
+<td>0.015104</td>
+<td>0.022657</td>
+<td>0.120391</td>
+<td>0.154154</td>
+<td>0.036428</td>
+<td>0.102177</td>
+<td>0.128387</td>
+<td>0.222124</td>
+<td>0.112839</td>
+<td>0.017326</td>
+<td>0.005775</td>
+<td>0.046646</td>
+<td>0.013327</td>
+<td>0.000888</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -2734,7 +2734,7 @@ window.Quarto = {
 </div>
 </div>
 <p>For further numerical analysis, we extract the data from this table and assign it to a variable <code>X</code>.</p>
-<div id="17895785" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="11">
+<div id="7f39557b" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract values of table to matrix</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> tpc_dists.values</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2756,7 +2756,7 @@ window.Quarto = {
 <li>these dimensions are called the <em>principal components</em></li>
 <li>each principal component is associated with how much of the data variance it explains</li>
 </ul>
-<div id="b6876a80" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="12">
+<div id="4384af74" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for numerical computations</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA <span class="co"># for dimensionality reduction</span></span>
@@ -2765,7 +2765,7 @@ window.Quarto = {
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>pca.fit(X) <span class="co"># apply it to the data</span></span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>variance <span class="op">=</span> pca.explained_variance_ratio_ <span class="co"># assign explained variance to variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dedbab89" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="13">
+<div id="d538ef59" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>,<span class="dv">5</span>))</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">35</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>ax.plot(x, variance, label<span class="op">=</span><span class="st">"relative"</span>, marker<span class="op">=</span><span class="st">"o"</span>)</span>
@@ -2788,7 +2788,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="cf471e90" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="14">
+<div id="e4d572e1" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>variance[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>array([0.41144591, 0.23410347, 0.09063507, 0.07574242, 0.04436989])</code></pre>
@@ -2801,7 +2801,7 @@ window.Quarto = {
 </section>
 <section id="recovering-the-line-of-fifths-from-data" class="level2" data-number="15.4">
 <h2 data-number="15.4" class="anchored" data-anchor-id="recovering-the-line-of-fifths-from-data"><span class="header-section-number">15.4</span> Recovering the line of fifths from data</h2>
-<div id="38b2b590" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="15">
+<div id="80e2c59b" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pca3d <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>pca3d.fit(X)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2811,7 +2811,7 @@ window.Quarto = {
 <pre><code>(2012, 3)</code></pre>
 </div>
 </div>
-<div id="e014b39b" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="16">
+<div id="44b770e1" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
@@ -2839,7 +2839,7 @@ window.Quarto = {
 <li>How can we interpret them?</li>
 </ul>
 <p>Fortunately, we can inspect them individually and try to interpret what we see.</p>
-<div id="58b4b936" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="17">
+<div id="00cb8080" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> combinations</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>, sharey<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">24</span>,<span class="dv">8</span>))</span>
@@ -2866,7 +2866,7 @@ window.Quarto = {
 <p>One way to see whether the pieces are clustered together systematically be coloring them according to some criterion.</p>
 <p>As always, many different options are available. For the present purpose we will use the most simple summary of the piece: its most frequent note (which is the <em>mode</em> of its pitch-class distribution in statistical terms) and call this note its <strong>tonal center</strong>.</p>
 <p>This will also allow to map the tonal pitch-classes on the line of fifths to colors.</p>
-<div id="95dc9fc8" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="18">
+<div id="35eaccda" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tpc_dists[<span class="st">"tonal_center"</span>] <span class="op">=</span> tpc_dists.<span class="bu">apply</span>(<span class="kw">lambda</span> piece: np.argmax(piece[lof].values) <span class="op">-</span> <span class="dv">15</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tpc_dists.sample(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -2917,345 +2917,186 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">607</td>
+<td data-quarto-table-cell-role="th">1710</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.00000</td>
 <td>0.0</td>
-<td>0.0</td>
-<td>0.007474</td>
-<td>0.086697</td>
-<td>0.203288</td>
-<td>0.164425</td>
-<td>0.085202</td>
-<td>0.180867</td>
-<td>0.180867</td>
-<td>0.049327</td>
-<td>0.025411</td>
-<td>0.014948</td>
-<td>0.001495</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>-6</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">53</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000898</td>
-<td>0.007181</td>
-<td>0.026032</td>
-<td>0.073609</td>
-<td>0.101436</td>
-<td>0.095153</td>
-<td>0.147217</td>
-<td>0.164273</td>
-<td>0.151706</td>
-<td>0.114004</td>
-<td>0.033214</td>
-<td>0.033214</td>
-<td>0.038600</td>
-<td>0.012567</td>
-<td>0.000898</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>9</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1127</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.014440</td>
-<td>0.007220</td>
-<td>0.111913</td>
-<td>0.238267</td>
-<td>0.227437</td>
-<td>0.137184</td>
-<td>0.043321</td>
-<td>0.126354</td>
-<td>0.083032</td>
-<td>0.007220</td>
-<td>0.000000</td>
-<td>0.003610</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>-1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1273</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.006568</td>
+<td>0.00000</td>
 <td>0.000000</td>
-<td>0.003284</td>
-<td>0.070608</td>
-<td>0.160920</td>
-<td>0.060755</td>
-<td>0.037767</td>
-<td>0.059113</td>
-<td>0.178982</td>
-<td>0.172414</td>
-<td>0.073892</td>
-<td>0.026273</td>
-<td>0.031199</td>
-<td>0.082102</td>
-<td>0.036125</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
+<td>0.048417</td>
+<td>0.048417</td>
+<td>0.040968</td>
+<td>0.007449</td>
+<td>0.111732</td>
+<td>0.199255</td>
+<td>0.193669</td>
+<td>0.081937</td>
+<td>0.111732</td>
+<td>0.072626</td>
+<td>0.068901</td>
+<td>0.011173</td>
 <td>0.000000</td>
+<td>0.003724</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1648</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.012469</td>
-<td>0.027431</td>
-<td>0.038653</td>
-<td>0.043641</td>
-<td>0.033666</td>
-<td>0.018703</td>
-<td>0.022444</td>
-<td>0.011222</td>
-<td>0.008728</td>
-<td>0.006234</td>
-<td>0.044888</td>
-<td>0.097257</td>
-<td>0.041147</td>
-<td>0.067332</td>
-<td>0.150873</td>
-<td>0.173317</td>
-<td>0.105985</td>
-<td>0.016209</td>
-<td>0.003741</td>
-<td>0.043641</td>
-<td>0.029925</td>
-<td>0.002494</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>8</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">279</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.002183</td>
-<td>0.006550</td>
-<td>0.139738</td>
-<td>0.143013</td>
-<td>0.052402</td>
-<td>0.123362</td>
-<td>0.157205</td>
-<td>0.156114</td>
-<td>0.074236</td>
-<td>0.006550</td>
-<td>0.008734</td>
-<td>0.044760</td>
-<td>0.037118</td>
-<td>0.015284</td>
-<td>0.013100</td>
-<td>0.004367</td>
-<td>0.003275</td>
-<td>0.004367</td>
-<td>0.004367</td>
-<td>0.003275</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">300</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.001304</td>
-<td>0.002608</td>
-<td>0.001304</td>
-<td>0.014342</td>
-<td>0.108214</td>
-<td>0.178618</td>
-<td>0.177314</td>
-<td>0.113429</td>
-<td>0.116037</td>
-<td>0.142112</td>
-<td>0.078227</td>
-<td>0.032595</td>
-<td>0.016949</td>
-<td>0.011734</td>
-<td>0.001304</td>
-<td>0.003911</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>7</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1124</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.084967</td>
-<td>0.194444</td>
-<td>0.307190</td>
-<td>0.147059</td>
-<td>0.037582</td>
-<td>0.129085</td>
-<td>0.071895</td>
-<td>0.027778</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>4</td>
 </tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1201</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.003690</td>
+<td>0.009225</td>
+<td>0.011070</td>
+<td>0.016605</td>
+<td>0.071956</td>
+<td>0.160517</td>
+<td>0.180812</td>
+<td>0.191882</td>
+<td>0.125461</td>
+<td>0.066421</td>
+<td>0.114391</td>
+<td>0.042435</td>
+<td>0.005535</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>3</td>
+</tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">548</td>
+<td data-quarto-table-cell-role="th">641</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.006472</td>
+<td>0.016181</td>
+<td>0.012945</td>
+<td>0.059871</td>
+<td>0.205502</td>
+<td>0.245955</td>
+<td>0.119741</td>
+<td>0.084142</td>
+<td>0.179612</td>
+<td>0.024272</td>
+<td>0.006472</td>
+<td>0.032362</td>
+<td>0.006472</td>
+<td>0.000000</td>
+<td>0.000000</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1363</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.001595</td>
+<td>0.000000</td>
+<td>0.046252</td>
+<td>0.135566</td>
+<td>0.071770</td>
+<td>0.079745</td>
+<td>0.151515</td>
+<td>0.167464</td>
+<td>0.191388</td>
+<td>0.084530</td>
+<td>0.000000</td>
+<td>0.028708</td>
+<td>0.039872</td>
+<td>0.001595</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.014881</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1399</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.011122</td>
+<td>0.048534</td>
+<td>0.093023</td>
+<td>0.129424</td>
+<td>0.100101</td>
+<td>0.088979</td>
+<td>0.138524</td>
+<td>0.132457</td>
+<td>0.139535</td>
+<td>0.046512</td>
+<td>0.019211</td>
+<td>0.017189</td>
+<td>0.027300</td>
+<td>0.008089</td>
 <td>0.000000</td>
-<td>0.080357</td>
-<td>0.127976</td>
-<td>0.238095</td>
-<td>0.163690</td>
-<td>0.062500</td>
-<td>0.122024</td>
-<td>0.139881</td>
-<td>0.035714</td>
-<td>0.000000</td>
-<td>0.008929</td>
-<td>0.000000</td>
-<td>0.005952</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
@@ -3263,48 +3104,207 @@ window.Quarto = {
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>1</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1487</td>
+<td data-quarto-table-cell-role="th">1386</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.00000</td>
 <td>0.0</td>
-<td>0.0</td>
+<td>0.00000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
-<td>0.006295</td>
-<td>0.004358</td>
-<td>0.019370</td>
-<td>0.057627</td>
-<td>0.043099</td>
-<td>0.038741</td>
-<td>0.116223</td>
-<td>0.161259</td>
-<td>0.152542</td>
-<td>0.123002</td>
-<td>0.074576</td>
-<td>0.077482</td>
-<td>0.062470</td>
-<td>0.031477</td>
-<td>0.012591</td>
-<td>0.003874</td>
-<td>0.010169</td>
-<td>0.003874</td>
-<td>0.000484</td>
+<td>0.002506</td>
+<td>0.002506</td>
 <td>0.000000</td>
-<td>0.000484</td>
+<td>0.012531</td>
+<td>0.015038</td>
+<td>0.127820</td>
+<td>0.160401</td>
+<td>0.062657</td>
+<td>0.112782</td>
+<td>0.213033</td>
+<td>0.200501</td>
+<td>0.080201</td>
+<td>0.000000</td>
+<td>0.002506</td>
+<td>0.007519</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
 <td>0.000000</td>
 <td>0.000000</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>2</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1330</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.001520</td>
+<td>0.001520</td>
+<td>0.031915</td>
+<td>0.139818</td>
+<td>0.144377</td>
+<td>0.153495</td>
+<td>0.161094</td>
+<td>0.113982</td>
+<td>0.130699</td>
+<td>0.057751</td>
+<td>0.025836</td>
+<td>0.015198</td>
+<td>0.015198</td>
+<td>0.004559</td>
+<td>0.003040</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">267</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.019277</td>
+<td>0.118876</td>
+<td>0.128514</td>
+<td>0.069880</td>
+<td>0.180723</td>
+<td>0.131727</td>
+<td>0.167068</td>
+<td>0.104418</td>
+<td>0.012851</td>
+<td>0.028112</td>
+<td>0.036145</td>
+<td>0.002410</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1570</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00146</td>
+<td>0.0</td>
+<td>0.00438</td>
+<td>0.091971</td>
+<td>0.103650</td>
+<td>0.040876</td>
+<td>0.159124</td>
+<td>0.084672</td>
+<td>0.055474</td>
+<td>0.072993</td>
+<td>0.071533</td>
+<td>0.200000</td>
+<td>0.039416</td>
+<td>0.018978</td>
+<td>0.011679</td>
+<td>0.023358</td>
+<td>0.011679</td>
+<td>0.008759</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1418</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.0</td>
+<td>0.00000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.001312</td>
+<td>0.002625</td>
+<td>0.007874</td>
+<td>0.019685</td>
+<td>0.081365</td>
+<td>0.119423</td>
+<td>0.175853</td>
+<td>0.144357</td>
+<td>0.137795</td>
+<td>0.154856</td>
+<td>0.078740</td>
+<td>0.027559</td>
+<td>0.017060</td>
+<td>0.018373</td>
+<td>0.001312</td>
+<td>0.011811</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>
@@ -3312,7 +3312,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="2d7a1771" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="19">
+<div id="1ca9a6d2" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> cm</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> Normalize</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3322,7 +3322,7 @@ window.Quarto = {
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># cs = [ cm.seismic(norm(c)) for c in data["tonal_center"]]</span></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> [ cm.seismic(norm(c)) <span class="cf">for</span> c <span class="kw">in</span> tpc_dists[<span class="st">"tonal_center"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1adb8611" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="20">
+<div id="e5af00e2" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> combinations</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>, sharey<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">24</span>,<span class="dv">8</span>))</span>
@@ -3352,12 +3352,12 @@ window.Quarto = {
 <p>But we have treated all pieces in our dataset as synchronic and have not yet taken their historical location into account.</p>
 <p>Let’s assume the pitch-class content of a piece spreads on the line of fifths from F to A<span class="math inline">\(\sharp\)</span>. This means, its range on the line of fifths is <span class="math inline">\(10 - (-1) = 11\)</span>. The piece covers eleven consecutive fifths on the lof.</p>
 <p>We can generalize this calculation and write a function that calculates the range for each piece in the dataset.</p>
-<div id="8be257db" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="21">
+<div id="7e537b7a" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lof_range(piece):</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> [i <span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(piece) <span class="cf">if</span> v<span class="op">!=</span><span class="dv">0</span>]</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">max</span>(l) <span class="op">-</span> <span class="bu">min</span>(l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="30410464" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="22">
+<div id="bc8c653c" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"lof_range"</span>] <span class="op">=</span> data.loc[:, lof].<span class="bu">apply</span>(lof_range, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># create a new column</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>data.sample(<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
@@ -3420,280 +3420,252 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">11</td>
-<td>Koželuh</td>
-<td>Leopold</td>
-<td>Piano Sonata</td>
-<td>Op.</td>
-<td>8</td>
-<td>1</td>
-<td>2</td>
-<td>Rondo - Andante</td>
-<td>1784.0</td>
-<td>NaN</td>
-<td>DB</td>
-<td>1784.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>52</td>
-<td>193</td>
-<td>249</td>
-<td>123</td>
-<td>54</td>
-<td>124</td>
-<td>103</td>
-<td>10</td>
-<td>0</td>
-<td>28</td>
-<td>4</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>11</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1911</td>
+<td data-quarto-table-cell-role="th">1876</td>
 <td>Corelli</td>
 <td>Arcangelo</td>
 <td>12 concerti grossi</td>
 <td>Op.</td>
 <td>6</td>
-<td>8</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1714.0</td>
-<td>CCARH</td>
-<td>1714.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>83</td>
-<td>152</td>
-<td>119</td>
-<td>116</td>
-<td>168</td>
-<td>220</td>
-<td>131</td>
-<td>19</td>
-<td>4</td>
-<td>41</td>
-<td>8</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>10</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">149</td>
-<td>Alkan</td>
-<td>Charles Valentin</td>
-<td>Esquisses</td>
-<td>Op.</td>
-<td>63</td>
-<td>21</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1861.0</td>
-<td>NaN</td>
-<td>MS</td>
-<td>1861.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>18</td>
-<td>60</td>
-<td>57</td>
-<td>39</td>
-<td>62</td>
-<td>89</td>
-<td>81</td>
-<td>45</td>
-<td>30</td>
-<td>15</td>
-<td>54</td>
-<td>12</td>
-<td>9</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>15</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">469</td>
-<td>Bach</td>
-<td>Johann Sebastian</td>
-<td>Inventions and Sinfonias</td>
-<td>BWV</td>
-<td>780</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1723.0</td>
-<td>MS</td>
-<td>1723.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>38</td>
-<td>69</td>
-<td>49</td>
-<td>67</td>
-<td>84</td>
-<td>86</td>
-<td>86</td>
-<td>45</td>
-<td>20</td>
-<td>35</td>
-<td>19</td>
-<td>8</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>12</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1974</td>
-<td>Mozart</td>
-<td>Wolfgang Amadeus</td>
-<td>Sonaten</td>
-<td>KV</td>
-<td>330</td>
-<td>10</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>1783.0</td>
-<td>NaN</td>
-<td>CCARH</td>
-<td>1783.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>17</td>
-<td>187</td>
-<td>348</td>
-<td>501</td>
-<td>319</td>
-<td>153</td>
-<td>260</td>
-<td>226</td>
-<td>63</td>
-<td>21</td>
-<td>15</td>
 <td>11</td>
-<td>3</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1714.0</td>
+<td>CCARH</td>
+<td>1714.0</td>
 <td>0</td>
 <td>0</td>
-<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>31</td>
+<td>64</td>
+<td>59</td>
+<td>50</td>
 <td>17</td>
+<td>46</td>
+<td>26</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1695</td>
+<td data-quarto-table-cell-role="th">1778</td>
 <td>Corelli</td>
 <td>Arcangelo</td>
 <td>12 Trio Sonatas</td>
 <td>Op.</td>
-<td>1</td>
+<td>4</td>
+<td>11</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1694.0</td>
+<td>CCARH</td>
+<td>1694.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>44</td>
+<td>106</td>
+<td>74</td>
+<td>92</td>
+<td>114</td>
+<td>145</td>
+<td>117</td>
+<td>35</td>
 <td>10</td>
+<td>18</td>
+<td>18</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1836</td>
+<td>Corelli</td>
+<td>Arcangelo</td>
+<td>12 Violin Sonatas</td>
+<td>Op.</td>
+<td>5</td>
+<td>5</td>
 <td>1.0</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>1681.0</td>
+<td>1700.0</td>
 <td>CCARH</td>
-<td>1681.0</td>
+<td>1700.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+<td>24</td>
+<td>11</td>
+<td>16</td>
+<td>25</td>
+<td>26</td>
+<td>19</td>
+<td>6</td>
+<td>2</td>
+<td>7</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">112</td>
+<td>Chopin</td>
+<td>Frédéric</td>
+<td>Nocturnes</td>
+<td>Op.</td>
+<td>9</td>
+<td>3</td>
+<td>NaN</td>
+<td>3 Nocturnes</td>
+<td>1833.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1833.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>6</td>
+<td>26</td>
+<td>37</td>
+<td>181</td>
+<td>88</td>
+<td>72</td>
+<td>208</td>
+<td>357</td>
+<td>365</td>
+<td>363</td>
+<td>165</td>
+<td>202</td>
+<td>220</td>
+<td>138</td>
+<td>32</td>
+<td>24</td>
+<td>41</td>
+<td>10</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1562</td>
+<td>Wolf</td>
+<td>Hugo</td>
+<td>Eichendorff-Lieder</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>18</td>
+<td>NaN</td>
+<td>Erwartung</td>
+<td>NaN</td>
+<td>1889.0</td>
+<td>OSLC</td>
+<td>1889.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+<td>7</td>
+<td>13</td>
+<td>39</td>
+<td>31</td>
+<td>29</td>
+<td>29</td>
+<td>83</td>
+<td>129</td>
+<td>108</td>
+<td>90</td>
+<td>98</td>
+<td>83</td>
+<td>48</td>
+<td>19</td>
+<td>4</td>
+<td>16</td>
+<td>10</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -3701,15 +3673,45 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>17</td>
-<td>16</td>
-<td>14</td>
-<td>20</td>
-<td>36</td>
-<td>30</td>
-<td>13</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1215</td>
+<td>Schubert</td>
+<td>Franz</td>
+<td>Impromptus</td>
+<td>Op.</td>
+<td>142</td>
+<td>3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1827.0</td>
+<td>1839.0</td>
+<td>DCML</td>
+<td>1827.0</td>
 <td>0</td>
-<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>15</td>
 <td>6</td>
+<td>69</td>
+<td>181</td>
+<td>366</td>
+<td>83</td>
+<td>320</td>
+<td>765</td>
+<td>724</td>
+<td>535</td>
+<td>235</td>
+<td>407</td>
+<td>312</td>
+<td>128</td>
+<td>39</td>
+<td>31</td>
+<td>19</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -3721,18 +3723,118 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>9</td>
+<td>18</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1615</td>
+<td data-quarto-table-cell-role="th">1547</td>
+<td>Webern</td>
+<td>Anton</td>
+<td>Variationen für Klavier</td>
+<td>Op.</td>
+<td>27</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1936.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1936.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>10</td>
+<td>16</td>
+<td>55</td>
+<td>64</td>
+<td>66</td>
+<td>66</td>
+<td>70</td>
+<td>66</td>
+<td>61</td>
+<td>67</td>
+<td>61</td>
+<td>65</td>
+<td>59</td>
+<td>50</td>
+<td>9</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1398</td>
+<td>Scriabin</td>
+<td>Alexander</td>
+<td>Préludes</td>
+<td>Op.</td>
+<td>35</td>
+<td>2</td>
+<td>NaN</td>
+<td>3 Preludes</td>
+<td>1903.0</td>
+<td>NaN</td>
+<td>DCML</td>
+<td>1903.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+<td>1</td>
+<td>5</td>
+<td>11</td>
+<td>28</td>
+<td>23</td>
+<td>33</td>
+<td>17</td>
+<td>44</td>
+<td>42</td>
+<td>45</td>
+<td>32</td>
+<td>19</td>
+<td>31</td>
+<td>25</td>
+<td>5</td>
+<td>8</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1609</td>
 <td>Chopin</td>
 <td>Frédéric</td>
 <td>Mazurkas</td>
 <td>Op.</td>
-<td>7</td>
-<td>4</td>
+<td>6</td>
+<td>2</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>1830.0</td>
@@ -3746,74 +3848,75 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>20</td>
 <td>0</td>
-<td>18</td>
-<td>101</td>
-<td>117</td>
-<td>114</td>
-<td>50</td>
-<td>50</td>
-<td>75</td>
-<td>47</td>
-<td>15</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>22</td>
-<td>10</td>
+<td>74</td>
+<td>13</td>
+<td>49</td>
+<td>103</td>
+<td>244</td>
+<td>140</td>
+<td>26</td>
+<td>16</td>
+<td>81</td>
+<td>13</td>
 <td>8</td>
-<td>4</td>
-<td>7</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>15</td>
+<td>11</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2007</td>
-<td>Henselt</td>
-<td>Adolf von</td>
-<td>Études Caracteristiques</td>
-<td>Op.</td>
-<td>2</td>
-<td>2.0</td>
+<td data-quarto-table-cell-role="th">1995</td>
+<td>Mozart</td>
+<td>Wolfgang Amadeus</td>
+<td>Sonaten</td>
+<td>KV</td>
+<td>533</td>
+<td>15</td>
+<td>3.0</td>
 <td>NaN</td>
-<td>Pensez un peu à moi, qui pense toujours à vous</td>
+<td>1788.0</td>
 <td>NaN</td>
-<td>1838.0</td>
-<td>MS</td>
-<td>1838.0</td>
+<td>CCARH</td>
+<td>1788.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>40</td>
-<td>20</td>
-<td>21</td>
-<td>181</td>
-<td>295</td>
-<td>433</td>
-<td>234</td>
-<td>221</td>
-<td>238</td>
-<td>153</td>
-<td>29</td>
-<td>35</td>
-<td>20</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>5</td>
+<td>83</td>
+<td>137</td>
+<td>114</td>
+<td>110</td>
+<td>94</td>
+<td>177</td>
+<td>96</td>
+<td>10</td>
 <td>13</td>
-<td>6</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
+<td>23</td>
+<td>11</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -3823,26 +3926,74 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1260</td>
+<td>Schubert</td>
+<td>Franz</td>
+<td>Schwanengesang</td>
+<td>D. 957</td>
+<td>NaN</td>
+<td>9</td>
+<td>NaN</td>
+<td>Ihr Bild</td>
+<td>NaN</td>
+<td>1828.0</td>
+<td>OSLC</td>
+<td>1828.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>16</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1549</td>
-<td>Webern</td>
-<td>Anton</td>
-<td>Variationen für Klavier</td>
-<td>Op.</td>
+<td>47</td>
+<td>18</td>
 <td>27</td>
+<td>25</td>
+<td>132</td>
+<td>83</td>
+<td>50</td>
+<td>8</td>
+<td>27</td>
+<td>20</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1602</td>
+<td>Satie</td>
+<td>Erik</td>
+<td>Ludions</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>3</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1936.0</td>
+<td>La grenouille américaine</td>
+<td>1923.0</td>
 <td>NaN</td>
 <td>MS</td>
-<td>1936.0</td>
-<td>0</td>
-<td>0</td>
+<td>1923.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -3851,175 +4002,75 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>2</td>
-<td>5</td>
-<td>11</td>
-<td>26</td>
-<td>32</td>
-<td>30</td>
-<td>30</td>
-<td>35</td>
-<td>31</td>
-<td>28</td>
-<td>31</td>
-<td>32</td>
-<td>31</td>
-<td>30</td>
+<td>3</td>
+<td>3</td>
+<td>36</td>
+<td>117</td>
+<td>94</td>
+<td>82</td>
+<td>72</td>
+<td>95</td>
+<td>71</td>
+<td>10</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1323</td>
+<td>Schumann</td>
+<td>Robert</td>
+<td>Frauenliebe und Leben</td>
+<td>Op.</td>
+<td>42</td>
+<td>6</td>
+<td>NaN</td>
+<td>Süßer Freund, du blickest</td>
+<td>1840.0</td>
+<td>NaN</td>
+<td>OSLC</td>
+<td>1840.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>93</td>
+<td>109</td>
+<td>243</td>
+<td>191</td>
+<td>172</td>
+<td>103</td>
+<td>115</td>
+<td>61</td>
+<td>41</td>
 <td>22</td>
 <td>6</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>15</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1509</td>
-<td>Buxtehude</td>
-<td>Dietrich</td>
-<td>Trio Sonata in G major</td>
-<td>Op.</td>
-<td>1</td>
-<td>2</td>
-<td>NaN</td>
-<td>Allegro</td>
-<td>NaN</td>
-<td>1694.0</td>
-<td>ELVIS</td>
-<td>1694.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>28</td>
-<td>74</td>
-<td>25</td>
-<td>45</td>
-<td>95</td>
-<td>118</td>
-<td>39</td>
-<td>8</td>
-<td>4</td>
-<td>10</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>11</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">789</td>
-<td>Chopin</td>
-<td>Frédéric</td>
-<td>Nocturnes</td>
-<td>Op.</td>
-<td>55</td>
-<td>2</td>
-<td>NaN</td>
-<td>2 Nocturnes</td>
-<td>1844.0</td>
-<td>NaN</td>
-<td>DCML</td>
-<td>1844.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>19</td>
-<td>29</td>
-<td>43</td>
-<td>154</td>
-<td>202</td>
-<td>183</td>
-<td>163</td>
-<td>145</td>
-<td>174</td>
-<td>151</td>
-<td>28</td>
-<td>23</td>
-<td>20</td>
-<td>13</td>
-<td>9</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>19</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">552</td>
-<td>Chaminade</td>
-<td>Cécile</td>
-<td>Album des enfants – Première serie</td>
-<td>Op.</td>
-<td>123</td>
-<td>7</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1906.0</td>
-<td>MS</td>
-<td>1906.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>26</td>
-<td>61</td>
-<td>60</td>
-<td>30</td>
-<td>36</td>
-<td>56</td>
-<td>25</td>
-<td>11</td>
-<td>2</td>
-<td>3</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
+<td>14</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4031,24 +4082,71 @@ window.Quarto = {
 <td>0</td>
 <td>12</td>
 </tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Händel</td>
+<td>Georg Friedrich</td>
+<td>Funeral Anthem for Queen Caroline</td>
+<td>HWV</td>
+<td>264</td>
+<td>NaN</td>
+<td>4</td>
+<td>She put on righteousness</td>
+<td>NaN</td>
+<td>1737.0</td>
+<td>KPM</td>
+<td>1737.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>87</td>
+<td>210</td>
+<td>96</td>
+<td>181</td>
+<td>279</td>
+<td>300</td>
+<td>212</td>
+<td>52</td>
+<td>5</td>
+<td>83</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">900</td>
-<td>Lang</td>
-<td>Josephine</td>
-<td>Sechs Lieder</td>
+<td data-quarto-table-cell-role="th">362</td>
+<td>Beethoven</td>
+<td>Ludwig van</td>
+<td>Piano Sonatas</td>
 <td>Op.</td>
-<td>25</td>
-<td>3</td>
+<td>53</td>
 <td>NaN</td>
-<td>Barcarole</td>
+<td>2.0</td>
+<td>Piano Sonata No. 21</td>
+<td>1803.0</td>
 <td>NaN</td>
-<td>1860.0</td>
-<td>OSLC</td>
-<td>1860.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
+<td>MS</td>
+<td>1803.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4060,80 +4158,33 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>4</td>
-<td>2</td>
-<td>55</td>
-<td>99</td>
-<td>107</td>
-<td>81</td>
-<td>59</td>
-<td>84</td>
+<td>13</td>
+<td>0</td>
+<td>29</td>
+<td>102</td>
+<td>72</td>
+<td>49</td>
+<td>40</td>
 <td>44</td>
-<td>8</td>
-<td>2</td>
-<td>7</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
+<td>52</td>
+<td>66</td>
 <td>11</td>
+<td>5</td>
+<td>14</td>
+<td>15</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>15</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1069</td>
-<td>Rachmaninoff</td>
-<td>Sergei</td>
-<td>10 Préludes</td>
-<td>Op.</td>
-<td>23</td>
-<td>2</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1903.0</td>
-<td>NaN</td>
-<td>MS</td>
-<td>1903.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>11</td>
-<td>32</td>
-<td>74</td>
-<td>70</td>
-<td>78</td>
-<td>219</td>
-<td>691</td>
-<td>687</td>
-<td>234</td>
-<td>255</td>
-<td>562</td>
-<td>223</td>
-<td>96</td>
-<td>40</td>
-<td>57</td>
-<td>16</td>
-<td>10</td>
-<td>25</td>
-<td>31</td>
-<td>14</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>20</td>
-</tr>
-<tr class="odd">
 <td data-quarto-table-cell-role="th">1210</td>
 <td>Chopin</td>
 <td>Frédéric</td>
@@ -4184,95 +4235,45 @@ window.Quarto = {
 <td>0</td>
 <td>22</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">854</td>
-<td>Rue</td>
-<td>Pierre de la</td>
-<td>Ave Sanctissima Maria</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Et resurrexit</td>
-<td>1485.0</td>
-<td>NaN</td>
-<td>ELVIS</td>
-<td>1485.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>25</td>
-<td>26</td>
-<td>35</td>
-<td>29</td>
-<td>31</td>
-<td>19</td>
-<td>19</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>6</td>
-</tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1387</td>
-<td>Scriabin</td>
-<td>Alexander</td>
-<td>Préludes</td>
+<td data-quarto-table-cell-role="th">243</td>
+<td>Alkan</td>
+<td>Charles Valentin</td>
+<td>Esquisses</td>
 <td>Op.</td>
-<td>27</td>
+<td>63</td>
+<td>36</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1861.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1861.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>1</td>
-<td>NaN</td>
-<td>2 Preludes</td>
-<td>1901.0</td>
-<td>NaN</td>
-<td>DCML</td>
-<td>1901.0</td>
+<td>4</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
+<td>13</td>
+<td>22</td>
+<td>74</td>
+<td>118</td>
+<td>32</td>
+<td>71</td>
+<td>147</td>
+<td>127</td>
+<td>92</td>
+<td>29</td>
+<td>15</td>
+<td>62</td>
+<td>21</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>2</td>
-<td>16</td>
-<td>27</td>
-<td>12</td>
-<td>51</td>
-<td>95</td>
-<td>123</td>
-<td>92</td>
-<td>88</td>
-<td>141</td>
-<td>115</td>
-<td>60</td>
-<td>16</td>
-<td>38</td>
-<td>27</td>
-<td>29</td>
-<td>6</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4283,23 +4284,22 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>16</td>
+<td>19</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1726</td>
-<td>Corelli</td>
-<td>Arcangelo</td>
-<td>12 Trio Sonatas</td>
-<td>Op.</td>
-<td>3</td>
-<td>11</td>
-<td>4.0</td>
+<td data-quarto-table-cell-role="th">146</td>
+<td>Bach</td>
+<td>Johann Sebastian</td>
+<td>Wohltemperiertes Klavier II</td>
+<td>BWV</td>
+<td>890</td>
+<td>1</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>1689.0</td>
-<td>CCARH</td>
-<td>1689.0</td>
+<td>1740.0</td>
+<td>NaN</td>
+<td>MS</td>
+<td>1740.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4308,21 +4308,21 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>26</td>
-<td>67</td>
-<td>32</td>
-<td>45</td>
-<td>85</td>
-<td>73</td>
+<td>1</td>
+<td>13</td>
+<td>20</td>
+<td>54</td>
+<td>175</td>
+<td>260</td>
+<td>259</td>
+<td>277</td>
+<td>237</td>
+<td>231</td>
+<td>204</td>
+<td>62</td>
 <td>38</td>
-<td>4</td>
-<td>0</td>
-<td>27</td>
-<td>0</td>
+<td>26</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4335,22 +4335,73 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>9</td>
+<td>14</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1913</td>
-<td>Corelli</td>
-<td>Arcangelo</td>
-<td>12 concerti grossi</td>
-<td>Op.</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">922</td>
+<td>Liszt</td>
+<td>Franz</td>
+<td>NaN</td>
+<td>S.</td>
+<td>394</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Réminiscences de Norma</td>
+<td>1841.0</td>
+<td>1843.0</td>
+<td>MS</td>
+<td>1841.0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>141</td>
+<td>286</td>
+<td>100</td>
+<td>400</td>
+<td>742</td>
+<td>792</td>
+<td>481</td>
+<td>629</td>
+<td>1148</td>
+<td>1209</td>
+<td>836</td>
+<td>933</td>
+<td>1272</td>
+<td>1631</td>
+<td>713</td>
+<td>545</td>
+<td>676</td>
+<td>452</td>
+<td>116</td>
+<td>47</td>
+<td>65</td>
 <td>8</td>
-<td>5.0</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>22</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">728</td>
+<td>Gesualdo</td>
+<td>Carlo</td>
+<td>Sacrae cantiones I</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>1714.0</td>
-<td>CCARH</td>
-<td>1714.0</td>
+<td>4</td>
+<td>NaN</td>
+<td>Reminiscere</td>
+<td>NaN</td>
+<td>1603.0</td>
+<td>CPDL</td>
+<td>1603.0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4363,17 +4414,17 @@ window.Quarto = {
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>19</td>
-<td>42</td>
-<td>28</td>
-<td>35</td>
-<td>84</td>
-<td>83</td>
-<td>41</td>
-<td>19</td>
+<td>32</td>
+<td>97</td>
+<td>117</td>
+<td>111</td>
+<td>137</td>
+<td>143</td>
+<td>117</td>
+<td>52</td>
 <td>3</td>
-<td>21</td>
-<td>8</td>
+<td>9</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -4388,57 +4439,6 @@ window.Quarto = {
 <td>0</td>
 <td>10</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">178</td>
-<td>Koželuh</td>
-<td>Leopold</td>
-<td>Piano Sonata</td>
-<td>Op.</td>
-<td>20</td>
-<td>1</td>
-<td>2</td>
-<td>Adagio</td>
-<td>1786.0</td>
-<td>NaN</td>
-<td>DB</td>
-<td>1786.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>49</td>
-<td>168</td>
-<td>184</td>
-<td>89</td>
-<td>60</td>
-<td>76</td>
-<td>92</td>
-<td>41</td>
-<td>3</td>
-<td>9</td>
-<td>4</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>12</td>
-</tr>
 </tbody>
 </table>
 
@@ -4446,7 +4446,7 @@ window.Quarto = {
 </div>
 </div>
 <p>This allows us now to take the <code>display_year</code> (composition or publication) and <code>lof_range</code> (range on the line of fifths) features to observe historical changes.</p>
-<div id="9ec0fad4" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="23">
+<div id="6354b564" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">9</span>))</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ax.scatter(data[<span class="st">"display_year"</span>].values, data[<span class="st">"lof_range"</span>].values, alpha<span class="op">=</span><span class="fl">.5</span>, s<span class="op">=</span><span class="dv">50</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>,<span class="dv">35</span>)</span>
@@ -4462,7 +4462,7 @@ window.Quarto = {
 </div>
 </div>
 <p>We could try to fit a line to this data to see whether there is a trend (kinda obvious here).</p>
-<div id="f3698c36" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="24">
+<div id="18f9022e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.lmplot(</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>data, </span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"display_year"</span>, </span>
@@ -4484,7 +4484,7 @@ window.Quarto = {
 </div>
 <p>But actually, this is not the best idea. Why should any historical process be linear? More complex models might make more sense.</p>
 <p>A more versatile technique is <em>Locally Weighted Scatterplot Smoothing</em> (LOWESS) that locally fits a polynomial. Using this method, we see that a non-linear process is displayed.</p>
-<div id="32f5af1e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="25">
+<div id="8a8fe183" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.nonparametric.smoothers_lowess <span class="im">import</span> lowess</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> data.display_year</span>
@@ -4509,7 +4509,7 @@ window.Quarto = {
 </section>
 <section id="if-there-is-time-some-more-advanced-stuff" class="level2" data-number="15.6">
 <h2 data-number="15.6" class="anchored" data-anchor-id="if-there-is-time-some-more-advanced-stuff"><span class="header-section-number">15.6</span> If there is time: some more advanced stuff</h2>
-<div id="e97c31be" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="26">
+<div id="45d840fe" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> <span class="dv">200</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>delta <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">10</span> </span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4582,7 +4582,7 @@ window.Quarto = {
 <p>Usung bootstrap sampling we achieve an estimation of the local varience of the data and thus of the diversity in the note usage of the musical pieces.</p>
 <p>We also can distinguish three regions in terms of line-of-fifth range: diatonic, chromatic, and enharmonic.</p>
 <p>Grouping the data together in these three regions, we see a clear change from diatonic and chromatic to chromatic and enharmonic pieces over the course of history.</p>
-<div id="fe494d29" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="27">
+<div id="c75c2261" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> {</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Renaissance"</span> : [<span class="dv">1300</span>, <span class="dv">1549</span>],</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Baroque"</span> : [<span class="dv">1550</span>, <span class="dv">1649</span>],</span>
