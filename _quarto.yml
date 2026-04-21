@@ -5,7 +5,7 @@ execute:
 book:
   title: "INTRODUCTION TO DIGITAL MUSICOLOGY"
   author: "Fabian C. Moss"
-  date: "Fall 2025"
+  date: "Spring 2026"
   chapters:
   - index.qmd
   - part: INTRODUCTION

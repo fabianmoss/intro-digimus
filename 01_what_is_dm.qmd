@@ -35,7 +35,7 @@ I am also teaching a course on music encoding this semester:
 [_Digitale Musikkodierung und -edition_](https://wuestudy.zv.uni-wuerzburg.de:443/qisserver/pages/startFlow.xhtml?_flowId=detailView-flow&unitId=206548&periodId=3499&navigationPosition=hisinoneLehrorganisation,examEventOverviewOwn){target="_blank"}.
 :::
 
-### Corpus Studies 
+## Corpus Studies 
 
 Although corpus studies are considered a modern form of music theory, 
 they can look back an an astonishingly long history. Many consider the first 
@@ -44,7 +44,7 @@ where he counts and tabulates occurrences of dissonant vertical intervals in the
 vocal work of the Renaissance composer [@Jeppesen1927]. Further early examples 
 are the dissertations of @Budge1943 and @Norman1945.
 
-In a nutshell, corpus attempt to find regularities in large collections of 
+In a nutshell, corpus studies attempt to find regularities in large collections of 
 music data [@Shanahan2022] in order to draw conclusions about the style of a particular 
 composer, period, or genre, for instance. Corpus studies thus naturally make use 
 of digital data and statistical or algorithmic methods for their analysis. 
@@ -89,7 +89,6 @@ into domain-specific areas of research [@Wing2006]. If we have this extended vie
 we also need to include computational models of music perception and cognition, acoustics, 
 and enthnological and anthropological approaches to music as well. However, this would go 
 beyond the scope of this course. 
-
 
 ---
 
